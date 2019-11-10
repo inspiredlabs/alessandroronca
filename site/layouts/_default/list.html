@@ -1,10 +1,14 @@
 {{ partial "head" . }}
-{{ partial "nav.html" . }}
+<body class="w-100 source_sans_proregular black-70 highlight bg-near-white lh-copy" id="top">
+<!-- <b class="w-10 fixed z-999 mt0 pa1 top-0 moon-gray" id="debugInfo">0</b> -->
+{{ partial "svg.html" . }}
+{{ partial "newNav" . }}
+
 <div id="content">
 	<ul class="list">
 		{{ range .Data.Pages.ByWeight }}
 
-			<li class="post-holder"><!-- Begin: li.html -->
+			<li class="post-holder" id="{{ .Title | lower | urlize }}"><!-- Begin: li.html -->
 				<data class="meta dn">
 					{{ .Title }}
 					{{ .Description }}

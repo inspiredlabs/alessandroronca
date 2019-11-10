@@ -1,12 +1,11 @@
-<nav class="w-25 w-30-l fixed z-999 mt0 pa1 top-0 white right-0 overflow-y overflow-x-hidden h-100 vh-100"><!--bg-black-->
+<nav class="w-25 w-30-l fixed z-999 mt0 pa1 top-0 white right-0 overflow-y overflow-x-hidden h-100 vh-100"><!---->
 <!-- `{{ if eq (relURL .URL) ("/" | safeHTML) }}<hr/>{{ end }}`: discourse.gohugo.io/t/how-to-check-for-home-page/149/17 -->
-
 <ul class="list"><!-- fw1 fl w-100 mb4 pa0 data-gumshoe ttu tracked -->
 	{{ $thisTitle := .Title }}
 	{{ range .Site.Pages.ByWeight }}
 		<li class=""><!-- fl 100 -->
-			<a href="{{ .URL }}"
-				class="no-underline bg-animate flex items-center pa3 border-box f3 f2-ns f3-m f2-l tracked-tight
+			<a href="#{{ .Title | lower | urlize }}"
+				class="no-underline bt bw2 bw1-m bw2-l b--transparent flex items-center pa3 border-box f3 f5-ns f5-m f3-l tracked-tight
 				{{ if eq .Title $thisTitle }}
 					fw7
 				{{ end }}">{{ .Title }}</a><!-- pa3 -->
@@ -14,45 +13,6 @@
 	{{ end }}
 </ul>
 </nav>
-
-
-
-
-
-
-
-
-
-
-
-<script>/*
-	{{ $home := .Site.Home }}
-	<div class="css-treeview box">
-		<ul>
-			<li><input type="checkbox" id="item-0" checked="checked" /><label for="item-0">Home</label>
-			<ul>
-			{{ template "section-tree-nav" $home }}
-			</ul>
-		</ul>
-	</div>
-	{{ define "section-tree-nav" }}
-	{{ range .Sections.Reverse}}
-	<li>
-		<li><input type="checkbox" id="item-0-0" checked="checked"/><label for="item-0-0">{{ .Title }}</label>
-		<ul>
-			{{ range .Pages }}
-			<li><a href="{{ .RelPermalink}}">{{ .Title }}</a></li>
-			{{ end }}
-			<ul>
-			{{ template "section-tree-nav" . }}
-			</ul>
-		</ul>
-	</li>
-	</li>
-	{{ end }}
-	{{ end }}
-*/</script>
-
 
 
 <script>/*
