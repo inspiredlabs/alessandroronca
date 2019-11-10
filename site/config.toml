@@ -1,9 +1,25 @@
-baseurl = "/"
-languageCode = "en-us"
+baseurl = "./" #{{ .Site.BaseURL }} "/" #netlify "./" #local
+#baseurl = "https://relaxed-stonebraker-0c66a9.netlify.com"
+#relativeURLs = "true"
+languageCode = "en-gb" #Initial configuration reset
 languageLang = "en"
 title = "Homepage"
 
 # RSS, categories and tags disabled for an easy start
-# See configuration options for more details: 
+# See configuration options for more details:
 # https://gohugo.io/getting-started/configuration/#toml-configuration
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+
+[Params]
+  [[Params.description]]
+    description = "Multilingual" #Scott Phillips is a Designer & Frontend Developer
+
+  [[Params.assignment]]
+    assignment = "Multilingual" #Designer & Frontend Developer
+
+  [[Params.location]]
+    location = "Multilingual" #Oxford
+
+  [[Params.links]]
+    title = "Email"
+    url = "mailto:alan.scott.phillips@pm.me"
