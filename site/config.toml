@@ -1,4 +1,5 @@
-baseurl = "https://hungry-wozniak-e915f8.netlify.com" #{{ .Site.BaseURL }} "/" && netlify "./" local only
+baseurl = "./" #{{ .Site.BaseURL }} #"/" netlify #"./" local only #"https://hungry-wozniak-e915f8.netlify.com"
+# baseurl = "https://relaxed-stonebraker-0c66a9.netlify.com/"
 #relativeURLs = "true"
 
 languageCode = "en-gb" #Initial configuration reset
