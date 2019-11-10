@@ -1,24 +1,25 @@
-baseurl = "./" #{{ .Site.BaseURL }} "/" #netlify "./" #local
-#baseurl = "https://relaxed-stonebraker-0c66a9.netlify.com"
+baseurl = "https://hungry-wozniak-e915f8.netlify.com" #{{ .Site.BaseURL }} "/" && netlify "./" local only
 #relativeURLs = "true"
-languageCode = "en-gb" #Initial configuration reset
-languageLang = "en"
-title = "Homepage"
 
-# RSS, categories and tags disabled for an easy start
-# See configuration options for more details:
-# https://gohugo.io/getting-started/configuration/#toml-configuration
-disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+languageCode = "en-gb" #Initial configuration reset
+title = "Inspired Labs"
+#disableKinds = ["home", "section", "taxonomy", "taxonomyTerm", "RSS", "sitemap", "robotsTXT", "404"]#"page",
+#theme = "ultimate-simplicity"
+#theme = "ga-hugo-theme"
+## As of v0.20, all content files include a default "categories" value that's the same as the section. This was a cheap future-proofing method and should/could be changed accordingly.
+[taxonomies]
+  key = "value"
 
 [Params]
   [[Params.description]]
-    description = "Multilingual" #Scott Phillips is a Designer & Frontend Developer
+    description = "Scott Phillips is a Designer & Frontend Developer"
 
   [[Params.assignment]]
-    assignment = "Multilingual" #Designer & Frontend Developer
+    assignment = "Designer & Frontend Developer"
 
   [[Params.location]]
-    location = "Multilingual" #Oxford
+    location = "Oxford"
+
 
   [[Params.links]]
     title = "Email"

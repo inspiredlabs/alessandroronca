@@ -6,6 +6,9 @@ assignment: Frontend Developer
 location: SME Boutiques
 
 ---
+<!--From Summer&nbsp;2011-->
+
+{{<flickity src="https://inspiredlabs.co.uk/images/iwa-pablowoodward-01.jpg" title="PabloWoodward.com" color="blue" selectCell="flkty.selectCell( value, isWrapped, isInstant )" >}}
 
 ## Philosophy
 
@@ -45,6 +48,8 @@ Designed to flow around different screen types, the layout adapts to client devi
 
 Designed to be flexible, the template can handle poor network connections. Without extraneous widgets content delivery is as fast as possible over cellular networks.
 
+{{<flickity src="https://inspiredlabs.co.uk/images/iwa-tdb-01.jpg" title="TheDiscoBunny.com" color="blue" selectCell="flkty.selectCell( value, isWrapped, isInstant )" >}}
+
 ### My small business? – There's an app for that!
 
 #### Customer admiration
@@ -74,3 +79,5 @@ By combining content and graphics into fewer server requests we improve time to 
 #### Performant
 
 The design has undergone many iterations to achieve a GTMetrix UX score: 100%.
+
+{{<flickity src="https://inspiredlabs.co.uk/images/iwa-multitool-01.jpg" title="An early jQuery implementation" color="blue" selectCell="flkty.selectCell( value, isWrapped, isInstant )" >}}
