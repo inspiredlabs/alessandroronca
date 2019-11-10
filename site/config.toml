@@ -2,7 +2,7 @@ baseurl = "https://hungry-wozniak-e915f8.netlify.com" #{{ .Site.BaseURL }} "/" &
 #relativeURLs = "true"
 
 languageCode = "en-gb" #Initial configuration reset
-title = "Inspired Labs"
+#title = "Inspired Labs"
 #disableKinds = ["home", "section", "taxonomy", "taxonomyTerm", "RSS", "sitemap", "robotsTXT", "404"]#"page",
 #theme = "ultimate-simplicity"
 #theme = "ga-hugo-theme"
