@@ -8,7 +8,7 @@ title = "Inspired Labs"
 #theme = "ga-hugo-theme"
 ## As of v0.20, all content files include a default "categories" value that's the same as the section. This was a cheap future-proofing method and should/could be changed accordingly.
 [taxonomies]
-  key = "value"
+  #new
 
 [Params]
   [[Params.description]]
@@ -19,7 +19,6 @@ title = "Inspired Labs"
 
   [[Params.location]]
     location = "Oxford"
-
 
   [[Params.links]]
     title = "Email"
