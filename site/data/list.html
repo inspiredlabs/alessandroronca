@@ -12,12 +12,12 @@
 			{{ end }}
 		*/</script>
 
-		{{ range (where .Site.RegularPages.ByWeight "Type" "posts") }}
+		{{ range (where .Data.Pages "Type" "posts") }}
 			{{ .Render "li" }}
 		{{ end }}
 
 		{{ range (where .Data.Pages "Type" "notizia") }}
-			<div class="bg-washed-green">
+			<div="bg-washed-green">
 			{{ .Render "li" }}
 			</div>
 		{{ end }}
