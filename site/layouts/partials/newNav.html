@@ -5,14 +5,13 @@
 	
 	}
 
-	#scrollspy li.active {
+	/* #scrollspy li.active {
 		background-color: gainsboro;
-	}
+	} */
 	
 	#scrollspy li.active a {
-		/*color: white;*/
+		font-weight: bold;
 	}
-
 	
 </style>
 
@@ -22,12 +21,42 @@
 <nav class="w-25 w-30-l fixed z-999 mt0 pa1 top-0 white right-0 overflow-y overflow-x-hidden h-100 vh-100">
 	<ul class="list preserve-3d" id="scrollspy" >
 
-		{{ range .Site.RegularPages.ByWeight }}
+		{{ range (where .Site.RegularPages.ByWeight "Type" "it") }}
 		<li><!-- fl 100 -->
 			<a href="#{{ .Title | lower | urlize }}"
-				class="no-underline bt bw2 bw1-m bw2-l b--transparent flex items-center pa3 border-box f3 f5-ns f5-m f3-l tracked-tight">{{ .Title }}</a>
-			</li>
+			class="no-underline bt bw2 bw1-m bw2-l b--transparent flex items-center pa3 border-box f3 f5-ns f5-m f3-l tracked-tight bg-washed-green">
+			{{ .Title }}
+			</a>
+		</li>
 		{{ end }}
+
+		{{ range (where .Site.RegularPages.ByWeight "Type" "prezzi") }}
+		<li><!-- fl 100 -->
+			<a href="#{{ .Title | lower | urlize }}"
+			class="no-underline bt bw2 bw1-m bw2-l b--transparent flex items-center pa3 border-box f3 f5-ns f5-m f3-l tracked-tight bg-light-green">
+			{{ .Title }}
+			</a>
+		</li>
+		{{ end }}
+
+		{{ range (where .Site.RegularPages.ByWeight "Type" "notizia") }}
+		<li><!-- fl 100 -->
+			<a href="#{{ .Title | lower | urlize }}"
+			class="no-underline bt bw2 bw1-m bw2-l b--transparent flex items-center pa3 border-box f3 f5-ns f5-m f3-l tracked-tight bg-green">
+			{{ .Title }}
+			</a>
+		</li>
+		{{ end }}
+		
+		
+		<li><!-- fl 100 -->
+			<a href="#contact"
+			class="no-underline bt bw2 bw1-m bw2-l b--transparent flex items-center pa3 border-box f3 f5-ns f5-m f3-l tracked-tight bg-dark-green">
+			Contact
+			</a>
+		</li>
+		
+		
 	
 </nav>
 

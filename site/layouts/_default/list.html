@@ -10,19 +10,41 @@
 			{{ range .Data.Pages.ByWeight }}
 				{{ .Render "li" }}
 			{{ end }}
-		*/</script>
 
-		{{ range (where .Site.RegularPages.ByWeight "Type" "posts") }}
+			{{ range (where .Site.RegularPages.ByWeight "Type" "posts") }}
 			{{ .Render "li" }}
 		{{ end }}
+		*/</script>
 
-		{{ range (where .Data.Pages "Type" "notizia") }}
+		
+
+		{{ range (where .Site.RegularPages.ByWeight "Type" "it") }}
 			<div class="bg-washed-green">
 			{{ .Render "li" }}
 			</div>
 		{{ end }}
 
-		{{ partial "contact" . }}
+		{{ range (where .Site.RegularPages.ByWeight "Type" "prezzi") }}
+			<div class="bg-light-green">
+			{{ .Render "li" }}
+			</div>
+		{{ end }}
+
+		{{ range (where .Site.RegularPages.ByWeight "Type" "notizia") }}
+			<div class="bg-green">
+			{{ .Render "li" }}
+			</div>
+		{{ end }}
+
+		{{/* range (where .Site.RegularPages.ByWeight "Type" "contact") }}
+			<div class="bg-dark-green">
+			{{ .Render "li" }}
+			</div>
+		{{ end */}}
+
+		<div class="bg-dark-green">
+			{{ partial "contact" . }}
+		</div>
 	</ul>
 
 {{ partial "javascript" . }}
