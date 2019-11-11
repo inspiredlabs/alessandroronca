@@ -4,8 +4,8 @@
 {{ partial "svg.html" . }}
 {{ partial "newNav" . }}
 
-<div id="content">
-	<ul class="list">
+<div id="content" class="bg-orange">
+	<ul class="ma0 list bg-near-white black-70 "><!-- antialias B&W -->
 		<script>/*{{ range (where .Data.Pages "Type" "principle") }}
 			{{ .Render "li" }}
 		{{ end }}*/</script>
