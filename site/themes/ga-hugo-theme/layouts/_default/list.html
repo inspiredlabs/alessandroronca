@@ -1,0 +1,51 @@
+{{ partial "head" }}
+{{ partial "svg" . }}
+<body
+  class="w-100 h-100 ma0 pa0 overflow-hidden backface-hidden no-clutter  bg-near-white charcoal avenir fixed disable-scrolling">
+  {{ partial "horizontalNav.html" . }}
+
+<div class="carousel carousel-main vh-100 vw-100 relative z-1"><!-- https://discourse.gohugo.io/t/get-pages-from-multiple-sections-in-one-list/15271 -->
+
+{{/* range .Sections.ByWeight }}
+<span class="red">{{ .Title | lower }}</span>
+{{ end */}}
+
+
+
+
+
+  {{ range .Sections.ByWeight }}
+  <section id="{{ .Title | lower }}" class="carousel-cell h-100 scrollable overflow-y-scroll touch-scrolling w-100 highlight">
+    <div>
+      <span><a href="{{ .RelPermalink }}">{{ .Title }}</a></span>
+      <span>{{ .Content }}</span>
+    </div>
+    {{ range .Pages }}
+    <li style="border: 1px solid black;" class="list pa4">
+      <a href="{{.URL}}">
+        <h1>{{ .Title }}</h1>
+        <h2>{{ .Page.CurrentSection.Title }}</h2>
+      </a>
+      <!-- <div style="color:grey; font-size:16px;">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</div>
+          <div style="color:grey; font-size:16px;">{{ if .Params.tags }}<strong>Tags:</strong> {{range .Params.tags}}<a
+              href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}</div>
+          <div style="color:grey; font-size:16px;">{{ if .Params.categories }}<strong>Categories:</strong>
+            {{range .Params.categories}}<a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}
+          </div>
+          <div style="color:grey; font-size:16px;">{{ if .Params.moods }}<strong>Moods:</strong> {{range .Params.moods}}<a
+              href="{{ "/moods/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}</div>
+          <p style="font-size:18px;">{{.Summary}}</p> -->
+    <p class="">{{.Content}}</p>
+
+    
+  </li>
+    
+    {{ end }}
+  </section>
+  {{ end }}
+</div>
+
+{{ partial "footer" . }}
+{{ partial "script" . }}
+</body>
+</html>

@@ -1,0 +1,128 @@
+<style>
+
+	nav {
+	  position:fixed;
+	  background:white;
+	  width: 100%;
+	}
+
+	ul {
+	    margin:0 auto;
+	    padding:0;
+	    list-style:none;
+	    display:table;
+	    width:50%;
+	    text-align:center
+	}
+	 li {
+	    display:table-cell
+	}
+	.gumshoe a {
+	    color:#000;
+	    text-transform:uppercase;
+	    text-decoration:none;
+	    letter-spacing:.15em;
+	    display:inline-block;
+	    /*padding:0.5rem;*/
+	    width: 100%;
+	    padding-top:1.5rem;
+	    padding-bottom:1.5rem;
+	}
+	 .gumshoe a:after{
+	    bottom:0;
+	    content:"";
+	    display:block;
+	    height:2px;
+	    left:0;
+	    position:absolute;
+	    background:#000;
+	    transition:width .3s ease 0s,left .3s ease 0s;
+	    width:0
+	}
+	 .gumshoe a:hover:after {
+	    width:100%;
+	    left:0;
+	}
+
+	.gumshoe li.active {
+		background-color: gainsboro;
+	}
+	
+	.gumshoe li.active a {
+		
+	}
+
+	a.active {
+		color:red;/**/
+	}
+
+</style>
+
+<style>
+hr {
+  height: .25rem;
+  width: 25%;
+  margin: 0;
+  background: tomato;
+  border: none;
+  transition: .3s ease-in-out;
+  position: relative;
+  z-index: 99999;
+}
+</style>
+
+<div class="w-100 fixed bottom-0">
+	<p><a data-scroll href="#top">Top</a></p>
+</div>
+<nav >
+	<ul data-gumshoe class="list preserve-3d">
+		{{ range .Pages.ByWeight }}
+			{{ $current := .Params.Name | lower | urlize }}
+			<li class="relative near-white">
+				<a data-scroll href="#{{ .Params.Name | lower | urlize }}" class="link ttu near-black overflow-x-hidden no-focus-ring">
+				<span>{{ .Params.Name }}</span>
+				</a>
+			</li>
+		{{ end }}
+		<hr />
+		<!-- <li class=overflow></li> -->
+	</ul>
+</nav>
+
+
+<!-- <script src="{{ .Site.BaseURL }}js/smooth-scroll.min.js"></script> -->
+<!-- <script src="{{ .Site.BaseURL }}js/gumshoe.min.js"></script> -->
+<!-- <script>
+/**** spy ***/
+var scroll = new SmoothScroll('a[href*="#"]',{
+	header: '[data-scroll-header]'
+});
+</script> -->
+<!-- <script>
+var scrollspy = new Gumshoe('#scrollspy a');
+
+</script> -->
+<script src="{{ .Site.BaseURL }}js/cferdinandi.min.js"></script>		
+<script>smoothScroll.init({offset:0});gumshoe.init({});</script>
+
+
+
+<style>nav#offcanvas-menu a{display:block;color:#FFFFFF;opacity:1;text-rendering:optimizeLegibility;}nav#offcanvas-menu ul{list-style:none;}nav#offcanvas-menu ul li a{padding:1rem 0 1rem 0.5rem;text-transform:uppercase;letter-spacing:0.128rem;border-bottom:none;}nav#offcanvas-menu ul li a:hover{background-color:rgba(0, 0, 0, 0.08);text-decoration:none;border-bottom:none;}nav#offcanvas-menu ul li a.active{background-color:rgba(0, 0, 0, 0.333);font-weight:700;position:relative;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.4);-moz-box-shadow:inset 0 1px 1px rgba(0,0,0,.4);box-shadow:inset 0 1px 1px rgba(0,0,0,.4);}div.overlay{position:fixed;width:100%;height:100%;left:0;top:0;z-index:1;visibility:hidden;}div.overlay label{width:100%;height:100%;position:fixed;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-user-select:none;-ms-touch-action:none;}input[type="checkbox"]#togglebox:checked ~ div#overlay-icon{}input[type="checkbox"]#togglebox:checked ~ nav#offcanvas-menu{-moz-transform:all 0.4s;-webkit-transform:all 0.4s;transform:all 0.4s;-moz-transform:translate3d(0,0,0);-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);visibility:visible;-moz-transition-delay:0s;-webkit-transition-delay:0s;transition-delay:0s;}input[type="checkbox"]#togglebox:checked ~ nav#offcanvas-menu ul{opacity:1;}input[type="checkbox"]#togglebox:checked ~ div.overlay{visibility:visible;}nav#offcanvas-menu a:link{font-family:sans-serif;text-decoration:none;}.overflow{height:12rem;}@media (max-width:33.9999em){body{margin-right:10px}.jumbotron h1{font-size:2.4rem;}.jumbotron h2{font-size:1.6rem;}nav#offcanvas-menu{font-size:0.7rem;width:168px;-moz-transform:translate3d(160px,0,0);-webkit-transform:translate3d(160px,0,0);transform:translate3d(160px,0,0);outline:1px #333 solid;}div.overlay{display:block;}.container{max-width:33.9rem;margin-right:auto;}.table-of-contents{padding:0;}.table-of-contents .card-deck{padding-left:0;padding-right:0;}}@media (min-width:34em){body{margin-right:134px}nav#offcanvas-menu{font-size:0.5rem;}nav#offcanvas-menu a{}nav#offcanvas-menu{width:134px;-moz-transform:translate3d(126px,0,0);-webkit-transform:translate3d(126px,0,0);transform:translate3d(126px,0,0);}div.overlay{display:none;}.container{max-width:34rem;margin-right:auto;}.table-of-contents{padding:0;}.table-of-contents .card-deck{padding-left:0;padding-right:0;}}@media (min-width:48em){body{margin-right:142px}nav#offcanvas-menu{font-size:0.666rem;}nav#offcanvas-menu a{letter-spacing:0;}nav#offcanvas-menu{width:142px;-moz-transform:translate3d(134px,0,0);-webkit-transform:translate3d(134px,0,0);transform:translate3d(134px,0,0);}.container{max-width:45rem;margin-right:auto;}}@media (min-width:62em){body{margin-right:158px}nav#offcanvas-menu{font-size:0.666rem;}nav#offcanvas-menu a{letter-spacing:0;}nav#offcanvas-menu{width:148px;-moz-transform:translate3d(140px,0,0);-webkit-transform:translate3d(140px,0,0);transform:translate3d(140px,0,0);}.container{max-width:60rem;margin-right:auto;}}@media (min-width:75em){body{margin-right:174px}nav#offcanvas-menu{font-size:0.8rem;width:164px;-moz-transform:translate3d(158px,0,0);-webkit-transform:translate3d(158px,0,0);transform:translate3d(158px,0,0);}.container{max-width:72.25rem;margin-right:auto;}}.img-fluid{min-width:100%;width:100%;height:auto;}aside{}figcaption{background:#383838;color:#FFFFFF;padding:1rem;}a:hover,a:active{text-decoration:none!important;}</style>
+
+<style>
+/* Remove jank:
+	https://stackoverflow.com/questions/2946748/iphone-webkit-css-animations-cause-flicker
+*/
+
+nav#offcanvas-menu ul {
+	-webkit-backface-visibility: hidden;
+}
+
+nav#offcanvas-menu ul li {
+	-webkit-backface-visibility: hidden;
+}
+
+nav#offcanvas-menu ul li a {
+	-webkit-backface-visibility: hidden;
+}
+</style>

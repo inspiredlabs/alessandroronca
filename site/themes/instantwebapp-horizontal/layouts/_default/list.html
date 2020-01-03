@@ -1,0 +1,51 @@
+{{ partial "head" . }}
+<body class="w-100 source_sans_proregular black-70 highlight bg-near-white lh-copy" id="top">
+<!-- <b class="w-10 fixed z-999 mt0 pa1 top-0 moon-gray" id="debugInfo">0</b> -->
+{{ partial "svg.html" . }}
+{{ partial "newNav" . }}
+
+
+	<ul class="ma0 list bg-near-white black-70 "><!-- antialias B&W -->
+		<script>/*
+			{{ range .Data.Pages.ByWeight }}
+				{{ .Render "li" }}
+			{{ end }}
+
+			{{ range (where .Site.RegularPages.ByWeight "Type" "posts") }}
+			{{ .Render "li" }}
+		{{ end }}
+		*/</script>
+
+		
+    
+		{{ range (where .Site.RegularPages.ByWeight "Type" "it") }}
+			<div class="bg-washed-green">
+			{{ .Render "li" }}
+			</div>
+		{{ end }}
+
+    {{ range (where .Site.RegularPages.ByWeight "Type" "prezzi") }}
+			<div class="bg-light-green">
+			{{ .Render "li" }}
+			</div>
+		{{ end }}
+
+    {{ range (where .Site.RegularPages.ByWeight "Type" "notizia") }}
+			<div class="bg-green">
+			{{ .Render "li" }}
+			</div>
+		{{ end }}
+
+		{{/* range (where .Site.RegularPages.ByWeight "Type" "contact") }}
+			<div class="bg-dark-green">
+			{{ .Render "li" }}
+			</div>
+		{{ end */}}
+
+		<div class="bg-dark-green">
+			{{ partial "contact" . }}
+		</div>
+	</ul>
+
+{{ partial "javascript" . }}
+{{/* partial "footer" . */}}
