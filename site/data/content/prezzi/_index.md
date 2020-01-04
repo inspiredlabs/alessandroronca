@@ -1,9 +1,9 @@
 ---
 
-name: index
-title: Section (oh yeah).
+weight: 3
+name: prezzi
+title: prezzi
 icon: info
 
 ---
 prezzi: It Works! 
-<!--weight: 1-->

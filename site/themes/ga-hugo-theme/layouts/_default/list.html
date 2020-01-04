@@ -11,11 +11,9 @@
 {{ end */}}
 
 
-
-
-
   {{ range .Sections.ByWeight }}
   <section id="{{ .Title | lower }}" class="carousel-cell h-100 scrollable overflow-y-scroll touch-scrolling w-100 highlight">
+    {{ partial "jumbotron" . }}
     <div>
       <span><a href="{{ .RelPermalink }}">{{ .Title }}</a></span>
       <span>{{ .Content }}</span>

@@ -1,11 +1,10 @@
 ---
-
-name: index
-title: Section (oh yeah).
+weight: 4
+name: notizia
+title: notizia
 icon: info
 
 ---
 
 notizia: It Works! 
 
-<!--weight: 1-->

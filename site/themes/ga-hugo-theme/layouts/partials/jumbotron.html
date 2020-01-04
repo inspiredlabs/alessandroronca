@@ -1,0 +1,21 @@
+<header class="seal">
+  <div class="dt w-100 tc bg-dark-gray white cover
+    portrait-vh-50 landscape-vh-66
+    landscape-vh-85-ns portrait-vh-85-ns
+    landscape-vh-66-m portrait-vh-85-m
+    landscape-vh-85-l bg-center b-lazy" data-src="{{- if .Params.image -}}{{- .Params.image -}}{{- end -}}|{{- if .Params.imageRetina -}}{{- .Params.imageRetina -}}{{- end -}}" style="background-position:{{- if .Params.backgroundPos -}}{{- .Params.backgroundPos -}}{{- end -}}">
+    <div class="dtc tc white
+          pv4 ph3 v-btm
+          pv3-ns v-mid-ns
+          pv5-m v-btm-m
+          pt6-l ph4-l
+          text-shadow measure-narrow lh-title">
+      <h1 class="pa0 ma0">
+        <span class="
+              ttu tracked tracked-mega-ns tracked-mega-m tracked-mega-l
+              f3 f2-ns f2-m f1-l mb0 ts2-dark-gray">{{- if .Params.title -}}{{- .Params.title -}}{{- end -}}</span>
+        <span class="db f4 f3-ns fw5 ts2-dark-gray">{{- if .Params.subtitle -}}{{- .Params.subtitle -}}{{- end -}}</span>
+      </h1>
+    </div>
+  </div>
+</header>
