@@ -12,9 +12,3 @@ imageRetina: images/activities-group-2x.jpg
 backgroundPos:
 
 ---
-blurb
-
-
-
-
-

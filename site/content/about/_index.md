@@ -12,4 +12,3 @@ imageRetina: images/IMG_2754-adaptation-2x.jpg
 backgroundPos: 
 
 ---
-blurb

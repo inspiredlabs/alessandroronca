@@ -12,4 +12,4 @@ imageRetina: images/workshop-02-2x.jpg
 backgroundPos: 0 0
 
 ---
-blurb
+<!-- Breakout content: blurb -->

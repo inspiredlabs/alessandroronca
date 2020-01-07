@@ -1,9 +1,9 @@
 {{ partial "head" }}
 <body
-  class="w-100 h-100 ma0 pa0 overflow-hidden backface-hidden no-clutter  bg-near-white charcoal avenir fixed disable-scrolling">
+  class="w-100 h-100 ma0 pa0 overflow-hidden backface-hidden no-clutter bg-near-white charcoal avenir fixed disable-scrolling">
   {{ partial "svg" . }}
   {{ partial "horizontalNav.html" . }}
-
+  
 <div class="carousel carousel-main vh-100 vw-100 relative z-1"><!-- https://discourse.gohugo.io/t/get-pages-from-multiple-sections-in-one-list/15271 -->
 
 {{/* range .Sections.ByWeight }}
@@ -14,16 +14,33 @@
   {{ range .Sections.ByWeight }}
   <section id="{{ .Title | lower }}" class="carousel-cell h-100 scrollable overflow-y-scroll touch-scrolling w-100 highlight">
     {{ partial "jumbotron" . }}
-    <div>
-      <span><a href="{{ .RelPermalink }}">{{ .Title }}</a></span>
-      <span>{{ .Content }}</span>
-    </div>
+    
+    <!-- The `_index.md` is reserved for the synopsis, introduction or sign-up tiers (figure), breaking out from the main layout. -->
+    <aside class="db dark-gray athelas f5 f4-ns f3-m f3-l lh-copy measure-narrow pa4 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l mr-auto ml-auto">
+      <!--h2>{{ .Title }}&nbsp;<a href="{{ .Permalink }}" class="link emojisymbol o-30 glow no-underline"
+        title="{{ .Permalink | absURL | lower | urlize }}"></a></h2-->
+      {{ .Content }}
+      <!--div class="dt-ns dt--fixed-ns">
+        <div class="dtc-ns tc pv4 bg-black-10">
+          Three column Adaptation: one&hellip;
+        </div>
+        <div class="dtc-ns tc pv4 bg-black-05">
+          Three column Adaptation: two&hellip;
+        </div>
+        <div class="dtc-ns tc pv4 bg-black-10">
+          Three column Adaptation: three&hellip;
+        </div>
+      </div-->
+    </aside>
+   
     {{ range .Pages }}
-    <li style="border: 1px solid black;" class="list pa4">
-      <a href="{{.URL}}">
-        <h1>{{ .Title }}</h1>
-        <h2>{{ .Page.CurrentSection.Title }}</h2>
-      </a>
+    <!-- Main layout, in a single column -->
+    <article class="db dark-gray athelas f5 f4-ns f3-m f3-l lh-copy measure-narrow pa4 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l mr-auto ml-auto">
+      <!-- <li style="border: 1px solid black;" class="list pa4"> -->
+      <heading>
+        <h3>{{ .Title }}&nbsp;<a href="{{ .RelPermalink }}" class="link emojisymbol o-30 glow no-underline" title="{{ .Permalink | absURL | lower | urlize }}"></a></h3>
+        <!--code>{{ .Page.CurrentSection.Title | lower | urlize }}</code-->
+      </heading>
       <!-- <div style="color:grey; font-size:16px;">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</div>
           <div style="color:grey; font-size:16px;">{{ if .Params.tags }}<strong>Tags:</strong> {{range .Params.tags}}<a
               href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}</div>
@@ -33,17 +50,13 @@
           <div style="color:grey; font-size:16px;">{{ if .Params.moods }}<strong>Moods:</strong> {{range .Params.moods}}<a
               href="{{ "/moods/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}</div>
           <p style="font-size:18px;">{{.Summary}}</p> -->
-    <p class="">{{.Content}}</p>
-
-    
-  </li>
-    
-    {{ end }}
+      {{- .Content -}}
+    </article>
+    {{ end }}<!-- {{/* range .Pages */}} -->
+    {{ partial "footer" . }}
   </section>
-  {{ end }}
+  {{ end }}<!-- {{/* range .Sections.ByWeight */}} -->
 </div>
-
-{{ partial "footer" . }}
 {{ partial "script" . }}
 </body>
 </html>
