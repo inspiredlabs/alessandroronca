@@ -6,13 +6,9 @@ subtitle:
 
 ---
 
-##### Cerftified Wim Hof Method Instructor
+##### Training Facilitator &amp; Life-coach
 
-A Cerftified Wim Hof Method Instructor based in Italy, I teach how improve people's life circumstances for themselves.
-
-##### Training Facilitator &amp; life-coach
-
-As a Training Facilitator, my goal is to improve your circumstances. I run sustainability projects, a [range](https://www.per.umbria.it/i-nostri-corsi/) of courses such as _Change your job, change your life_ and give people answers so they can unlock thier own potential.
+<!--As a Training Facilitator, -->My goal is to improve your circumstances. I run a [range](https://www.per.umbria.it/i-nostri-corsi/) of sustainability courses such as _Change your job. Change your life_ to give people answers that unlock thier potential. 
 
 ##### Sustainability Veteran
 
@@ -20,4 +16,4 @@ As well as being a **Cerftified Wim Hof Method Instructor** based in Italy, I te
 
 ##### Mentor
 
-As trainer and facilitator, I have coached numerous personalities including giving council to **Frederico Pistano** (Robots Will Steal Your Job, But That's OK).
+Through facilitating sessions, I have coached numerous personalities. Including giving council to **Frederico Pistano**, [Robots Will Steal Your Job, But That's OK](https://www.amazon.co.uk/Robots-Will-Steal-Your-Thats-ebook/dp/B009R93JR6) and [A Tale Two Futures](https://www.amazon.co.uk/Tale-Two-Futures-Federico-Pistono-ebook/dp/B00RB6PFF6).

@@ -1,6 +1,6 @@
 ---
-draft: false
-weight: 1
+draft: true
+weight: 2
 name: X
 icon: info
 
@@ -14,24 +14,16 @@ tags: ["italiano"]
 moods: ["italiano"]
 categories: ["italiano"]
 
-image: /img/1200x675/IMG_20170906-cu.jpg
+
 description: ''
 
 ---
 
-##### What is The Wim Hof Method?
-
-**The Wim Hof Method** is a tool to help _manage_ health. It moderates immune response, connects you directly to nature and has been know to bring symptoms into remission.
-
-##### How does **The Wim Hof Method** really work?
-
-The Wim Hof Method ushers in your natural state of being. Over a decade of scientific research has shown **The Wim Hof Method** will boost the body's natural healing capability, improve concentration and increase perception.
-
 ##### Scientifically speaking how does **The Wim Hof Method** really work?
 
-Using empirical evidence built up over decades, Wim Hof has proven there are numerous benefits. Wim Hof challenged the doctors at The University Medical Center St. Radboud in Nijmegen, Netherlands to a series of tests – where he was the subject! Starting from 2011, he proved there are numerous health benefits to cold exposure and meditation. 3 LISTS:
+Using empirical evidence built up over decades, Wim Hof has proven there are numerous benefits. By challenging doctors at The University Medical Center St. Radboud, Nijmegen, Netherlands he became the subject of ground-breaking x.
 
-
+Starting from 2011, he proved there are numerous health benefits to cold exposure and meditation. 3 LISTS:
 
 Boost the body's natural healing capability:
 
