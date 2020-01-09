@@ -3,7 +3,7 @@ region: en
 
 weight: 1
 name: coach
-title: Alessandro Ronca
+title: ALESSANDRO RONCA
 subtitle: Certified Wim Hof Method Instructor & 1-on-1 Training Facilitator
 icon: info
 

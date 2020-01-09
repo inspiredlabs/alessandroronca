@@ -1,7 +1,7 @@
 ---
 draft: false
 weight: 1
-name: X
+
 icon: info
 
 region: it
