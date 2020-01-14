@@ -14,6 +14,17 @@ subtitle:
 
 As well as being a **Cerftified Wim Hof Method Instructor** based in Italy, I teach how to integrate energy technologies into your business, and home. These activities are conducted from the Sustainability Research Center called: [Il Parco dell’ Energia Rinnovabile](https://per.umbria.it/), where I am the [Scientific Director](https://rvo.lt/knowledgeshare/alessandro-ronca/).
 
-##### Mentor
+##### Who do I coach?
+
+People looking to overcome burn out, improve their focus and seek proven time management skills.
+
+Through facilitating sessions, I have coached numerous personalities, executives and authors. 
+
+All can benefit from the innovative insight, to define a life strategy to meet the most ambitious goals.
+
+<!--
+
+##### Which famous personalities have you coached?
 
 Through facilitating sessions, I have coached numerous personalities. Including giving council to **Frederico Pistano**, [Robots Will Steal Your Job, But That's OK](https://www.amazon.co.uk/Robots-Will-Steal-Your-Thats-ebook/dp/B009R93JR6) and [A Tale Two Futures](https://www.amazon.co.uk/Tale-Two-Futures-Federico-Pistono-ebook/dp/B00RB6PFF6).
+-->
