@@ -19,14 +19,11 @@ description: ''
 
 ---
 
-##### Scientifically speaking how does **The Wim Hof Method** really work?
+[Joe Rogan Breathing with "The Iceman" Wim Hof (from Joe Rogan Experience #712)](https://www.youtube.com/watch?v=erx9czQsY2Q).
 
-Using empirical evidence built up over decades, Wim Hof has proven there are numerous benefits. By challenging doctors at The University Medical Center St. Radboud, Nijmegen, Netherlands he became the subject of ground-breaking x.
+These boost the body's natural healing capability.
 
-Starting from 2011, he proved there are numerous health benefits to cold exposure and meditation. 3 LISTS:
-
-Boost the body's natural healing capability:
-
+x
 - regulates the body's chemistry
 - Autonomic Nervous System, etc...
 

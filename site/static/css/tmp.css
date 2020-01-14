@@ -15,6 +15,8 @@
 
 	/* Recycle existing class and break Tachyons convention. */
 	/* 07.01.20 .emojisymbol			Semantic unicode-icons			addition								*/
+	/* 13.01.20 .link							word-wrap: break-word;			bug fix 								*/
+	/* Consider `.hover-o-*` convention. */
 
 	/* .box-sizing,etc...{border-box;margin-top:0;margin-bottom:0;}. */
 	/* .dim and .grow: https://github.com/tachyons-css/tachyons/issues/337 */
@@ -1376,6 +1378,9 @@
 
 	.link {
 	  text-decoration: none;
+		/* https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/ */
+		overflow-wrap: break-word;
+		word-wrap: break-word;
 	}
 
 	.link,
@@ -10887,7 +10892,7 @@
 	/*</style>*/
 
 	/* https://css-tricks.com/snippets/css/common-unicode-icons/ */
-	/* Recycle existing class and break Tachyons convention. 
+	/* Recycle existing class and break Tachyons convention.
 	a[href^="mailto:"]:before {
 	  content: '';
 	}

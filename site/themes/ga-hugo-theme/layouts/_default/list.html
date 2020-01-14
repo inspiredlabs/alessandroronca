@@ -12,7 +12,7 @@
 
 
   {{ range .Sections.ByWeight }}
-  <section id="{{ .Title | lower }}" class="carousel-cell h-100 scrollable overflow-y-scroll touch-scrolling w-100 highlight">
+  <section id="{{ .Title | lower }}" class="carousel-cell h-100 scrollable overflow-y-scroll touch-scrolling w-100 ">
     {{ partial "jumbotron" . }}
     
     <!-- The `_index.md` is reserved for the synopsis, introduction or sign-up tiers (figure), breaking out from the main layout. -->
@@ -50,11 +50,18 @@
           <div style="color:grey; font-size:16px;">{{ if .Params.moods }}<strong>Moods:</strong> {{range .Params.moods}}<a
               href="{{ "/moods/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}</div>
           <p style="font-size:18px;">{{.Summary}}</p> -->
-      {{- .Content -}}
+      
+      {{- $content := .Content | replaceRE "PeR" "<span class='ttn fs-initial'>P<sup class='large v-sup'>e̲</sup>R</span>" -}}
+      {{- $content := $content | replaceRE "<a" "<a class='link pointer charcoal dim no-underline'" -}}
+      {{- $content := $content | replaceRE "<ul" "<ul class='list pl0'" -}}
+      {{- $content | safeHTML -}}
+
     </article>
     {{ end }}<!-- {{/* range .Pages */}} -->
     {{ partial "footer" . }}
+    <p class="mb7 tc"><span class=o-90>© {{ now.Format "2006" }}&nbsp;di {{ .Site.Params.author  }} </span>|<span class="o-90">&nbsp;Web <a class="o-70 glow" href="{{ .Site.Copyright }}">Scott Phillips</a></span></p>
   </section>
+  
   {{ end }}<!-- {{/* range .Sections.ByWeight */}} -->
 </div>
 {{ partial "script" . }}
