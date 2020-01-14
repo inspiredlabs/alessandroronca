@@ -1,24 +1,28 @@
 ---
 
-draft: true
+draft: false
 region: en
 weight: 5
 title: Breathing Practice
-subtitle:
-
 ---
 
-Tests
+<!--
 
+draft: true
+
+[![Photo of Wim Hof](images/hqdefault-1x.jpg)](https://www.youtube.com/watch?v=nzCaZQqAs9I)
+-->
+
+{{<cell
+src="/images/hqdefault-1x.jpg"
+caption="Photo of Wim Hof explaining Breathing Practice.">}}
+
+<!--
 [Joe Rogan Breathing with "The Iceman" Wim Hof (from Joe Rogan Experience #712)](https://www.youtube.com/watch?v=erx9czQsY2Q).
-
-<!--NIX-->
+-->
 
 <!--
 They are broadly arrenged in three categories:
 -->
 
 
-<!--
-[![Photo of Wim Hof](images/hqdefault-1x.jpg)](https://www.youtube.com/watch?v=nzCaZQqAs9I)
--->
