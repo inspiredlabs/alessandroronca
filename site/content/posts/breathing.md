@@ -6,8 +6,13 @@ weight: 5
 title: Breathing Practice
 ---
 
-<!--
 
+{{< youtube nzCaZQqAs9I >}}
+
+
+
+<!--
+caption="Wim Hof explaining the breathing practice."
 draft: true
 
 [![Photo of Wim Hof](images/hqdefault-1x.jpg)](https://www.youtube.com/watch?v=nzCaZQqAs9I)

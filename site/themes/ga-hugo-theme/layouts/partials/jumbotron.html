@@ -1,9 +1,11 @@
-<header class="seal">
+<header ><!-- class="seal" -->
   <div class="dt w-100 tc bg-dark-gray white cover
     portrait-vh-50 landscape-vh-66
     landscape-vh-85-ns portrait-vh-85-ns
     landscape-vh-66-m portrait-vh-85-m
-    landscape-vh-85-l bg-center b-lazy" data-src="{{- if .Params.image -}}{{- .Params.image -}}{{- end -}}|{{- if .Params.imageRetina -}}{{- .Params.imageRetina -}}{{- end -}}" style="background-position:{{- if .Params.backgroundPos -}}{{- .Params.backgroundPos -}}{{- end -}}"><!-- https://developer.mozilla.org/en-US/docs/Web/CSS/background-position-y -->
+    landscape-vh-85-l bg-center lazyLoad"
+    style="background-position:{{- if .Params.backgroundPos -}}{{- .Params.backgroundPos -}}{{- end -}}"
+    data-bg="url('{{- if .Params.image -}}{{- .Params.image -}}{{- end -}}')">{{/*- if .Params.imageRetina -}}{{- .Params.imageRetina -}}{{- end -*/}}<!-- https://developer.mozilla.org/en-US/docs/Web/CSS/background-position-y -->
     <div class="dtc tc white
           pv4 ph3 v-btm
           pv3-ns v-mid-ns
