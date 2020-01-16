@@ -16,11 +16,9 @@ As well as being a **Cerftified Wim Hof Method Instructor** based in Italy, I te
 
 ##### Who do I coach?
 
-People looking to overcome burn out, improve their focus and seek proven time management skills.
+People looking to overcome burn out, improve their focus and seek proven time management skills. Although, all can benefit from innovative insights I have been exposed to.
 
-Through facilitating sessions, I have coached numerous personalities, executives and authors. 
-
-All can benefit from the innovative insight, to define a life strategy to meet the most ambitious goals.
+Through facilitating sessions, I have coached numerous personalities, executives and authors helping to define life strategies to meet the most ambitious goals.
 
 <!--
 

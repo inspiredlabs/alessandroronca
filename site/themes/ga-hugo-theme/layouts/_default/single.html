@@ -1,6 +1,6 @@
 {{ partial "head" }}
 <body
-  class="w-100 h-100 backface-hidden no-clutter bg-near-white charcoal avenir overflow-scroll">
+  class=" ma0 pa0 backface-hidden no-clutter bg-near-white charcoal avenir overflow-scroll">
   {{/* range .Sections }}{{ partial "jumbotron" . }}{{ end */}}
   <article
     class="db dark-gray athelas f5 f4-ns f3-m f3-l lh-copy measure-narrow pa4 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l mr-auto ml-auto">
@@ -9,10 +9,7 @@
 
         {{ .Title }}&nbsp;<a href="{{ .Site.BaseURL }}" class="back emojisymbol o-30 glow no-underline"
           title="{{ .Site.BaseURL | lower | urlize }}"></a></h2>
-        <!-- .Content -->
-        {{ block "content" . }}
-          {{ partial "content.html" . }}
-        {{ end  }}
+        {{.Content}}
     </article>
     {{ partial "footer" . }}
 </body>

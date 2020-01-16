@@ -1,4 +1,6 @@
 {{- $content := .Content | replaceRE "PeR" "<span class='ttn fs-initial'>P<sup class='large v-sup'>e̲</sup>R</span>" -}}
 {{- $content := $content | replaceRE "<a" "<a class='link pointer charcoal dim no-underline bb bw1'" -}}
 {{- $content := $content | replaceRE "<ul" "<ul class='list pl0'" -}}
+{{- $content := $content | replaceRE "<cite" "<blockquote class='f3 b db'" -}}
+{{- $content := $content | replaceRE "<cite" "<cite class='db o-60'" -}}
 {{- $content | safeHTML -}}

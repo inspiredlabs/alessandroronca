@@ -26,11 +26,11 @@ There's much more going on than just an interesting building in a beautiful, tra
 
 During the management of **PeR**, it became apparent to me: technology over-promises and under delivers. I realised, Humanity has made a lot of progress – but it has become too intensive.
 
-> Humanity’s footprint sinks under its own weight! <cite class="f3 b db o-60">– Alessandro Ronca on progress becoming needlessly intensive.</cite>
+> Humanity’s footprint sinks under its own weight! <cite>– Alessandro Ronca on progress becoming needlessly intensive.</cite>
 
 _Conscious Resource Allocation_ became critical to the success of the center. By being mindful of supply-needs, we developed systems without sacrificing comfort. As **PeR** evolved, so did society's environomental concerns. Today, it is accepted there is Climate Crisis.
 
-> The true value of technology to Humanity is when it provides more benefit than cost, this can only be achieved in equilibrium with our environment. <cite class="f3 b db o-60">– Alessandro Ronca on technology</cite>
+> The true value of technology to Humanity is when it provides more benefit than cost, this can only be achieved in equilibrium with our environment. <cite>– Alessandro Ronca on technology</cite>
 
 ##### Man and planet in harmony
 
@@ -40,6 +40,6 @@ _The Human Component_ is living fully. It is the correct use of our mind and bod
 
 **The Wim Hof Method** helped me face cold, harsh winters, develop focus and strengthen my creativity. Now, I want to share this knowledge for other's to benefit. 
 
-> Give yourself the gift of strength, happiness and health <cite class="f3 b db o-60">– Why learn The Wim Hof Method? By Alessandro Ronca</cite>
+> Give yourself the gift of strength, happiness and health <cite>– Why learn The Wim Hof Method? By Alessandro Ronca</cite>
 
 * * *
