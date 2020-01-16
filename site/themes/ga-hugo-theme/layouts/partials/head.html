@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en" class="touch-manipulation h-100 fixed overflow-hidden"><!-- https://www.bram.us/2016/05/02/prevent-overscroll-bounce-in-ios-mobilesafari-pure-css/ -->
+<html lang="en" class="touch-manipulation w-100 h-100 fixed overflow-hidden"><!-- https://www.bram.us/2016/05/02/prevent-overscroll-bounce-in-ios-mobilesafari-pure-css/ -->
 <head>
   <meta charset="utf-8">
   <meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
-  <!-- CodePen - Flickity - asNavFor instant -- <canonical href="https://codepen.io/desandro/pen/jzEOZq" /-->
+  <!-- `asNavFor` <canonical href="https://codepen.io/desandro/pen/jzEOZq" /-->
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, shrink-to-fit=no">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,7 +36,7 @@
           "@type": "person",
           "name": "Alessandro Ronca"
         },
-    
+
       "description": "Scientific Director PeR, Training Facilitator and 1-on-1 Instructor of the WHM (Wim Hof Method). There are only three WHM Instructors from Italy.",
       "keywords": "1-on-1 Instructor, 1-on-1 Ice Coach,
       Sustainability, positive net impact, energy techologies, Fairtech Revolution, Artisan, Polymath, Construction Management, Diving Instructor, PeR, Parco dell’ Energia Rinnovabile,
@@ -84,7 +84,7 @@
   <meta property="og:image" content="https://inspiredlabs.co.uk/alessandroronca.it/images/profile.png" />
   <meta property="og:image:secure_url" content="https://inspiredlabs.co.uk/alessandroronca.it/images/profile.png" />
   <!-- <link rel='stylesheet' href='https://instantwebapp.netlify.com/css/tachyon.shower.css'> -->
-  
+
   <!-- Tachyon Shower -->
   <link rel="stylesheet" href="{{ .Site.BaseURL | absURL }}css/tmp.css" />
   <!-- https://instantwebapp.netlify.com/css/tachyon.shower.css -->
@@ -98,11 +98,11 @@
       max-width: 100%;
       opacity: 0;
     }
-  
+
     .b-lazy.b-loaded {
       opacity: 1;
     }
-  
+
     .seal { /* https://base64.guru/converter/encode/image/svg */
       background-color: dimgray;
       background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii05NiAtOTYgMzIwIDMyMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAtOTYgLTk2IDMyMCAzMjAiPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+LnN0MHtmaWxsOiNGRkZGRkY7fTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTEyOCA4My44bC01LjItOC44LTE0LjUgOC4yLTE2LjktOS43di0xOS4ybDE3LjEtOS43IDE0IDcuOSA1LjItOC44LTE0LjEtOHYtMTYuMmgtMTAuNHYxNi40bC0xNy4yIDkuNi0xNi45LTkuNXYtMTkuMmwxNC04LTUuMS04LjgtMTQgOC0xNC04LTUuMiA4LjggMTQgOHYxOS4ybC0xNi45IDkuNy0xNy05Ljd2LTE2LjVoLTEwLjR2MTYuNGwtMTQuNSA4LjIgNS4yIDguOCAxNC41LTguMiAxNi45IDkuN3YxOS4ybC0xNy4xIDkuNy0xNC03LjktNS4yIDguOCAxNC4xIDh2MTYuNGgxMC40di0xNi41bDE3LjItOS42IDE2LjkgOS41djE5LjJsLTE0IDggNS4yIDguOCAxNC04IDE0IDggNS4yLTguOC0xNC04di0xOS4ybDE2LjktOS43IDE2LjkgOS43djE2LjVoMTAuNHYtMTYuNWwxNC41LTguMnptLTgxLjItMTAuMnYtMTkuMmwxNy4xLTkuNyAxNy4xIDkuN3YxOS4xbC0xNy4xIDkuNy0xNy4xLTkuNnoiLz48L3N2Zz4=');
@@ -110,7 +110,25 @@
       background-repeat: no-repeat;
       background-size: cover;
     }
-    
+    /* Pre-lazy loading styles */
+    .feature {
+      opacity: 0;
+    }
+
+    .feature.lazy-bg-loaded {
+      opacity: 1;
+      -webkit-transition: opacity 2s ease-in;
+      -moz-transition: opacity 2s ease-in;
+      -o-transition: opacity 2s ease-in;
+      -ms-transition: opacity 2s ease-in;
+      transition: opacity 2s ease-in;
+    }
+
+    .lazy-bg-loaded {
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
   </style>
 
   {{ partial "add-to-tachyon-shower" }}

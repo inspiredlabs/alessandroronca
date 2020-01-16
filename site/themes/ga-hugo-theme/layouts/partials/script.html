@@ -72,9 +72,25 @@ navFlkty.onNavStaticClick = function (event, pointer, cellElement, cellIndex) {
   }
 };
 </script>
-<script src="js/lazyload.min.js">//lazyload.iife.min.js</script>
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script src="js/yall.min.js">//Yet Another Lazy Loader</script>
 <script>
-  var lazyLoadInstance = new LazyLoad({
-    elements_selector: ".lazyLoad",
-  });
+  // A Crockford iife, Yall: https://stackoverflow.com/a/23925102/3429622
+    (function () {
+      yall({
+        observeChanges: true
+        /*, events: {
+          load: function (event) {
+            if (!event.target.classList.contains("lazy") && event.target.nodeName == "IMG") {
+              event.target.classList.add("yall-loaded");
+            }
+          },
+          play: function (event) {
+            if (event.target.nodeName == "VIDEO") {
+              event.target.nextElementSibling.classList.add("visible");
+            }
+          }
+        }*/
+      });
+    }());
 </script>

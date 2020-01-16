@@ -1,11 +1,24 @@
-<header ><!-- class="seal" -->
+<style>
+  #{{ .Params.name | lower | urlize }}.lazy-bg-loaded {
+    background-image: url("{{- if .Params.image -}}{{- .Params.image -}}{{- end -}}");
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi) {
+    #{{ .Params.name | lower | urlize }}.lazy-bg-loaded {
+      background-image: url("{{- if .Params.imageRetina -}}{{- .Params.imageRetina -}}{{- end -}}");
+    }
+  }
+</style>
+
+<header class="seal"><!--  -->
   <div class="dt w-100 tc bg-dark-gray white cover
     portrait-vh-50 landscape-vh-66
     landscape-vh-85-ns portrait-vh-85-ns
     landscape-vh-66-m portrait-vh-85-m
-    landscape-vh-85-l bg-center lazyLoad"
+    landscape-vh-85-l bg-center feature lazy-bg"
     style="background-position:{{- if .Params.backgroundPos -}}{{- .Params.backgroundPos -}}{{- end -}}"
-    data-bg="url('{{- if .Params.image -}}{{- .Params.image -}}{{- end -}}')">{{/*- if .Params.imageRetina -}}{{- .Params.imageRetina -}}{{- end -*/}}<!-- https://developer.mozilla.org/en-US/docs/Web/CSS/background-position-y -->
+    id="{{ .Params.name | lower | urlize }}"><!-- https://developer.mozilla.org/en-US/docs/Web/CSS/background-position-y -->
     <div class="dtc tc white
           pv4 ph3 v-btm
           pv3-ns v-mid-ns

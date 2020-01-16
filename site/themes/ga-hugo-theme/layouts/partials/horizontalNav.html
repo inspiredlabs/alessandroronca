@@ -47,7 +47,7 @@
                                 white-50 ts1-dark-gray
                                 w-third w-third-ns w-third-m w-20-l
                                 tc tc-ns tc-m tr-l
-                                link pointer hover-white-80 ml-auto mr-auto fl" title="{{ .Params.name }}">{{ .Params.name | lower }}</a><!-- glow -->
+                                link pointer hover-white-80 ml-auto mr-auto fl" title="{{ .Params.name }}">{{ .Params.name | lower | urlize }}</a><!-- glow -->
               {{ end }}
             {{end}}
 
