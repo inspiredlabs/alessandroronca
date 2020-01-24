@@ -36,11 +36,14 @@
    
     {{ range .Pages }}
     <!-- Main layout, in a single column -->
-    <article class="db dark-gray athelas f5 f4-ns f3-m f3-l lh-copy measure-narrow pa4 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l mr-auto ml-auto">
+    <article class="db dark-gray athelas f5 f4-ns f3-m f3-l lh-copy measure pa2 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l mr-auto ml-auto">
       <!-- <li style="border: 1px solid black;" class="list pa4"> -->
       <heading>
         <h3>{{ .Title }}&nbsp;<a href="{{ .RelPermalink }}" class="link emojisymbol o-30 glow no-underline" title="{{ .Permalink | absURL | lower | urlize }}"></a></h3>
         <!--code>{{ .Page.CurrentSection.Title | lower | urlize }}</code-->
+      <!-- aside class="db dark-gray athelas f5 f4-ns f3-m f3-l lh-copy measure pa3 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l
+        mr-auto ml-auto" -->
+        {{ partial "share" . }}
       </heading>
       <!-- <div style="color:grey; font-size:16px;">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</div>
           <div style="color:grey; font-size:16px;">{{ if .Params.tags }}<strong>Tags:</strong> {{range .Params.tags}}<a
