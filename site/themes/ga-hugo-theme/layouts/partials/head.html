@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="touch-manipulation w-100 h-100 fixed overflow-hidden"><!-- https://www.bram.us/2016/05/02/prevent-overscroll-bounce-in-ios-mobilesafari-pure-css/ -->
+<html lang="en" class="{{ if .IsHome }}touch-manipulation w-100 h-100 fixed overflow-hidden{{ end }}"><!-- https://www.bram.us/2016/05/02/prevent-overscroll-bounce-in-ios-mobilesafari-pure-css/ -->
 <head>
   <meta charset="utf-8">
   <meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
@@ -86,9 +86,9 @@
   <!-- <link rel='stylesheet' href='https://instantwebapp.netlify.com/css/tachyon.shower.css'> -->
 
   <!-- Tachyon Shower -->
-  <link rel="stylesheet" href="{{ .Site.BaseURL | absURL }}css/tmp.css" />
+  <link rel="stylesheet" href="{{ .Site.BaseURL | relURL }}css/tmp.css" />
   <!-- https://instantwebapp.netlify.com/css/tachyon.shower.css -->
-  <link rel='stylesheet' href='css/flickity.css'><!-- flickity.min.css -->
+  <link rel='stylesheet' href='{{ .Site.BaseURL | relURL }}css/flickity.css'><!-- flickity.min.css -->
   <style>
     .b-lazy {
       -webkit-transition: opacity 500ms ease-in-out;

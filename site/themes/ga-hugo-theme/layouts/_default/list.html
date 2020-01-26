@@ -62,10 +62,8 @@
     </article>
     {{ end }}<!-- {{/* range .Pages */}} -->
     {{ partial "footer" . }}
-    <p class="mb7 tc"><span class=o-90>© {{ now.Format "2006" }}&nbsp;di {{ .Site.Params.author  }} </span>|<span class="o-90">&nbsp;Web <a class="o-70 glow" href="{{ .Site.Copyright }}">Scott Phillips</a></span></p>
   </section>
-  
-  {{ end }}<!-- {{/* range .Sections.ByWeight */}} -->
+    {{ end }}<!-- {{/* range .Sections.ByWeight */}} -->
 </div>
 {{ partial "script" . }}
 </body>

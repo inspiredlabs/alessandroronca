@@ -2,7 +2,7 @@
 region: en
 weight: 3
 title: Biography
-subtitle: 
+subtitle:
 
 ---
 
@@ -14,7 +14,7 @@ Using engineering to alleviate difficult environmental situations, I have worked
 
 ##### Sustainable development
 
-Knowing there was important lessons to share in what I had learned so far, my next challenge was obvious. I sought advocates to help me test the idea… and eventually _we_ began to design and develop an independent sustainability research center based around energy techologies. This became known as <span lang="it">Il Parco Dell'Energia Rinnovabile, or **PeR** for short. This has been an incredibly complicated process.
+Knowing there was important lessons to share in what I had learned so far, my next challenge was obvious. I sought advocates to help me test the idea… and eventually _we_ began to design and develop an independent sustainability research center based around energy techologies. This became known as <span lang="it">Il Parco Dell'Energia Rinnovabile</span>, or **PeR** for short. This has been an incredibly complicated process.
 
 ##### Now
 
@@ -36,9 +36,9 @@ _Conscious Resource Allocation_ became critical to the success of the center. By
 
 To act in coherence with nature, we must use engineering, the natural sciences and also practice developing our own, inner-technology. I call this: _The Human Component_.
 
-_The Human Component_ is living fully. It is the correct use of our mind and body to improve well-being be happy and live better. It is focus – and guides effort.
+_The Human Component_ is to live fully, in coherence with nature. It is the correct use of our mind and body to improve well-being be happy and live better. It is focus – it guides our efforts.
 
-**The Wim Hof Method** helped me face cold, harsh winters, develop focus and strengthen my creativity. Now, I want to share this knowledge for other's to benefit. 
+**The Wim Hof Method** helped me face cold, harsh winters, develop focus and strengthen my creativity. Now, I want to share this knowledge for other's to benefit.
 
 > Give yourself the gift of strength, happiness and health <cite>– Why learn The Wim Hof Method? By Alessandro Ronca</cite>
 

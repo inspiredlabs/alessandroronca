@@ -1,5 +1,4 @@
 baseurl = "./" #{{ .Site.BaseURL }} #"/" netlify #"./" local only #"https://hungry-wozniak-e915f8.netlify.com"
-# baseurl = "https://relaxed-stonebraker-0c66a9.netlify.com/"
 #relativeURLs = "true"
 #Change theme: `echo 'theme = "instantwebapp-vertical"' >> config.toml`
 theme = "ga-hugo-theme" #pablo, instantwebapp-horizontal, ga-hugo-theme

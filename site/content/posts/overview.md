@@ -21,7 +21,7 @@ description: ''
 
 ##### Cerftified Wim Hof Method Instructor
 
-I teach people to improve their life circumstances. Now a **Cerftified Wim Hof Method Instructor** based in Italy, I have been practicing <!--**The Wim Hof Method**--> for several years. Courses take place in [Il Parco dell’ Energia Rinnovabile](https://per.umbria.it/), which is in Umbria, Italy. <!--Here, I am Scientific Director.-->
+I teach people to improve their life circumstances. Now a **Cerftified Wim Hof Method Instructor** based in Italy, I have been practicing <!--**The Wim Hof Method**--> for several years. Courses take place around [Il Parco dell’ Energia Rinnovabile](https://per.umbria.it/), which is in Umbria, Italy. <!--Here, I am Scientific Director.-->
 
 ##### What is The Wim Hof Method?
 
