@@ -1,9 +1,10 @@
 <footer
   class="db dark-gray athelas f5 f4-ns f3-m f3-l lh-copy measure pa2 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l mr-auto ml-auto">
-  <aside class="db">
+  <aside class="db cf">
     {{/* partial "sociallist" . */}}
     {{ partial "social" . }}
   </aside>
-  <p class="mb7 tc"><span class=o-90>© {{ now.Format "2006" }}&nbsp;di {{ .Site.Params.author  }} </span>|<span
-      class="o-90">&nbsp;Web <a class="o-70 glow" href="{{ .Site.Copyright }}">Scott Phillips</a></span></p>
+  <small class="db mv7 tc "><span class=o-90>© {{ now.Format "2006" }}&nbsp;di {{ .Site.Params.author  }} </span>|<span
+      class="o-90">&nbsp;Web <a class="o-70 glow" href="{{ .Site.Copyright }}">Scott Phillips</a></span>
+  </small><!-- https://stackoverflow.com/questions/5876021/correct-semantic-tag-for-copyright-info-html5 -->
 </footer>
