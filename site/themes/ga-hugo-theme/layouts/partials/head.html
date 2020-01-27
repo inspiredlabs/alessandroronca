@@ -89,6 +89,11 @@ class='w-100 h-100 {{ if .IsHome }}touch-manipulation fixed overflow-hidden{{ en
   <!-- <link rel='stylesheet' href='https://instantwebapp.netlify.com/css/tachyon.shower.css'> -->
 
   <!-- Tachyon Shower -->
+  <!-- https://discourse.gohugo.io/t/hugo-inline-css-optimization-for-google-pagespeed/6032/13 -->
+  {{/* with resources.Get "css/tmp.css" | minify }}
+  <style>{{ .Content | safeCSS }}</style>
+  {{ end */}}
+  
   <link rel="stylesheet" href="{{ .Site.BaseURL | relURL }}css/tmp.css" />
   <!-- https://instantwebapp.netlify.com/css/tachyon.shower.css -->
   <link rel='stylesheet' href='{{ .Site.BaseURL | relURL }}css/flickity.css'><!-- flickity.min.css -->
