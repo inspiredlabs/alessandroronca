@@ -10,6 +10,9 @@
 <span class="red">{{ .Title | lower }}</span>
 {{ end */}}
 
+{{/* if eq .Sections "booking" }}
+  {{ partial "contact" . }}
+{{ end */}}
 
   {{ range .Sections.ByWeight }}
   <section id="{{ .Title | lower | urlize }}" class="carousel-cell h-100 scrollable overflow-y-scroll touch-scrolling w-100 ">

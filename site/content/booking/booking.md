@@ -6,4 +6,6 @@ subtitle:
 
 ---
 
-This page is under development.
+<!--This page is under development.-->
+
+{{< booking >}}
