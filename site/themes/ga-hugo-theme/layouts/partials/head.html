@@ -94,9 +94,9 @@ class='w-100 h-100 {{ if .IsHome }}touch-manipulation fixed overflow-hidden{{ en
   <style>{{ .Content | safeCSS }}</style>
   {{ end */}}
   
-  <link rel="stylesheet" href="{{ .Site.BaseURL | relURL }}css/tmp.css" />
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/tmp.css" />
   <!-- https://instantwebapp.netlify.com/css/tachyon.shower.css -->
-  <link rel='stylesheet' href='{{ .Site.BaseURL | relURL }}css/flickity.css'><!-- flickity.min.css -->
+  <link rel='stylesheet' href='{{ .Site.BaseURL }}css/flickity.css'><!-- flickity.min.css -->
   <style>
     .b-lazy {
       -webkit-transition: opacity 500ms ease-in-out;
