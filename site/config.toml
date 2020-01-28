@@ -1,31 +1,30 @@
-baseurl = "./" #{{ .Site.BaseURL }} #"/" netlify #"./" local only #"https://hungry-wozniak-e915f8.netlify.com"
-#relativeURLs = "true"
-#Change theme: `echo 'theme = "instantwebapp-vertical"' >> config.toml`
-theme = "ga-hugo-theme" #pablo, instantwebapp-horizontal, ga-hugo-theme
-languageCode = "en-gb" #Initial configuration reset
-title = "instantWebapp"
-
-
-copyright = "https://InspiredLabs.co.uk" # © = http://www.theukwebdesigncompany.com/articles/entity-escape-characters.php
+enableRobotsTXT = true
+baseurl = "./" #baseurl = "https://alessandroronca.netlify.com/" #{{ .Site.BaseURL }} #"/" netlify #"./" local only #"https://hungry-wozniak-e915f8.netlify.com"
+# relativeURLs = "true" #https://github.com/gohugoio/hugo/issues/985
+#Change theme = "`echo 'theme = "instantwebapp-vertical"' >> config.toml`
+theme = "ga-hugo-theme" #pablo, instantwebapp-vertical, instantwebapp-horizontal, ga-hugo-theme
+languageCode = "en-gb" #Initial configuration reset #languageCode = "en-us"
+title = "Alessandro Ronca"
+copyright = "https://inspiredlabs.co.uk" # © = http://www.theukwebdesigncompany.com/articles/entity-escape-characters.php
 #disableKinds = ["home", "section", "taxonomy", "taxonomyTerm", "RSS", "sitemap", "robotsTXT", "404"]#"page",
-#theme = "ultimate-simplicity"
-#theme = "ga-hugo-theme"
 ## As of v0.20, all content files include a default "categories" value that's the same as the section. This was a cheap future-proofing method and should/could be changed accordingly.
+
 [taxonomies]
   #new
 
 [Params]
-author = "Alessandro Ronca"
+  author = "Alessandro Ronca"
+  logo = "favicon.png" #{{ with .Site.Params.logo }}{{ . }}{{ end }}
+  logoIcon = "favicon.ico" #{{ with .Site.Params.logoIcon }}{{ . }}{{ end }}
+  logoMask = "favicon.svg" #{{ with .Site.Params.logoMask }}{{ . }}{{ end }}
+  keywords = ["Training", "Facilitator" ]
+  description = """Want to beat burnout? Need an Ice Coach? Find out how to get a life upgrade from a leading Wim Hof Method Instructor in Italy.""" #Return `{{ .WordCount }}` at build time? #<160 thing for SERP #Could you benefit from a life upgrade? #Ready to connect with nature?
+  mobile = "Ice Coach"
+  jobtitle = "Wim Hof Method Training Facilitator" #1on1 Wim Hof Method Instructor
+  #telephoninoDescritzioni = "The Wim Hof Method in Italian Methodo de Wim Hof, verzioni Italiano"
 
-  [[Params.description]]
-    description = "Scott Phillips is a Designer & Frontend Developer"
-
-  [[Params.assignment]]
-    assignment = "Designer & Frontend Developer"
-
-  [[Params.location]]
-    location = "Oxford"
-
-  [[Params.links]]
-    title = "Email"
-    url = "mailto:alan.scott.phillips@pm.me"
+  [[Params.social]]
+    icon = "Email"
+    site = "Email"
+    url = "mailto:fairtech@pm.me"
+    user = "fairtech@pm.me"

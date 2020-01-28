@@ -22,7 +22,7 @@
 /* 07.01.20 .emojisymbol			Semantic unicode-icons				addition								*/
 /* 13.01.20 .link							word-wrap: break-word;			bug fix 								*/
 /* 24.01.20 .twitter, .facebook, .pm-blue. .pm-blue-light, etc.					addition								*/
-/* 27.01.20: `--directions: #1A73E8;` */
+
 
 /* SORT ME */
 /* Integrate: https://uncss-online.com/ */
@@ -9393,9 +9393,6 @@ details[open] summary~* {
   /* https://vimeo.com/311885154 */
   --tripadvisor: #00a680;
   /* https://www.tripadvisor.com/Widgets */
-
-  --directions: yellow;
-
   --facebook: #1877f2;
   /* New blue: https://en.facebookbrand.com/facebookapp/ */
   --whatsapp: #25D366;
@@ -9789,30 +9786,6 @@ details[open] summary~* {
 .hover-bg-linkedin:focus {
   background-color: var(--linkedin);
 }
-
-
-.directions {
-  color: var(--directions);
-}
-
-.bg-directions {
-  background-color: var(--directions);
-}
-
-.b--directions {
-  border-color: var(--directions);
-}
-
-.hover-directions:hover,
-.hover-directions:focus {
-  color: var(--directions);
-}
-
-.hover-bg-directions:hover,
-.hover-bg-directions:focus {
-  background-color: var(--directions);
-}
-
 
 .facebook {
   color: var(--facebook);
