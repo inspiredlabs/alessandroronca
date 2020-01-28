@@ -152,7 +152,7 @@ class='w-100 h-100 {{ if .IsHome }}touch-manipulation fixed overflow-hidden{{ en
   <!-- https://discourse.gohugo.io/t/hugo-inline-css-optimization-for-google-pagespeed/6032/13 -->
   <!-- regex CSS comments: http://blog.moagrius.com/javascript/javascript-regexp-to-remove-comments/ -->
   <!-- backticks instead of quotes: https://discourse.gohugo.io/t/replacere-gives-syntax-error/22624/2 -->
-  {{ $style := resources.Get "css/uncssonline.css" | minify }}
+  {{ $style := resources.Get "css/tmp.css" | minify }}
   <style>{{ $style.Content | replaceRE `\/\*(.*)\*\/` `$style` | safeCSS }}</style>
 
   <!--link rel="stylesheet" href="{{/* if .IsHome }}{{ .Site.BaseURL }}{{ else }} {{ .Site.BaseURL | relURL }}{{ end */}}css/tmp.css" /-->
