@@ -8,7 +8,7 @@ subtitle:
 
 ##### Training Facilitator &amp; Life-coach
 
-<!--As a Training Facilitator, -->My goal is to improve your circumstances. I run a [range](https://www.per.umbria.it/i-nostri-corsi/) of sustainability courses such as _Change your job. Change your life_ to give people answers that unlock thier potential. 
+<!--As a Training Facilitator, -->My goal is to improve your circumstances. I run a [range](https://www.per.umbria.it/i-nostri-corsi/) of sustainability courses such as _Change your job. Change your life_ to give people answers that unlock their potential. 
 
 ##### Sustainability Veteran
 

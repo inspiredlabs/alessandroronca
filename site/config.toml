@@ -36,8 +36,8 @@ copyright = "https://inspiredlabs.co.uk" # © = http://www.theukwebdesigncompany
   image = "https://alessandroronca.netlify.com/images/profile.png" #favicon.png?
   homepage = "https://alessandroronca.netlify.com/"
   facebook = "https://www.facebook.com/pablo.woodward/" #"inspiredlabs"
-  twitter = "pablowoodward" #https://twitter.com/PabloWoodward/, "inspiredlabs"
-	bio = """Actor, Presenter, Comedian & ethnically ambiguous probable Latino with an insatiable energy to explore, adventure & learn: Bold Linguistic Artist Extraordinaire.""" #"""multi-line""" #https://discourse.gohugo.io/t/how-to-access-site-params-map-with-a-params-variable/348/2
+  #twitter = "pablowoodward" #https://twitter.com/PabloWoodward/, "inspiredlabs"
+	#bio = """Actor, Presenter, Comedian & ethnically ambiguous probable Latino with an insatiable energy to explore, adventure & learn: Bold Linguistic Artist Extraordinaire.""" #"""multi-line""" #https://discourse.gohugo.io/t/how-to-access-site-params-map-with-a-params-variable/348/2
 
 
 [taxonomies]

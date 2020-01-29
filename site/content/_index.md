@@ -1,7 +1,7 @@
 ---
 region: en
 
-images: ["https://pablowoodward.com/img/M55128.0122.jpg"]
+images: ["https://alessandroronca.netlify.com/images/profile.png"]
 
 ---
 

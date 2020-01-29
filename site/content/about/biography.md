@@ -14,7 +14,7 @@ Using engineering to alleviate difficult environmental situations, I have worked
 
 ##### Sustainable development
 
-Knowing there was important lessons to share in what I had learned so far, my next challenge was obvious. I sought advocates to help me test the idea… and eventually _we_ began to design and develop an independent sustainability research center based around energy techologies. This became known as <span lang="it">Il Parco Dell'Energia Rinnovabile</span>, or **PeR** for short. This has been an incredibly complicated process.
+Knowing there was important lessons to share in what I had learned so far, my next challenge was obvious. I sought advocates to help me test the idea… and eventually _we_ began to design and develop an independent sustainability research center based around energy technologies. This became known as <span lang="it">Il Parco Dell'Energia Rinnovabile</span>, or **PeR** for short. This has been an incredibly complicated process.
 
 ##### Now
 

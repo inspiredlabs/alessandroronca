@@ -6,7 +6,7 @@ subtitle:
 
 ---
 
-Applying engineering principles across developing countries has helped me discover inventive ways to  deliver the right solution. In this area, my work aims to achieve maximum effect and conciously allocate resources. 
+Applying engineering principles across developing countries has helped me discover inventive ways to  deliver the right solution. In this area, my work aims to achieve maximum effect and consciously allocate resources. 
 
 The following applications are low-resource, 
 low-impediment and often exceptionally cheap. All these implementations are available for hands-on inspection at **PeR**. 
