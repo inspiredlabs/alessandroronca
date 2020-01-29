@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://alessandroronca.netlify.com/posts/</loc>
+    <lastmod>2018-12-07T10:14:48+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alessandroronca.netlify.com/posts/overview/</loc>
+    <lastmod>2018-12-07T10:14:48+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alessandroronca.netlify.com/about/introduction/</loc>
+  </url>
+  
+  <url>
+    <loc>https://alessandroronca.netlify.com/posts/science/</loc>
+    <lastmod>2018-12-07T10:14:48+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alessandroronca.netlify.com/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://alessandroronca.netlify.com/about/background/</loc>
+  </url>
+  
+  <url>
+    <loc>https://alessandroronca.netlify.com/events/</loc>
+    <lastmod>2019-02-13T17:29:28+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alessandroronca.netlify.com/about/biography/</loc>
+  </url>
+  
+  <url>
+    <loc>https://alessandroronca.netlify.com/booking/</loc>
+    <lastmod>2019-02-13T17:29:28+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alessandroronca.netlify.com/about/applications/</loc>
+  </url>
+  
+  <url>
+    <loc>https://alessandroronca.netlify.com/posts/breathing/</loc>
+  </url>
+  
+  <url>
+    <loc>https://alessandroronca.netlify.com/</loc>
+    <lastmod>2019-02-13T17:29:28+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://alessandroronca.netlify.com/events/whm-introduction/</loc>
+    <lastmod>2019-02-13T17:29:28+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alessandroronca.netlify.com/booking/booking/</loc>
+    <lastmod>2019-02-13T17:29:28+00:00</lastmod>
+  </url>
+  
+</urlset>

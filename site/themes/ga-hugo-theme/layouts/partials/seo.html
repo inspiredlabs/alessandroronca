@@ -3,23 +3,18 @@
   {
   '@context': 'http://schema.org',
   '@type': 'WebSite',
-  'url': {{ .Site.BaseURL | jsonify | safeJS }},
+  'url': {{- if (isset .Site.Params "canonical") }}{{ .Site.Params.canonical | jsonify | safeJS }}{{ else }}{{ .Site.BaseURL | absURL | jsonify | safeJS }}{{ end -}},
       'author': {
-        '@type': '{{ with .Site.Author.type }}{{ . }}{{ end }}',
-        'name': '{{ with .Site.Author.name }}{{ . }}{{ end }}'
+        '@type': '{{- if (isset .Site.Author "type" ) }}{{ .Site.Author.type | safeJS }}{{ else }}person{{ end -}}',
+        'name': '{{- if (isset .Site.Author "name" ) }}{{ .Site.Author.name | safeJS }}{{ else }}{{ .Site.Params.author | safeJS }}{{ end -}}'
       },
-  {{ with .Site.Params.description }}
-    'description': {{ . | jsonify | safeJS  }},
-  {{ end -}}
-  {{ with .Params.keywords }}
-    'keywords': '{{ delimit . ", " }}',
-  {{ end -}}
-    {{/* 'thumbnailUrl' : {{ apply .Params.images "absURL" "." }}, from: https://discourse.gohugo.io/t/marking-up-json-ld/1154 note: `[...]` */}}
-    'image' : {{ range $i, $e := .Params.images }}{{ if $i }}, {{ end }}{{ $e }}{{ end }},
+    'description': '{{- if (isset .Site.Params "description" ) }}{{ .Site.Params.description | safeJS }}{{ else }}{{ .Site.Title }}{{ end -}}',
+    'keywords': '{{- if (isset .Site.Author "keywords" ) }}{{- with .Site.Author.keywords }}{{ delimit . ", " | safeJS }}{{ end -}}{{else}}{{- with .Site.Params.keywords }}{{ delimit . ", " | safeJS }}{{ end -}}{{ end -}}',{{/* 'thumbnailUrl' : {{ apply .Params.images "absURL" "." }}, from: https://discourse.gohugo.io/t/marking-up-json-ld/1154 note: `[...]` */}}
+    {{/* range $i, $e := .Params.images }}{{ if $i }}, {{ end }}{{ $e | jsonify | safeJS }}{{ end */}}
+    'image': {{ .Site.Author.image | jsonify | safeJS }}{{/* .Site.BaseURL | absURL | safeJS }}{{ .Site.Params.mask | safeJS */}},
     {{ with .Site.Params.logo -}}
     'thumbnailUrl': '{{ . }}',
-    {{- end }}
-    'license': '{{ with .Site.Copyright }}©{{ now.Format "2006"}}, {{ . }}{{ end }}',
+    {{- end }}{{/*'license': {{ with .Site.Copyright }}©{{ now.Format "2006"}}, {{ . }}{{ end }}, */}}
     'name': '{{ .Site.Title }} | {{ .Site.Params.SiteDescription }}'
   }
   </script>

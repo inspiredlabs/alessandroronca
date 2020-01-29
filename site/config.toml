@@ -13,22 +13,37 @@ copyright = "https://inspiredlabs.co.uk" # © = http://www.theukwebdesigncompany
 #disableKinds = ["home", "section", "taxonomy", "taxonomyTerm", "RSS", "sitemap", "robotsTXT", "404"]#"page",
 ## As of v0.20, all content files include a default "categories" value that's the same as the section. This was a cheap future-proofing method and should/could be changed accordingly.
 
-[taxonomies]
-  #new
-
-[Params]
-  #canonical = "//alessandroronca.it"
+[params] #Public `[params]` in `config.toml` stored as: {{ .Site.Params.Foo }} or {{ .Site.Params.foo }}: https://discourse.gohugo.io/t/variables-not-pulled-from-config-file/1455/10
+  canonical = "https://alessandroronca.it/"
+  foo = "foo"
+  bar = "bar" #{{ (.Site.Param "bar") }}
   author = "Alessandro Ronca"
   logo = "favicon.png" #{{ with .Site.Params "logo" }}{{ . }}{{ end }}
   icon = "favicon.ico" #{{ with .Site.Params "logoIcon" }}{{ . }}{{ end }}
   mask = "favicon.svg" #{{ with .Site.Params "logoMask" }}{{ . }}{{ end }}
-  keywords = ["Training", "Facilitator" ]
   description = """Want to beat burnout? Need an Ice Coach? Find out how to get a life upgrade from a leading Wim Hof Method Instructor in Italy.""" #Return `{{ .WordCount }}` at build time? #<160 thing for SERP #Could you benefit from a life upgrade? #Ready to connect with nature?
   mobile = "Ice Coach"
   jobtitle = "Wim Hof Method Training Facilitator" #1on1 Wim Hof Method Instructor
   #telephoninoDescritzioni = "The Wim Hof Method in Italian Methodo de Wim Hof, verzioni Italiano"
+  keywords = ["Wim Hof Method", "Training", "Facilitator", "Ice Coach", "1-on-1 teacher", "1-on-1 Ice Coach", "1-on-1 Trainer" ]
 
-  [[Params.social]]
+[author]
+  #type = "person" #canonical = "https://alessandroronca.it/"
+  #name = "Alessandro Ronca" #`seo.html` has: `{{- if (isset .Site.Author "name" ) }} etc...`
+  #itemid = "#pablowoodward" #`seo.html` has: "$id": "{{ .Site.BaseURL }}"
+  #keywords = ["Osm", "Bloke" ]
+  email = "fairtech@pm.me"
+  image = "https://alessandroronca.netlify.com/images/profile.png" #favicon.png?
+  homepage = "https://alessandroronca.netlify.com/"
+  facebook = "https://www.facebook.com/pablo.woodward/" #"inspiredlabs"
+  twitter = "pablowoodward" #https://twitter.com/PabloWoodward/, "inspiredlabs"
+	bio = """Actor, Presenter, Comedian & ethnically ambiguous probable Latino with an insatiable energy to explore, adventure & learn: Bold Linguistic Artist Extraordinaire.""" #"""multi-line""" #https://discourse.gohugo.io/t/how-to-access-site-params-map-with-a-params-variable/348/2
+
+
+[taxonomies]
+  #new
+
+  [[params.social]]
     icon = "Email"
     site = "Email"
     url = "mailto:fairtech@pm.me"

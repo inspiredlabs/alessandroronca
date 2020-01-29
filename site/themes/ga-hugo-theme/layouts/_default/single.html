@@ -1,4 +1,7 @@
-{{ partial "head" }}
+{{ partial "head" . }}
+{{/* note: context (aka the dot), is more important than customising: `baseof.html`: gohugo.io/templates/base/ */}}
+{{/* todo: hugo template lookup order "head" site:discourse.gohugo.io/ */}}
+
 <body
   class=" ma0 pa0 backface-hidden no-clutter bg-near-white charcoal avenir overflow-scroll">
   {{/* range .Sections }}{{ partial "jumbotron" . }}{{ end */}}

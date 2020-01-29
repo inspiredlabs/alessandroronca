@@ -31,29 +31,27 @@ class='w-100 h-100 {{ if .IsHome }}touch-manipulation fixed overflow-hidden{{ en
   <meta name='viewport' content='width=device-width, minimum-scale=1.0, shrink-to-fit=no'><!-- maximum-scale=1.0, -->
   <meta name='mobile-web-app-capable' content='yes'>
   <meta name='apple-mobile-web-app-capable' content='yes'>
+  
   {{ if (isset .Site.Params "mobile") }}
-  <meta name='apple-mobile-web-app-title' content='{{- $mobile := .Site.Params.mobile }}{{ truncate 11 $mobile -}}' /><!-- {{/* slicestr .Site.Params.mobile 0 11 */}}&hellip; -->
+  <meta name='apple-mobile-web-app-title' content='{{ $mobile := .Site.Params.mobile }}{{ truncate 11 $mobile }}' />
+  <!-- {{/* slicestr .Site.Params.mobile 0 11 */}}&hellip; -->
   {{ end }}
 
+  <!-- https://discourse.gohugo.io/t/a-better-way-to-write-this-conditional-logic-solved/11936 -->
+  <!-- Public `[params]` in `config.toml` stored as: {{ .Site.Params.Foo }} or {{ .Site.Params.foo }}: https://discourse.gohugo.io/t/variables-not-pulled-from-config-file/1455/10 -->
   <title>{{ if .IsHome }}{{ .Site.Title }} {{ if .Site.Params.jobtitle }}{{ .Site.Params.jobtitle }}{{end}}
-    {{- else }}{{ .Site.Title }}{{end -}}</title>
-    {{/*with .Params.jobtitle }}{{.}}{{end*/}}
-    {{/* .Permalink }}, 1:{{ $title := .LinkTitle }},2:{{ .Param $title */}}
+  {{- else }}{{ .Title }} {{ .Params.subtitle }} | {{ .Site.Title }}{{end -}}</title>
+    
+  <!-- 
+  {{/*with .Params.jobtitle }}{{.}}{{end*/}}
+  {{/* .Permalink }}, 1:{{ $title := .LinkTitle }},2:{{ .Param $title */}} -->
   <meta name='robots' content='noodp' /><!-- `index, follow, noodp` https://beginnersbook.com/2013/01/meta-robots-tag-noindex-nofollow-noarchive-noodp-noydir/ -->
   <!-- <meta name="description" content='{{/* .Description | default .Site.Params.SiteDescription */}}'> -->
   {{ if (isset .Site.Params "description") }}
-  <meta name='description'content='{{- $serp := .Site.Params.Description }}{{ truncate 160 $serp -}}' />
+  <meta name='description'content='{{ $serp := .Site.Params.Description }}{{ truncate 160 $serp }}' />
   <meta name='serp-length' content='{{ .Site.Params.Description | countrunes }}' />
   {{ end }}
-  <meta name='canonical' href='{{ .Site.BaseURL }}' />
-  
-
-  <!-- {{ if (isset .Site.Params "canonical") }}
-  <meta name='canonical' href='{{ .Site.Params.canonical }}{{ .Permalink }}' />
-  <!-- https://alessandroronca.netlify.com/ -- >
-  {{ end }} -->
-  
-
+  <meta name='canonical' href='{{- if (isset .Site.Params "canonical") }}{{ .Site.Params.canonical }}{{ else }}{{ .Site.BaseURL | absURL }}{{ end -}}' /><!-- https://alessandroronca.netlify.com/ -->
 
   <!--script>/*
   <!-- <link rel='manifest' href='/site.webmanifest'/> -- >
@@ -65,8 +63,8 @@ class='w-100 h-100 {{ if .IsHome }}touch-manipulation fixed overflow-hidden{{ en
   <!-- <link rel='alternate' href='/index.xml' type='application/rss+xml' title='{{ .Site.Title }}'> -- >
   <!-- <link rel='feed' href='/index.xml' type='application/rss+xml' title='{{ .Site.Title }}'> -- >
   */</script-->
-  <link rel='shortcut icon' type='image/x-icon' href='{{ .Site.BaseURL | absURL }}{{ with .Site.Params.logo }}{{ . }}{{ end }}' />
-  <link rel='apple-touch-icon' href='{{ .Site.BaseURL | absURL }}{{ with .Site.Params.logo }}{{ . }}{{ end }}'>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ .Site.BaseURL | absURL }}{{ .Site.Params.logo }}' />
+  <link rel='apple-touch-icon' href='{{ .Site.BaseURL | absURL }}{{ .Site.Params.logo }}'>
   <link rel='icon' type='image/png' href='{{ .Site.BaseURL | absURL }}{{ .Site.Params.logo }}'>
   <link rel='icon' type='image/icon' href='{{ .Site.BaseURL | absURL }}{{ .Site.Params.icon }}'>
   <link rel='mask-icon' href='{{ .Site.BaseURL | absURL }}{{ .Site.Params.mask }}' color='white'>
@@ -87,8 +85,8 @@ class='w-100 h-100 {{ if .IsHome }}touch-manipulation fixed overflow-hidden{{ en
   <meta name="twitter:image" content="{{ .Site.Author.image }}" />{{/* .Site.Author.image | absURL */}}
   -->
   <!-- <meta name="twitter:image:src" content="{{ .Site.Author.image }}" />{{/* .Site.Author.image | absURL */}} -->
-  <!-- Originally from: x -->
-  {{ partial "seo.html" . -}}
+  <!-- Originally from: ? -->
+  {{- partial "seo.html" . -}}
 
 
 
@@ -156,21 +154,25 @@ class='w-100 h-100 {{ if .IsHome }}touch-manipulation fixed overflow-hidden{{ en
   <meta property="og:image:secure_url" content="https://inspiredlabs.co.uk/alessandroronca.it/images/profile.png" />
   <!-- <link rel='stylesheet' href='https://instantwebapp.netlify.com/css/tachyon.shower.css'> -- >*/</script-->
 
+  
   <!-- Tachyon Shower -->
   <!-- https://github.com/FullHuman/purgecss -->
+  <!-- Bud Par: https://discourse.gohugo.io/t/optimizing-css-remove-unused/18863/4 -->
   <!-- https://discourse.gohugo.io/t/hugo-inline-css-optimization-for-google-pagespeed/6032/13 -->
   <!-- regex CSS comments: http://blog.moagrius.com/javascript/javascript-regexp-to-remove-comments/ -->
-  <!-- backticks instead of quotes: https://discourse.gohugo.io/t/replacere-gives-syntax-error/22624/2 -->
+  
+  <!-- regex101.com PCRE & backticks not quotes: https://discourse.gohugo.io/t/replacere-gives-syntax-error/22624/2 -->
   {{ $style := resources.Get "css/uncssonline.css" | minify }}
   <style>{{ $style.Content | replaceRE `\/\*(.*)\*\/` `$style` | safeCSS }}</style>
 
   <!--link rel="stylesheet" href="{{/* if .IsHome }}{{ .Site.BaseURL }}{{ else }} {{ .Site.BaseURL }}/{{ end */}}css/tmp.css" /-->
   <script>/*{{/* <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/tmp.css" />*/}}*/</script>
   <!-- https://instantwebapp.netlify.com/css/tachyon.shower.css -->
-
-  <!-- So I start using relURL with a path to the resources not starting with / now …relURL “vendor/cool.css” and not relURL “/vendor/cool.css” since this works (in my use cases), from: https://discourse.gohugo.io/t/baseurl-path-subdir-sometimes-ignored-by-relurl-relURL/11512/9 -->
   
+  <!-- So I start using relURL with a path to the resources not starting with / now …relURL "vendor/cool.css" and not relURL “/vendor/cool.css” since this works (in my use cases), from: https://discourse.gohugo.io/t/baseurl-path-subdir-sometimes-ignored-by-relurl-relURL/11512/9 -->
+  
+  {{ if .IsHome }}
   <link rel="stylesheet" href="{{ .Site.BaseURL | absURL }}css/flickity.css"><!-- flickity.min.css -->
-  {{/* if .IsHome }}{{ .Site.BaseURL }}{{ end */}}
+  {{ end }}
   {{ partial "add-to-tachyon-shower" . }}
  

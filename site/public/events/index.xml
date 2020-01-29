@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Events on Alessandro Ronca</title>
+    <link>https://alessandroronca.netlify.com/events/</link>
+    <description>Recent content in Events on Alessandro Ronca</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <copyright>https://inspiredlabs.co.uk</copyright>
+    <lastBuildDate>Wed, 13 Feb 2019 17:29:28 +0000</lastBuildDate>
+    
+	<atom:link href="https://alessandroronca.netlify.com/events/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>An Introduction to The Wim Hof Method</title>
+      <link>https://alessandroronca.netlify.com/events/whm-introduction/</link>
+      <pubDate>Wed, 13 Feb 2019 17:29:28 +0000</pubDate>
+      
+      <guid>https://alessandroronca.netlify.com/events/whm-introduction/</guid>
+      <description>The regenerative potential of The Wim Hof Method Capacity 10 people, only This introductory course is held on February 1st, 2020. The course will lead people to appreciate first-hand the regenerative potential of The Wim Hof Method.
+More information.
+How I discovered The Wim Hof Method When I read Wim Hof&amp;rsquo;s The force of the cold, it inspired me to practice – and after a short while, I felt unusually energetic.</description>
+    </item>
+    
+  </channel>
+</rss>
