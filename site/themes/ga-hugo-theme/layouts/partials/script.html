@@ -42,10 +42,13 @@ window.addEventListener("load", function () {
   }, 0);
 });
 </script>
-<script src='js/flickity.pkgd.min.js'></script>
-<script src='js/hash.min.js'></script>
-<!-- 
-<script src='js/navigator-lang.js'>// Server only </script> -->
+
+<link rel="stylesheet" href="{{ .Site.BaseURL | relURL }}/css/flickity.css"><!-- flickity.min.css -->
+
+<script src="{{ .Site.BaseURL | relURL }}/js/flickity.pkgd.min.js"></script>
+<script src="{{ .Site.BaseURL | relURL }}/js/hash.min.js"></script>
+<!--
+<script src="{{ .Site.BaseURL | relURL }}/js/navigator-lang.js">// Server only </script> -->
 <script>
 // external js: flickity.pkgd.js
 
@@ -77,7 +80,7 @@ navFlkty.onNavStaticClick = function (event, pointer, cellElement, cellIndex) {
 {{ end }}
 
 <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
-<script src="js/yall.min.js">//Yet Another Lazy Loader</script>
+<script src="{{ .Site.BaseURL | relURL }}/js/yall.min.js">//Yet Another Lazy Loader</script>
 <script>
   // A Crockford iife, Yall: https://stackoverflow.com/a/23925102/3429622
     (function () {

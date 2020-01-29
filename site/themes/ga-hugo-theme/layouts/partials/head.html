@@ -155,8 +155,15 @@ class='w-100 h-100 {{ if .IsHome }}touch-manipulation fixed overflow-hidden{{ en
   {{ $style := resources.Get "css/uncssonline.css" | minify }}
   <style>{{ $style.Content | replaceRE `\/\*(.*)\*\/` `$style` | safeCSS }}</style>
 
-  <!--link rel="stylesheet" href="{{/* if .IsHome }}{{ .Site.BaseURL }}{{ else }} {{ .Site.BaseURL | relURL }}{{ end */}}css/tmp.css" /-->
-  <script>/*{{/* <link rel="stylesheet" href="{{ .Site.BaseURL | absURL }}css/tmp.css" />*/}}*/</script>
+  <!--link rel="stylesheet" href="{{/* if .IsHome }}{{ .Site.BaseURL }}{{ else }} {{ .Site.BaseURL | relURL }}/{{ end */}}css/tmp.css" /-->
+  <script>/*{{/* <link rel="stylesheet" href="{{ .Site.BaseURL | relURL }}/css/tmp.css" />*/}}*/</script>
   <!-- https://instantwebapp.netlify.com/css/tachyon.shower.css -->
-  <link rel="stylesheet" href="{{ .Site.BaseURL | absURL }}css/flickity.css"><!-- flickity.min.css -->
+
+  <!-- So I start using relURL with a path to the resources not starting with / now …relURL “vendor/cool.css” and not relURL “/vendor/cool.css” since this works (in my use cases), from: https://discourse.gohugo.io/t/baseurl-path-subdir-sometimes-ignored-by-relurl-relURL/11512/9 -->
+  <link rel="stylesheet" href="{{ .Site.BaseURL | relURL }}/css/flickity.css"><!-- flickity.min.css -->
   {{ partial "add-to-tachyon-shower" . }}
+
+
+
+  
+ 
