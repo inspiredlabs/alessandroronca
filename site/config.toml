@@ -1,5 +1,5 @@
 enableRobotsTXT = true
-baseurl = "./" #baseurl = "https://alessandroronca.netlify.com/" #{{ .Site.BaseURL }} #"/" netlify #"./" local only #"https://hungry-wozniak-e915f8.netlify.com"
+baseurl = "alessandroronca.netlify.com/" #baseurl = "https://alessandroronca.netlify.com/" #{{ .Site.BaseURL }} #"/" netlify #"./" local only #"https://hungry-wozniak-e915f8.netlify.com"
 # relativeURLs = "true" #https://github.com/gohugoio/hugo/issues/985
 #Change theme = "`echo 'theme = "instantwebapp-vertical"' >> config.toml`
 theme = "ga-hugo-theme" #pablo, instantwebapp-vertical, instantwebapp-horizontal, ga-hugo-theme
