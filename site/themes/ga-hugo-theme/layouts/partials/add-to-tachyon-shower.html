@@ -1,266 +1,63 @@
 <style>
-.flickity-page-dots ol {
+  .flickity-page-dots ol {
   top: 0;
   position: absolute;
   z-index: 1;
-}
-
-/* external css: flickity.css */
-
-* {
-  box-sizing: border-box;
-}
-
-.carousel-cell {
-  /* margin-right: 10px; */
-  /* border-radius: 5px; */
-}
-
-.carousel-cell.is-nav-selected {
-  color: rgba(255, 255, 255, 1);
-}
-
-@media all and (orientation:portrait) {
-  .portrait-top-0 {
-    top: 0;
   }
 
-  @media screen and (min-width: 30em) {
-    .portrait-top-0-ns {
-      top: 0;
-    }
+  /*
+  * {
+    box-sizing: border-box;
+  }
+  */
+
+  .carousel-cell {
+    /* margin-right: 10px; */
+    /* border-radius: 5px; */
   }
 
-  @media screen and (min-width: 30em) and (max-width: 60em) {
-    .portrait-top-0-m {
-      top: 0;
-    }
+  .carousel-cell.is-nav-selected {
+    color: rgba(255, 255, 255, 1);
   }
 
-  @media screen and (min-width: 60em) {
-    .portrait-top-0-l {
-      top: 0;
-    }
+  .b-lazy {
+    -webkit-transition: opacity 500ms ease-in-out;
+    -moz-transition: opacity 500ms ease-in-out;
+    -o-transition: opacity 500ms ease-in-out;
+    transition: opacity 500ms ease-in-out;
+    max-width: 100%;
+    opacity: 0;
   }
 
-  .portrait-bottom-0 {
-    bottom: 0;
+  .b-lazy.b-loaded {
+    opacity: 1;
   }
 
-  .portrait-vh-50 {
-    height: 50vh
+  .seal { /* https://base64.guru/converter/encode/image/svg */
+    background-color: dimgray;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii05NiAtOTYgMzIwIDMyMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAtOTYgLTk2IDMyMCAzMjAiPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+LnN0MHtmaWxsOiNGRkZGRkY7fTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTEyOCA4My44bC01LjItOC44LTE0LjUgOC4yLTE2LjktOS43di0xOS4ybDE3LjEtOS43IDE0IDcuOSA1LjItOC44LTE0LjEtOHYtMTYuMmgtMTAuNHYxNi40bC0xNy4yIDkuNi0xNi45LTkuNXYtMTkuMmwxNC04LTUuMS04LjgtMTQgOC0xNC04LTUuMiA4LjggMTQgOHYxOS4ybC0xNi45IDkuNy0xNy05Ljd2LTE2LjVoLTEwLjR2MTYuNGwtMTQuNSA4LjIgNS4yIDguOCAxNC41LTguMiAxNi45IDkuN3YxOS4ybC0xNy4xIDkuNy0xNC03LjktNS4yIDguOCAxNC4xIDh2MTYuNGgxMC40di0xNi41bDE3LjItOS42IDE2LjkgOS41djE5LjJsLTE0IDggNS4yIDguOCAxNC04IDE0IDggNS4yLTguOC0xNC04di0xOS4ybDE2LjktOS43IDE2LjkgOS43djE2LjVoMTAuNHYtMTYuNWwxNC41LTguMnptLTgxLjItMTAuMnYtMTkuMmwxNy4xLTkuNyAxNy4xIDkuN3YxOS4xbC0xNy4xIDkuNy0xNy4xLTkuNnoiLz48L3N2Zz4=');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  /* Pre-lazy loading styles */
+  .feature {
+    opacity: 0;
   }
 
-  @media screen and (min-width: 30em) {
-    .portrait-vh-50-ns {
-      height: 50vh
-    }
+  .feature.lazy-bg-loaded {
+    opacity: 1;
+    -webkit-transition: opacity 2s ease-in;
+    -moz-transition: opacity 2s ease-in;
+    -o-transition: opacity 2s ease-in;
+    -ms-transition: opacity 2s ease-in;
+    transition: opacity 2s ease-in;
   }
 
-  @media screen and (min-width: 30em) and (max-width: 60em) {
-    .portrait-vh-50-m {
-      height: 50vh
-    }
+  .lazy-bg-loaded {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
-
-  @media screen and (min-width: 60em) {
-    .portrait-vh-50-l {
-      height: 50vh
-    }
-  }
-
-  .portrait-vh-66 {
-    height: 66vh
-  }
-
-  @media screen and (min-width: 30em) {
-    .portrait-vh-66-ns {
-      height: 66vh
-    }
-  }
-
-  @media screen and (min-width: 30em) and (max-width: 60em) {
-    .portrait-vh-66-m {
-      height: 66vh
-    }
-  }
-
-  @media screen and (min-width: 60em) {
-    .portrait-vh-66-l {
-      height: 66vh
-    }
-  }
-
-  .portrait-vh-85 {
-    height: 85vh
-  }
-
-  @media screen and (min-width: 30em) {
-    .portrait-vh-85-ns {
-      height: 85vh
-    }
-  }
-
-  @media screen and (min-width: 30em) and (max-width: 60em) {
-    .portrait-vh-85-m {
-      height: 85vh
-    }
-  }
-
-  @media screen and (min-width: 60em) {
-    .portrait-vh-85-l {
-      height: 85vh
-    }
-  }
-
-  @media screen and (min-width: 30em) {
-    .portrait-bottom-0-ns {
-      bottom: 0;
-    }
-  }
-
-  @media screen and (min-width: 30em) and (max-width: 60em) {
-    .portrait-bottom-0-m {
-      bottom: 0;
-    }
-  }
-
-  @media screen and (min-width: 60em) {
-    .portrait-bottom-0-l {
-      bottom: 0;
-    }
-  }
-}
-
-@media all and (orientation:landscape) {
-  .landscape-top-0 {
-    top: 0;
-  }
-
-  @media screen and (min-width: 30em) {
-    .landscape-top-0-ns {
-      top: 0;
-    }
-  }
-
-  @media screen and (min-width: 30em) and (max-width: 60em) {
-    .landscape-top-0-m {
-      top: 0;
-    }
-  }
-
-  @media screen and (min-width: 60em) {
-    .landscape-top-0-l {
-      top: 0;
-    }
-  }
-
-  .landscape-bottom-0 {
-    bottom: 0;
-  }
-
-  @media screen and (min-width: 30em) {
-    .landscape-bottom-0-ns {
-      bottom: 0;
-    }
-  }
-
-  @media screen and (min-width: 30em) and (max-width: 60em) {
-    .landscape-bottom-0-m {
-      bottom: 0;
-    }
-  }
-
-  @media screen and (min-width: 60em) {
-    .landscape-bottom-0-l {
-      bottom: 0;
-    }
-  }
-
-
-  .landscape-vh-50 {
-    height: 50vh
-  }
-
-  @media screen and (min-width: 30em) {
-    .landscape-vh-50-ns {
-      height: 50vh
-    }
-  }
-
-  @media screen and (min-width: 30em) and (max-width: 60em) {
-    .landscape-vh-50-m {
-      height: 50vh
-    }
-  }
-
-  @media screen and (min-width: 60em) {
-    .landscape-vh-50-l {
-      height: 50vh
-    }
-  }
-
-  .landscape-vh-66 {
-    height: 66vh
-  }
-
-  @media screen and (min-width: 30em) {
-    .landscape-vh-66-ns {
-      height: 66vh
-    }
-  }
-
-  @media screen and (min-width: 30em) and (max-width: 60em) {
-    .landscape-vh-66-m {
-      height: 66vh
-    }
-  }
-
-  @media screen and (min-width: 60em) {
-    .landscape-vh-66-l {
-      height: 66vh
-    }
-  }
-
-  .landscape-vh-85 {
-    height: 85vh
-  }
-
-  @media screen and (min-width: 30em) {
-    .landscape-vh-85-ns {
-      height: 85vh
-    }
-  }
-
-  @media screen and (min-width: 30em) and (max-width: 60em) {
-    .landscape-vh-85-m {
-      height: 85vh
-    }
-  }
-
-  @media screen and (min-width: 60em) {
-    .landscape-vh-85-l {
-      height: 85vh
-    }
-  }
-}
-
-.no-body-scroll {
-  /* https://stackoverflow.com/questions/16348031/disable-scrolling-when-touch-moving-certain-element */
-  height: 100%;
-  overflow: hidden;
-  width: 100%;
-  position: fixed;
-}
-
-.ts1-dark-gray {
-  filter: drop-shadow(0 0.0625rem 0.0625rem #333);
-}
-
-/* https://css-tricks.com/breaking-css-box-shadow-vs-drop-shadow/ */
-
-
-
-/* CHECKED TMP.CSS? */
 
 </style>

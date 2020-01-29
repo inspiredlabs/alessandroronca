@@ -152,53 +152,11 @@ class='w-100 h-100 {{ if .IsHome }}touch-manipulation fixed overflow-hidden{{ en
   <!-- https://discourse.gohugo.io/t/hugo-inline-css-optimization-for-google-pagespeed/6032/13 -->
   <!-- regex CSS comments: http://blog.moagrius.com/javascript/javascript-regexp-to-remove-comments/ -->
   <!-- backticks instead of quotes: https://discourse.gohugo.io/t/replacere-gives-syntax-error/22624/2 -->
-  {{ $style := resources.Get "css/tmp.css" | minify }}
+  {{ $style := resources.Get "css/uncssonline.css" | minify }}
   <style>{{ $style.Content | replaceRE `\/\*(.*)\*\/` `$style` | safeCSS }}</style>
 
   <!--link rel="stylesheet" href="{{/* if .IsHome }}{{ .Site.BaseURL }}{{ else }} {{ .Site.BaseURL | relURL }}{{ end */}}css/tmp.css" /-->
   <script>/*{{/* <link rel="stylesheet" href="{{ .Site.BaseURL | absURL }}css/tmp.css" />*/}}*/</script>
   <!-- https://instantwebapp.netlify.com/css/tachyon.shower.css -->
   <link rel="stylesheet" href="{{ .Site.BaseURL | absURL }}css/flickity.css"><!-- flickity.min.css -->
-  <style>
-    .b-lazy {
-      -webkit-transition: opacity 500ms ease-in-out;
-      -moz-transition: opacity 500ms ease-in-out;
-      -o-transition: opacity 500ms ease-in-out;
-      transition: opacity 500ms ease-in-out;
-      max-width: 100%;
-      opacity: 0;
-    }
-
-    .b-lazy.b-loaded {
-      opacity: 1;
-    }
-
-    .seal { /* https://base64.guru/converter/encode/image/svg */
-      background-color: dimgray;
-      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii05NiAtOTYgMzIwIDMyMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAtOTYgLTk2IDMyMCAzMjAiPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+LnN0MHtmaWxsOiNGRkZGRkY7fTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTEyOCA4My44bC01LjItOC44LTE0LjUgOC4yLTE2LjktOS43di0xOS4ybDE3LjEtOS43IDE0IDcuOSA1LjItOC44LTE0LjEtOHYtMTYuMmgtMTAuNHYxNi40bC0xNy4yIDkuNi0xNi45LTkuNXYtMTkuMmwxNC04LTUuMS04LjgtMTQgOC0xNC04LTUuMiA4LjggMTQgOHYxOS4ybC0xNi45IDkuNy0xNy05Ljd2LTE2LjVoLTEwLjR2MTYuNGwtMTQuNSA4LjIgNS4yIDguOCAxNC41LTguMiAxNi45IDkuN3YxOS4ybC0xNy4xIDkuNy0xNC03LjktNS4yIDguOCAxNC4xIDh2MTYuNGgxMC40di0xNi41bDE3LjItOS42IDE2LjkgOS41djE5LjJsLTE0IDggNS4yIDguOCAxNC04IDE0IDggNS4yLTguOC0xNC04di0xOS4ybDE2LjktOS43IDE2LjkgOS43djE2LjVoMTAuNHYtMTYuNWwxNC41LTguMnptLTgxLjItMTAuMnYtMTkuMmwxNy4xLTkuNyAxNy4xIDkuN3YxOS4xbC0xNy4xIDkuNy0xNy4xLTkuNnoiLz48L3N2Zz4=');
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-    /* Pre-lazy loading styles */
-    .feature {
-      opacity: 0;
-    }
-
-    .feature.lazy-bg-loaded {
-      opacity: 1;
-      -webkit-transition: opacity 2s ease-in;
-      -moz-transition: opacity 2s ease-in;
-      -o-transition: opacity 2s ease-in;
-      -ms-transition: opacity 2s ease-in;
-      transition: opacity 2s ease-in;
-    }
-
-    .lazy-bg-loaded {
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-  </style>
-
-  {{/* partial "add-to-tachyon-shower" */}}
+  {{ partial "add-to-tachyon-shower" . }}
