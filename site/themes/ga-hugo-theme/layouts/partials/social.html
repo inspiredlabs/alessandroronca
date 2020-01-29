@@ -1,6 +1,8 @@
 <hr>
 <h3>Social</h3>
 
+<!-- So I start using absURL with a path to the resources not starting with / now …absURL “vendor/cool.css” and not absURL “/vendor/cool.css” since this works (in my use cases), from: https://discourse.gohugo.io/t/baseurl-path-subdir-sometimes-ignored-by-relurl-absurl/11512/9 -->
+
 <a href="https://api.whatsapp.com/send?text=I%20have%20seen%20your%20website%20AlessandroRonca.it&phone=390744988050"
   class="fl db w-third glow o-90 overflow-hidden cover z-0 aspect-ratio--3x1"
   style="background:white url({{ .Site.BaseURL | absURL }}images/00e676-whatsapp.svg) no-repeat center center"
