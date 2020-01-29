@@ -34,18 +34,27 @@ class='w-100 h-100 {{ if .IsHome }}touch-manipulation fixed overflow-hidden{{ en
   {{ if (isset .Site.Params "mobile") }}
   <meta name='apple-mobile-web-app-title' content='{{- $mobile := .Site.Params.mobile }}{{ truncate 11 $mobile -}}' /><!-- {{/* slicestr .Site.Params.mobile 0 11 */}}&hellip; -->
   {{ end }}
-  
 
-
-  <title>{{ .Site.Title }}{{ if (isset .Site.Params "jobtitle") }} {{ .Site.Params.jobtitle }}{{ end }}</title>
+  <title>{{ if .IsHome }}{{ .Site.Title }} {{ if .Site.Params.jobtitle }}{{ .Site.Params.jobtitle }}{{end}}
+    {{- else }}{{ .Site.Title }}{{end -}}</title>
+    {{/*with .Params.jobtitle }}{{.}}{{end*/}}
+    {{/* .Permalink }}, 1:{{ $title := .LinkTitle }},2:{{ .Param $title */}}
   <meta name='robots' content='noodp' /><!-- `index, follow, noodp` https://beginnersbook.com/2013/01/meta-robots-tag-noindex-nofollow-noarchive-noodp-noydir/ -->
   <!-- <meta name="description" content='{{/* .Description | default .Site.Params.SiteDescription */}}'> -->
   {{ if (isset .Site.Params "description") }}
   <meta name='description'content='{{- $serp := .Site.Params.Description }}{{ truncate 160 $serp -}}' />
   <meta name='serp-length' content='{{ .Site.Params.Description | countrunes }}' />
   {{ end }}
+  <meta name='canonical' href='{{ .Site.BaseURL | relURL }}' />
+  
 
-  <link rel='canonical' href='{{ .Permalink }}' /><!-- https://alessandroronca.netlify.com/ -->
+  <!-- {{ if (isset .Site.Params "canonical") }}
+  <meta name='canonical' href='{{ .Site.Params.canonical }}{{ .Permalink }}' />
+  <!-- https://alessandroronca.netlify.com/ -- >
+  {{ end }} -->
+  
+
+
   <!--script>/*
   <!-- <link rel='manifest' href='/site.webmanifest'/> -- >
   <link rel='mask-icon' href='{{ .Site.BaseURL }}images/favicon.svg' color='white'>
@@ -56,11 +65,11 @@ class='w-100 h-100 {{ if .IsHome }}touch-manipulation fixed overflow-hidden{{ en
   <!-- <link rel='alternate' href='/index.xml' type='application/rss+xml' title='{{ .Site.Title }}'> -- >
   <!-- <link rel='feed' href='/index.xml' type='application/rss+xml' title='{{ .Site.Title }}'> -- >
   */</script-->
-  <link rel='shortcut icon' type='image/x-icon' href='{{ with .Site.Params.logo }}{{ . }}{{ end }}' />
-  <link rel='apple-touch-icon' href='{{ with .Site.Params.logo }}{{ . }}{{ end }}'>
-  <link rel='icon' type='image/png' href='{{ with .Site.Params.logo }}{{ . }}{{ end }}'>
-  <link rel='icon' type='image/icon' href='{{ with .Site.Params.logoIcon }}{{ . }}{{ end }}'>
-  <link rel='mask-icon' href='{{ with .Site.Params.logoMask }}{{ . }}{{ end }}' color='white'>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ .Site.BaseURL | relURL }}/{{ with .Site.Params.logo }}{{ . }}{{ end }}' />
+  <link rel='apple-touch-icon' href='{{ .Site.BaseURL | relURL }}/{{ .Site.Params.logo }}'>
+  <link rel='icon' type='image/png' href='{{ .Site.BaseURL | relURL }}/{{ .Site.Params.logo }}'>
+  <link rel='icon' type='image/icon' href='{{ .Site.BaseURL | relURL }}/{{ .Site.Params.icon }}'>
+  <link rel='mask-icon' href='{{ .Site.BaseURL | relURL }}/{{ .Site.Params.mask }}' color='white'>
   <!-- https://developer.yoast.com/safari-pinned-tab-icon-mask-icon/ -->
   <meta name='msapplication-TileColor' content='#002147'><!-- .oxford -->
   <meta name=theme-color content='#002147'>
@@ -69,7 +78,7 @@ class='w-100 h-100 {{ if .IsHome }}touch-manipulation fixed overflow-hidden{{ en
   <!-- Twitter: summary|photo|video, a *canonical* link -->
   {{ template "_internal/twitter_cards.html" . }}
   <!--
-  <meta name="twitter:url" content="{{ .Permalink }}" />
+  <meta name="twitter:url" content="{{ .Site.BaseURL | relURL }}/" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@{{ .Site.Author.twitter }}" />
   <meta name="twitter:title" content="{{ .Site.Title }} | {{ .Site.Params.SiteDescription }}" />{{/* .Description */}}
@@ -160,10 +169,8 @@ class='w-100 h-100 {{ if .IsHome }}touch-manipulation fixed overflow-hidden{{ en
   <!-- https://instantwebapp.netlify.com/css/tachyon.shower.css -->
 
   <!-- So I start using relURL with a path to the resources not starting with / now …relURL “vendor/cool.css” and not relURL “/vendor/cool.css” since this works (in my use cases), from: https://discourse.gohugo.io/t/baseurl-path-subdir-sometimes-ignored-by-relurl-relURL/11512/9 -->
+  {{ if .IsHome }}
   <link rel="stylesheet" href="{{ .Site.BaseURL | relURL }}/css/flickity.css"><!-- flickity.min.css -->
+  {{ end }}
   {{ partial "add-to-tachyon-shower" . }}
-
-
-
-  
  

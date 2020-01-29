@@ -7,7 +7,7 @@
   <article
     class="db dark-gray athelas f5 f4-ns f3-m f3-l lh-copy measure pa2 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l mr-auto ml-auto">
     <heading>
-      <h3>{{ .Title }}&nbsp;<a href="{{ .Site.BaseURL }}" class="back emojisymbol o-30 glow no-underline"
+      <h3>{{ .Title }}&nbsp;<a href="{{ if (isset .Site.Params "canonical") }}{{ .Site.Params.canonical }}{{ end }}" class="back emojisymbol o-30 glow no-underline"
           title="{{ .Site.BaseURL | lower | urlize }}"></a></h3>
       {{ partial "share" . }}
     </heading>
@@ -19,3 +19,5 @@
     {{ partial "footer" . }}
 </body>
 </html>
+
+

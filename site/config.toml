@@ -1,5 +1,6 @@
 enableRobotsTXT = true
-baseurl = "./" #baseurl = "https://alessandroronca.netlify.com/" #{{ .Site.BaseURL }} #"/" netlify #"./" local only #"https://hungry-wozniak-e915f8.netlify.com"
+baseurl = "alessandroronca.netlify.com/" #baseurl = "alessandroronca.netlify.com/" "https://alessandroronca.netlify.com/" #{{ .Site.BaseURL }} #"/" netlify #"./" local only #"https://hungry-wozniak-e915f8.netlify.com"
+# same issue: https://discourse.gohugo.io/t/how-to-get-the-current-absolute-url/17328/13
 # relativeURLs = "true" #https://github.com/gohugoio/hugo/issues/985
 #Change theme = "`echo 'theme = "instantwebapp-vertical"' >> config.toml`
 theme = "ga-hugo-theme" #pablo, instantwebapp-vertical, instantwebapp-horizontal, ga-hugo-theme
@@ -13,10 +14,11 @@ copyright = "https://inspiredlabs.co.uk" # © = http://www.theukwebdesigncompany
   #new
 
 [Params]
+  #canonical = "//alessandroronca.it"
   author = "Alessandro Ronca"
-  logo = "favicon.png" #{{ with .Site.Params.logo }}{{ . }}{{ end }}
-  logoIcon = "favicon.ico" #{{ with .Site.Params.logoIcon }}{{ . }}{{ end }}
-  logoMask = "favicon.svg" #{{ with .Site.Params.logoMask }}{{ . }}{{ end }}
+  logo = "favicon.png" #{{ with .Site.Params "logo" }}{{ . }}{{ end }}
+  icon = "favicon.ico" #{{ with .Site.Params "logoIcon" }}{{ . }}{{ end }}
+  mask = "favicon.svg" #{{ with .Site.Params "logoMask" }}{{ . }}{{ end }}
   keywords = ["Training", "Facilitator" ]
   description = """Want to beat burnout? Need an Ice Coach? Find out how to get a life upgrade from a leading Wim Hof Method Instructor in Italy.""" #Return `{{ .WordCount }}` at build time? #<160 thing for SERP #Could you benefit from a life upgrade? #Ready to connect with nature?
   mobile = "Ice Coach"
