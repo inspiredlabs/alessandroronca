@@ -1,14 +1,15 @@
 <style>
   #{{ .Params.name | lower | urlize }}.lazy-bg-loaded {
-    background-image: url("{{- if .Params.image -}}{{- .Params.image -}}{{- end -}}");
+    background-image: url("{{ .Site.BaseURL }}{{- if .Params.image -}}{{- .Params.image -}}{{- end -}}");
   }
-
-  @media (-webkit-min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi) {
-    #{{ .Params.name | lower | urlize }}.lazy-bg-loaded {
-      background-image: url("{{- if .Params.imageRetina -}}{{- .Params.imageRetina -}}{{- end -}}");
+  {{ if .Params.imageRetina }}
+    @media (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+      #{{ .Params.name | lower | urlize }}.lazy-bg-loaded {
+        background-image: url("{{ .Site.BaseURL }}{{- if .Params.imageRetina -}}{{- .Params.imageRetina -}}{{- end -}}");
+      }
     }
-  }
+  {{ end }}
 </style>
 
 <header class="seal"><!--  -->
