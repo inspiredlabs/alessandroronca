@@ -45,7 +45,7 @@ class='w-100 h-100 {{ if .IsHome }}touch-manipulation fixed overflow-hidden{{ en
   <meta name='description'content='{{- $serp := .Site.Params.Description }}{{ truncate 160 $serp -}}' />
   <meta name='serp-length' content='{{ .Site.Params.Description | countrunes }}' />
   {{ end }}
-  <meta name='canonical' href='{{ .Site.BaseURL | relURL }}' />
+  <meta name='canonical' href='{{ .Site.BaseURL }}' />
   
 
   <!-- {{ if (isset .Site.Params "canonical") }}
@@ -65,11 +65,11 @@ class='w-100 h-100 {{ if .IsHome }}touch-manipulation fixed overflow-hidden{{ en
   <!-- <link rel='alternate' href='/index.xml' type='application/rss+xml' title='{{ .Site.Title }}'> -- >
   <!-- <link rel='feed' href='/index.xml' type='application/rss+xml' title='{{ .Site.Title }}'> -- >
   */</script-->
-  <link rel='shortcut icon' type='image/x-icon' href='{{ .Site.BaseURL | relURL }}/{{ with .Site.Params.logo }}{{ . }}{{ end }}' />
-  <link rel='apple-touch-icon' href='{{ .Site.BaseURL | relURL }}/{{ .Site.Params.logo }}'>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ .Site.Home.Permalink }}/{{ with .Site.Params.logo }}{{ . }}{{ end }}' />
+  <link rel='apple-touch-icon' href='{{ .Site.Home.RelPermalink }}/{{ with .Site.Params.logo }}{{ . }}{{ end }}'>
   <link rel='icon' type='image/png' href='{{ .Site.BaseURL | relURL }}/{{ .Site.Params.logo }}'>
-  <link rel='icon' type='image/icon' href='{{ .Site.BaseURL | relURL }}/{{ .Site.Params.icon }}'>
-  <link rel='mask-icon' href='{{ .Site.BaseURL | relURL }}/{{ .Site.Params.mask }}' color='white'>
+  <link rel='icon' type='image/icon' href='{{ .Site.BaseURL | absURL }}{{ .Site.Params.icon }}'>
+  <link rel='mask-icon' href='{{ .Site.Home.RelPermalink }}{{ .Site.Params.mask }}' color='white'>
   <!-- https://developer.yoast.com/safari-pinned-tab-icon-mask-icon/ -->
   <meta name='msapplication-TileColor' content='#002147'><!-- .oxford -->
   <meta name=theme-color content='#002147'>
@@ -78,7 +78,7 @@ class='w-100 h-100 {{ if .IsHome }}touch-manipulation fixed overflow-hidden{{ en
   <!-- Twitter: summary|photo|video, a *canonical* link -->
   {{ template "_internal/twitter_cards.html" . }}
   <!--
-  <meta name="twitter:url" content="{{ .Site.BaseURL | relURL }}/" />
+  <meta name="twitter:url" content="{{ .Site.BaseURL }}/" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@{{ .Site.Author.twitter }}" />
   <meta name="twitter:title" content="{{ .Site.Title }} | {{ .Site.Params.SiteDescription }}" />{{/* .Description */}}
@@ -164,13 +164,13 @@ class='w-100 h-100 {{ if .IsHome }}touch-manipulation fixed overflow-hidden{{ en
   {{ $style := resources.Get "css/uncssonline.css" | minify }}
   <style>{{ $style.Content | replaceRE `\/\*(.*)\*\/` `$style` | safeCSS }}</style>
 
-  <!--link rel="stylesheet" href="{{/* if .IsHome }}{{ .Site.BaseURL }}{{ else }} {{ .Site.BaseURL | relURL }}/{{ end */}}css/tmp.css" /-->
-  <script>/*{{/* <link rel="stylesheet" href="{{ .Site.BaseURL | relURL }}/css/tmp.css" />*/}}*/</script>
+  <!--link rel="stylesheet" href="{{/* if .IsHome }}{{ .Site.BaseURL }}{{ else }} {{ .Site.BaseURL }}/{{ end */}}css/tmp.css" /-->
+  <script>/*{{/* <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/tmp.css" />*/}}*/</script>
   <!-- https://instantwebapp.netlify.com/css/tachyon.shower.css -->
 
   <!-- So I start using relURL with a path to the resources not starting with / now …relURL “vendor/cool.css” and not relURL “/vendor/cool.css” since this works (in my use cases), from: https://discourse.gohugo.io/t/baseurl-path-subdir-sometimes-ignored-by-relurl-relURL/11512/9 -->
   {{ if .IsHome }}
-  <link rel="stylesheet" href="{{ .Site.BaseURL | relURL }}/css/flickity.css"><!-- flickity.min.css -->
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/flickity.css"><!-- flickity.min.css -->
   {{ end }}
   {{ partial "add-to-tachyon-shower" . }}
  
