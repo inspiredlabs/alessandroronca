@@ -65,11 +65,11 @@ class='w-100 h-100 {{ if .IsHome }}touch-manipulation fixed overflow-hidden{{ en
   <!-- <link rel='alternate' href='/index.xml' type='application/rss+xml' title='{{ .Site.Title }}'> -- >
   <!-- <link rel='feed' href='/index.xml' type='application/rss+xml' title='{{ .Site.Title }}'> -- >
   */</script-->
-  <link rel='shortcut icon' type='image/x-icon' href='{{ .Site.Home.Permalink }}/{{ with .Site.Params.logo }}{{ . }}{{ end }}' />
-  <link rel='apple-touch-icon' href='{{ .Site.Home.RelPermalink }}/{{ with .Site.Params.logo }}{{ . }}{{ end }}'>
-  <link rel='icon' type='image/png' href='{{ .Site.BaseURL | relURL }}/{{ .Site.Params.logo }}'>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ .Site.BaseURL | absURL }}{{ with .Site.Params.logo }}{{ . }}{{ end }}' />
+  <link rel='apple-touch-icon' href='{{ .Site.BaseURL | absURL }}{{ with .Site.Params.logo }}{{ . }}{{ end }}'>
+  <link rel='icon' type='image/png' href='{{ .Site.BaseURL | absURL }}{{ .Site.Params.logo }}'>
   <link rel='icon' type='image/icon' href='{{ .Site.BaseURL | absURL }}{{ .Site.Params.icon }}'>
-  <link rel='mask-icon' href='{{ .Site.Home.RelPermalink }}{{ .Site.Params.mask }}' color='white'>
+  <link rel='mask-icon' href='{{ .Site.BaseURL | absURL }}{{ .Site.Params.mask }}' color='white'>
   <!-- https://developer.yoast.com/safari-pinned-tab-icon-mask-icon/ -->
   <meta name='msapplication-TileColor' content='#002147'><!-- .oxford -->
   <meta name=theme-color content='#002147'>
@@ -169,8 +169,8 @@ class='w-100 h-100 {{ if .IsHome }}touch-manipulation fixed overflow-hidden{{ en
   <!-- https://instantwebapp.netlify.com/css/tachyon.shower.css -->
 
   <!-- So I start using relURL with a path to the resources not starting with / now …relURL “vendor/cool.css” and not relURL “/vendor/cool.css” since this works (in my use cases), from: https://discourse.gohugo.io/t/baseurl-path-subdir-sometimes-ignored-by-relurl-relURL/11512/9 -->
-  {{ if .IsHome }}
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/flickity.css"><!-- flickity.min.css -->
-  {{ end }}
+  
+  <link rel="stylesheet" href="{{ .Site.BaseURL | absURL }}css/flickity.css"><!-- flickity.min.css -->
+  {{/* if .IsHome }}{{ .Site.BaseURL }}{{ end */}}
   {{ partial "add-to-tachyon-shower" . }}
  
