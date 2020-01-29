@@ -1,5 +1,5 @@
 enableRobotsTXT = true
-baseurl = "alessandroronca.netlify.com/" #baseurl = "alessandroronca.netlify.com/" "https://alessandroronca.netlify.com/" #{{ .Site.BaseURL }} #"/" netlify #"./" local only #"https://hungry-wozniak-e915f8.netlify.com"
+baseurl = "https://alessandroronca.netlify.com/" #baseurl = "./" "https://alessandroronca.netlify.com/" #{{ .Site.BaseURL }} #"/" netlify #"./" local only #"https://hungry-wozniak-e915f8.netlify.com"
 # same issue: https://discourse.gohugo.io/t/how-to-get-the-current-absolute-url/17328/13
 # relativeURLs = "true" #https://github.com/gohugoio/hugo/issues/985
 #Change theme = "`echo 'theme = "instantwebapp-vertical"' >> config.toml`
