@@ -17,15 +17,15 @@ copyright = "https://inspiredlabs.co.uk" # © = http://www.theukwebdesigncompany
   canonical = "https://alessandroronca.it/"
   foo = "foo"
   bar = "bar" #{{ (.Site.Param "bar") }}
-  author = "Alessandro Ronca"
   logo = "favicon.png" #{{ with .Site.Params "logo" }}{{ . }}{{ end }}
   icon = "favicon.ico" #{{ with .Site.Params "logoIcon" }}{{ . }}{{ end }}
   mask = "favicon.svg" #{{ with .Site.Params "logoMask" }}{{ . }}{{ end }}
   description = """Want to beat burnout? Need an Ice Coach? Find out how to get a life upgrade from a leading Wim Hof Method Instructor in Italy.""" #Return `{{ .WordCount }}` at build time? #<160 thing for SERP #Could you benefit from a life upgrade? #Ready to connect with nature?
   mobile = "Ice Coach"
-  jobtitle = "Wim Hof Method Training Facilitator" #1on1 Wim Hof Method Instructor
+  author = "Alessandro Ronca" #{{- if (isset .Site.Params "author" ) }}{{ .Site.Params.author }}{{ else }}{{ .Params.title }}{{/* .Params.title from `_index.md` */}}{{ end -}}
+  jobtitle = "Training Facilitator & Certified Wim Hof Method Instructor" #{{- if (isset .Site.Params "jobtitle" ) }}{{ .Site.Params.jobtitle }}{{ else }}{{ .Params.subtitle }}{{/* .Params.subtitle from `_index.md` */}}{{ end -}} #Wim Hof Method Training Facilitator, #1on1 Wim Hof Method Instructor
   #telephoninoDescritzioni = "The Wim Hof Method in Italian Methodo de Wim Hof, verzioni Italiano"
-  keywords = ["Wim Hof Method", "Training", "Facilitator", "Ice Coach", "1-on-1 teacher", "1-on-1 Ice Coach", "1-on-1 Trainer" ]
+  keywords = ["The Wim Hof Method", "Training", "Facilitator", "Certified WHM Instructor", "Ice Coach", "1-on-1 teacher", "1-on-1 Ice Coach", "1-on-1 Trainer", "1-on-1 WHM Instructor", "Connect with nature" ]
 
 [author]
   #type = "person" #canonical = "https://alessandroronca.it/"
