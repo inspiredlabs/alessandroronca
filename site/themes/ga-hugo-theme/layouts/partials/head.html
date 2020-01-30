@@ -74,6 +74,7 @@ class='w-100 h-100 {{ if .IsHome }}touch-manipulation fixed overflow-hidden{{ en
 
   <!-- The search engine whisperer -->
   <!-- Twitter: summary|photo|video, a *canonical* link -->
+  {{/* Manually added image below: */}}
   {{ template "_internal/twitter_cards.html" . }}
   <!--
   <meta name="twitter:url" content="{{ .Site.BaseURL }}/" />
@@ -87,6 +88,9 @@ class='w-100 h-100 {{ if .IsHome }}touch-manipulation fixed overflow-hidden{{ en
   <!-- <meta name="twitter:image:src" content="{{ .Site.Author.image }}" />{{/* .Site.Author.image | absURL */}} -->
   <!-- Originally from: ? -->
   {{- partial "seo.html" . -}}
+  <meta property="og:image" content="{{ range $i, $e := .Params.images }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}" />
+  <meta property="og:image:secure_url"
+    content="{{ range $i, $e := .Params.images }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}" />
 
 
 
