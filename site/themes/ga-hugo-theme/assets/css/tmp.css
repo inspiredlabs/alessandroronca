@@ -28,7 +28,7 @@
 /* 29.01.20 .no-body-scroll 	overscroll shortcut?					multiple rules comment	*/
 /* 29.01.20 `#menu nav`,`[aria-expanded=false]~#menu nav`…	See comment							*/
 /* 30.01.20 .ts1-white… 			text-shadow: 0px 0.125rem 0.125rem white;							*/
-/* 30.01.20 .ds2-dark-gray… 	filter: drop-shadow(0px 0.625rem 0.625rem dark-gray);	*/
+/* 30.01.20 .ds2-dark-gray… 	filter: drop-shadow(0px 0.625rem 0.625rem #333);	*/
 
 /* SORT ME */
 /* Integrate: https://uncss-online.com/ */
@@ -11384,93 +11384,93 @@ input:focus::placeholder {
 
 /* small dark-gray text shadow */
 .ts1-dark-gray {
-  text-shadow: 0px 0.125rem 0.125rem dark-gray;
+  text-shadow: 0px 0.125rem 0.125rem #333;
 }
 
 @media screen and (min-width: 30em) {
   .ts1-dark-gray-ns {
-    text-shadow: 0px 0.125rem 0.125rem dark-gray;
+    text-shadow: 0px 0.125rem 0.125rem #333;
   }
 }
 
 @media screen and (min-width: 30em) and (max-width: 60em) {
   .ts1-dark-gray-m {
-    text-shadow: 0px 0.125rem 0.125rem dark-gray;
+    text-shadow: 0px 0.125rem 0.125rem #333;
   }
 }
 
 @media screen and (min-width: 60em) {
   .ts1-dark-gray-l {
-    text-shadow: 0px 0.125rem 0.125rem dark-gray;
+    text-shadow: 0px 0.125rem 0.125rem #333;
   }
 }
 
 /* small dark-gray SVG shadow */
 .ds1-dark-gray {
-  filter: drop-shadow(0px 0.125rem 0.125rem dark-gray);
+  filter: drop-shadow(0px 0.125rem 0.125rem #333);
 }
 
 @media screen and (min-width: 30em) {
   .ds1-dark-gray-ns {
-    filter: drop-shadow(0px 0.125rem 0.125rem dark-gray);
+    filter: drop-shadow(0px 0.125rem 0.125rem #333);
   }
 }
 
 @media screen and (min-width: 30em) and (max-width: 60em) {
   .ds1-dark-gray-m {
-    filter: drop-shadow(0px 0.125rem 0.125rem dark-gray);
+    filter: drop-shadow(0px 0.125rem 0.125rem #333);
   }
 }
 
 @media screen and (min-width: 60em) {
   .ds1-dark-gray-l {
-    filter: drop-shadow(0px 0.125rem 0.125rem dark-gray);
+    filter: drop-shadow(0px 0.125rem 0.125rem #333);
   }
 }
 
 /* large dark-gray text shadow */
 .ts2-dark-gray {
-  text-shadow: 0px 0.625rem 0.625rem dark-gray;
+  text-shadow: 0px 0.625rem 0.625rem #333;
 }
 
 @media screen and (min-width: 30em) {
   .ts2-dark-gray-ns {
-    text-shadow: 0px 0.625rem 0.625rem dark-gray;
+    text-shadow: 0px 0.625rem 0.625rem #333;
   }
 }
 
 @media screen and (min-width: 30em) and (max-width: 60em) {
   .ts2-dark-gray-m {
-    text-shadow: 0px 0.625rem 0.625rem dark-gray;
+    text-shadow: 0px 0.625rem 0.625rem #333;
   }
 }
 
 @media screen and (min-width: 60em) {
   .ts2-dark-gray-l {
-    text-shadow: 0px 0.625rem 0.625rem dark-gray;
+    text-shadow: 0px 0.625rem 0.625rem #333;
   }
 }
 
 /* large dark-gray SVG shadow */
 .ds2-dark-gray {
-  filter: drop-shadow(0px 0.625rem 0.625rem dark-gray);
+  filter: drop-shadow(0px 0.625rem 0.625rem #333);
 }
 
 @media screen and (min-width: 30em) {
   .ds2-dark-gray-ns {
-    filter: drop-shadow(0px 0.625rem 0.625rem dark-gray);
+    filter: drop-shadow(0px 0.625rem 0.625rem #333);
   }
 }
 
 @media screen and (min-width: 30em) and (max-width: 60em) {
   .ds2-dark-gray-m {
-    filter: drop-shadow(0px 0.625rem 0.625rem dark-gray);
+    filter: drop-shadow(0px 0.625rem 0.625rem #333);
   }
 }
 
 @media screen and (min-width: 60em) {
   .ds2-dark-gray-l {
-    filter: drop-shadow(0px 0.625rem 0.625rem dark-gray);
+    filter: drop-shadow(0px 0.625rem 0.625rem #333);
   }
 }
 

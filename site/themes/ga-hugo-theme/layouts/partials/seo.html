@@ -1,86 +1,86 @@
 {{ if .IsHome -}}
-<script type='application/ld+json'>
+<script type="application/ld+json">
   {
-  '@context': 'http://schema.org',
-  '@type': 'WebSite',
-  'url': {{- if (isset .Site.Params "canonical") }}{{ .Site.Params.canonical | jsonify | safeJS }}{{ else }}{{ .Site.BaseURL | absURL | jsonify | safeJS }}{{ end -}},
-    'author': {
-      '@type': {{- if (isset .Site.Author "type" ) }}{{ .Site.Author.type | jsonify | safeJS }}{{ else }}"person"{{ end -}},
-      'name': {{- if (isset .Site.Params "author" ) }}{{ .Site.Params.author | jsonify | safeJS }}{{ else }}{{ .Params.title | jsonify | safeJS }}{{ end -}}
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "url": {{- if (isset .Site.Params "canonical") }}{{ .Site.Params.canonical | jsonify | safeJS }}{{ else }}{{ .Site.BaseURL | absURL | jsonify | safeJS }}{{ end -}},
+    "author": {
+      "@type": {{- if (isset .Site.Author "type" ) }}{{ .Site.Author.type | jsonify | safeJS }}{{ else }}"person"{{ end -}},
+      "name": {{- if (isset .Site.Params "author" ) }}{{ .Site.Params.author | jsonify | safeJS }}{{ else }}{{ .Params.title | jsonify | safeJS }}{{ end -}}
     },
-    'description': {{- if (isset .Site.Params "description" ) }}{{ .Site.Params.description | jsonify | safeJS }}{{ else }}{{ .Site.Title | jsonify | safeJS }}{{ end -}},
-    'keywords': {{- if (isset .Site.Author "keywords" ) }}{{- with .Site.Author.keywords }}{{ delimit . ", " | jsonify | safeJS }}{{ end -}}{{else}}{{- with .Site.Params.keywords }}{{ delimit . ", " | jsonify | safeJS }}{{ end -}}{{ end -}},{{/* 'thumbnailUrl' : {{ apply .Params.images "absURL" "." }}, from: https://discourse.gohugo.io/t/marking-up-json-ld/1154 note: `[...]` */}}
+    "description": {{- if (isset .Site.Params "description" ) }}{{ .Site.Params.description | jsonify | safeJS }}{{ else }}{{ .Site.Title | jsonify | safeJS }}{{ end -}},
+    "keywords": {{- if (isset .Site.Author "keywords" ) }}{{- with .Site.Author.keywords }}{{ delimit . ", " | jsonify | safeJS }}{{ end -}}{{else}}{{- with .Site.Params.keywords }}{{ delimit . ", " | jsonify | safeJS }}{{ end -}}{{ end -}},{{/* 'thumbnailUrl' : {{ apply .Params.images "absURL" "." }}, from: https://discourse.gohugo.io/t/marking-up-json-ld/1154 note: `[...]` */}}
   {{/* range $i, $e := .Params.images }}{{ if $i }}, {{ end }}{{ $e | jsonify | safeJS }}{{ end */}}
-    'image': {{ .Site.Author.image | jsonify | safeJS }}{{/* .Site.BaseURL | absURL | safeJS }}{{ .Site.Params.mask | safeJS */}},
-    'thumbnailUrl': {{ .Site.Params.logo | jsonify | safeJS }},
-    'license': {{ .Site.Copyright | jsonify | safeJS -}} {{/* "©{{ now.Format "2006" | safeJS}}, {{ .Site.Copyright | escapeHTML | safeJS }}" */}},
-    'name': "{{ if (isset .Site.Params "author" ) }}{{ .Site.Params.author | safeJS }} {{ else }}{{ .Params.title | safeJS }}{{ end }} | {{ if (isset .Site.Params "jobtitle" ) }}{{ .Site.Params.jobtitle | safeJS }}{{ else }}{{ .Params.subtitle | jsonify | safeJS }}{{ end }}"
+    "image": {{ .Site.Author.image | jsonify | safeJS }}{{/* .Site.BaseURL | absURL | safeJS }}{{ .Site.Params.mask | safeJS */}},
+    "thumbnailUrl": {{ .Site.Params.logo | jsonify | safeJS }},
+    "license": {{ .Site.Copyright | jsonify | safeJS -}} {{/* "©{{ now.Format "2006" | safeJS}}, {{ .Site.Copyright | escapeHTML | safeJS }}" */}},
+    "name": "{{ if (isset .Site.Params "author" ) }}{{ .Site.Params.author | safeJS }} {{ else }}{{ .Params.title | safeJS }}{{ end }} | {{ if (isset .Site.Params "jobtitle" ) }}{{ .Site.Params.jobtitle | safeJS }}{{ else }}{{ .Params.subtitle | jsonify | safeJS }}{{ end }}"
   }
   </script>
 {{ else if .IsPage -}}
 <script type='application/ld+json'>
   {
-  '@context': 'http://schema.org',
-  '@type': 'Article',
-  'headline': '{{ .Title }}',
-  'mainEntityOfPage': {
-    '@type': 'WebPage',
-    {{/*'$id': '{{ with .Site.Author.itemid }}{{ . }}{{ end }}'*/}}
-    '$id': '{{ .Permalink }}{{/*.Site.BaseURL */}}'
+  "@context": 'http://schema.org',
+  "@type": 'Article',
+  "headline": '{{ .Title }}',
+  "mainEntityOfPage": {
+    "@type": 'WebPage',
+    {{/*'$id": '{{ with .Site.Author.itemid }}{{ . }}{{ end }}'*/}}
+    "$id": '{{ .Permalink }}{{/*.Site.BaseURL */}}'
   },
   {{ if ge (.Param "lua.image.width") 696 }}
-    'image': {
-      '@type': 'ImageObject',
-      'url': '{{ .Param "lua.image.url" | absURL }}',
-      'width': {{ .Param "lua.image.width" }},
-      'height': {{ .Param "lua.image.height" }}
+    "image": {
+      "@type": 'ImageObject',
+      "url": '{{ .Param "lua.image.url" | absURL }}',
+      "width": {{ .Param "lua.image.width" }},
+      "height": {{ .Param "lua.image.height" }}
     },
   {{ else if ge .Site.Params.image.width 696 }}
-    'image': {
-      '@type': 'ImageObject',
-      'url': '{{ .Site.Params.image.url | absURL }}',
-      'width': {{ .Site.Params.image.width }},
-      'height': {{ .Site.Params.image.height }}
+    "image": {
+      "@type": 'ImageObject',
+      "url": '{{ .Site.Params.image.url | absURL }}',
+      "width": {{ .Site.Params.image.width }},
+      "height": {{ .Site.Params.image.height }}
     },
   {{ end }}
-  'genre': '{{ .Type }}',
+  "genre": '{{ .Type }}',
   {{ with .Params.tags }}
-  'keywords': '{{ delimit . ", " }}',
+  "keywords": '{{ delimit . ", " }}',
   {{ end }}
-  'wordcount': {{ .WordCount }},
-  'url': '{{ .Permalink }}',
+  "wordcount": {{ .WordCount }},
+  "url": '{{ .Permalink }}',
   {{ if not .PublishDate.IsZero }}
-  'datePublished': '{{ .PublishDate.Format "2006-01-02T15:04:05-07:00" | safeHTML }}',
+  "datePublished": '{{ .PublishDate.Format "2006-01-02T15:04:05-07:00" | safeHTML }}',
 
   {{/* dateFormat "2006-01-02T15:04:05-07:00" (default .Date (.PublishDate)) */}}
 
   {{ else if not .Date.IsZero }}
-  'datePublished': '{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}',
+  "datePublished": '{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}',
   {{ end }}
   {{ with .Lastmod }}
-  'dateModified': '{{ .Format "2006-01-02T15:04:05-07:00" | safeHTML }}',
+  "dateModified": '{{ .Format "2006-01-02T15:04:05-07:00" | safeHTML }}',
   {{ end }}
   {{ with .Site.Copyright }}
-  'license': '{{ . }}',
+  "license": '{{ . }}',
   {{ end }}
   {{ with .Site.Params.publisher }}
-    'publisher': {
-      '@type': 'Organization',
-      'name': '{{ .name }}',
-      'logo': {
-      '@type': 'ImageObject',
-      'url': '{{ .logo.url | absURL }}',
-      'width': {{ .logo.width }},
-      'height': {{ .logo.height }}
+    "publisher": {
+      "@type": 'Organization',
+      "name": '{{ .name }}',
+      "logo": {
+      "@type": 'ImageObject',
+      "url": '{{ .logo.url | absURL }}',
+      "width": {{ .logo.width }},
+      "height": {{ .logo.height }}
       }
     },
   {{ end }}
-  'author': {
-    '@type': '{{ with .Site.Author.type }}{{ . }}{{ end }}',
-    'name': '{{ with .Site.Author.name }}{{ . }}{{ end }}',
-    '$id': '{{ .Permalink }}{{/*.Site.BaseURL */}}'
+  "author": {
+    "@type": '{{ with .Site.Author.type }}{{ . }}{{ end }}',
+    "name": '{{ with .Site.Author.name }}{{ . }}{{ end }}',
+    "$id": '{{ .Permalink }}{{/*.Site.BaseURL */}}'
   },
-  'description': {{ .Description | jsonify | safeJS  }}
+  "description": {{ .Description | jsonify | safeJS  }}
   }
 </script>
 {{ end }}
