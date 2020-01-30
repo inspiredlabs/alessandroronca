@@ -32,13 +32,13 @@
       {{ if eq .Section "posts" }}
       <h1 class="pa0 ma0">
         <span
-          class="tracked tracked-mega-ns tracked-mega-m tracked-mega-l f3 f2-ns f2-m f1-l mb0 ts2-dark-gray ttu">
+          class="tracked tracked-mega-ns tracked-mega-m tracked-mega-l f3 f2-ns f2-m f1-l mb0 ts1-dark-gray ttu">
           {{- if (isset .Site.Params "author" ) }}
             {{ .Site.Params.author }}
           {{ else }}
             {{ .Params.title }}
           {{ end -}}</span>
-        <span class="db f4 f3-ns fw5 ts2-dark-gray">
+        <span class="db f4 f3-ns fw5 ts1-dark-gray">
           {{- if (isset .Site.Params "jobtitle" ) }}
             {{ .Site.Params.jobtitle }}
           {{ else }}
@@ -47,8 +47,8 @@
       </h1>
       {{ else }}
         <h2 class="pa0 ma0">
-          <span class="tracked tracked-mega-ns tracked-mega-m tracked-mega-l f3 f2-ns f2-m f1-l mb0 ts2-dark-gray ">{{- if .Params.title -}}{{- .Params.title -}}{{- end -}}</span>
-          <span class="db f4 f3-ns fw5 ts2-dark-gray">{{- if .Params.subtitle -}}{{- .Params.subtitle -}}{{- end -}}</span>
+          <span class="tracked tracked-mega-ns tracked-mega-m tracked-mega-l f3 f2-ns f2-m f1-l mb0 ts1-dark-gray ">{{- if .Params.title -}}{{- .Params.title -}}{{- end -}}</span>
+          <span class="db f4 f3-ns fw5 ts1-dark-gray">{{- if .Params.subtitle -}}{{- .Params.subtitle -}}{{- end -}}</span>
         </h2>
       {{ end }}
     </div>

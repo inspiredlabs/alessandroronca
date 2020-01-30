@@ -5,7 +5,7 @@
 /*{{/* $style := resources.Get "css/uncssonline.css" | minify */}}*/
 /*{{/* $style.Content | replaceRE `\/\*(.*)\*\/` `$style` | safeCSS */}}*/
 
-*/
+
 /* 16.04.19	.dim 								transform:translateZ(0)			bug fix 	*/
 /* 17.04.19	.grow 							background-clip							bug fix 	*/
 /* 01.05.19	.ts 								shadow											addition 	*/
@@ -24,10 +24,11 @@
 /* 07.01.20 .emojisymbol			Semantic unicode-icons				addition								*/
 /* 13.01.20 .link							word-wrap: break-word;				bug fix 								*/
 /* 24.01.20 .twitter, .facebook, .pm-blue-light, etc.				addition								*/
-/* 29.01.20 .ts1-white-etc 		filter: drop-shadow(…)				addition								*/
 /* 29.01.20 .portrait-etc 		horiz/vert nav & banners…			multiple media queries	*/
 /* 29.01.20 .no-body-scroll 	overscroll shortcut?					multiple rules comment	*/
-/* 29.01.20 `#menu nav`,`[aria-expanded=false]~#menu nav`…	See comment	*/
+/* 29.01.20 `#menu nav`,`[aria-expanded=false]~#menu nav`…	See comment							*/
+/* 30.01.20 .ts1-white… 			text-shadow: 0px 0.125rem 0.125rem white;							*/
+/* 30.01.20 .ds2-dark-gray… 	filter: drop-shadow(0px 0.625rem 0.625rem dark-gray);	*/
 
 /* SORT ME */
 /* Integrate: https://uncss-online.com/ */
@@ -11290,114 +11291,186 @@ input:focus::placeholder {
 
 
 /* small white text shadow */
-/* small white SVG shadow */
 .ts1-white {
-  text-shadow: 0px 0.625rem 0.625rem white;
-  filter: drop-shadow(0px 0.625rem 0.625rem white);
+  text-shadow: 0px 0.125rem 0.125rem white;
 }
 
 @media screen and (min-width: 30em) {
   .ts1-white-ns {
-    text-shadow: 0px 0.625rem 0.625rem white;
-    filter: drop-shadow(0px 0.625rem 0.625rem white);
+    text-shadow: 0px 0.125rem 0.125rem white;
   }
 }
 
 @media screen and (min-width: 30em) and (max-width: 60em) {
   .ts1-white-m {
-    text-shadow: 0px 0.625rem 0.625rem white;
-    filter: drop-shadow(0px 0.625rem 0.625rem white);
+    text-shadow: 0px 0.125rem 0.125rem white;
   }
 }
 
 @media screen and (min-width: 60em) {
   .ts1-white-l {
-    text-shadow: 0px 0.625rem 0.625rem white;
-    filter: drop-shadow(0px 0.625rem 0.625rem white);
+    text-shadow: 0px 0.125rem 0.125rem white;
   }
 }
 
-/* large white text shadow */
-/* large white SVG shadow */
-.ts2-white {
-  text-shadow: 0px 0.125rem 0.125rem white;
+/* small white SVG shadow */
+.ds1-white {
   filter: drop-shadow(0px 0.125rem 0.125rem white);
 }
 
 @media screen and (min-width: 30em) {
-  .ts2-white-ns {
-    text-shadow: 0px 0.125rem 0.125rem white;
+  .ds1-white-ns {
     filter: drop-shadow(0px 0.125rem 0.125rem white);
+  }
+}
+
+@media screen and (min-width: 30em) and (max-width: 60em) {
+  .ds1-white-m {
+    filter: drop-shadow(0px 0.125rem 0.125rem white);
+  }
+}
+
+@media screen and (min-width: 60em) {
+  .ds1-white-l {
+    filter: drop-shadow(0px 0.125rem 0.125rem white);
+  }
+}
+
+/* large white text shadow */
+.ts2-white {
+  text-shadow: 0px 0.625rem 0.625rem white;
+}
+
+@media screen and (min-width: 30em) {
+  .ts2-white-ns {
+    text-shadow: 0px 0.625rem 0.625rem white;
   }
 }
 
 @media screen and (min-width: 30em) and (max-width: 60em) {
   .ts2-white-m {
-    text-shadow: 0px 0.125rem 0.125rem white;
-    filter: drop-shadow(0px 0.125rem 0.125rem white);
+    text-shadow: 0px 0.625rem 0.625rem white;
   }
 }
 
 @media screen and (min-width: 60em) {
   .ts2-white-l {
-    text-shadow: 0px 0.125rem 0.125rem white;
-    filter: drop-shadow(0px 0.125rem 0.125rem white);
+    text-shadow: 0px 0.625rem 0.625rem white;
   }
 }
 
-/* small gray text shadow */
-/* small gray SVG shadow */
+/* large white SVG shadow */
+.ds2-white {
+  filter: drop-shadow(0px 0.625rem 0.625rem white);
+}
+
+@media screen and (min-width: 30em) {
+  .ds2-white-ns {
+    filter: drop-shadow(0px 0.625rem 0.625rem white);
+  }
+}
+
+@media screen and (min-width: 30em) and (max-width: 60em) {
+  .ds2-white-m {
+    filter: drop-shadow(0px 0.625rem 0.625rem white);
+  }
+}
+
+@media screen and (min-width: 60em) {
+  .ds2-white-l {
+    filter: drop-shadow(0px 0.625rem 0.625rem white);
+  }
+}
+
+/* small dark-gray text shadow */
 .ts1-dark-gray {
-  text-shadow: 0px 0.625rem 0.625rem #333;
-  filter: drop-shadow(0px 0.625rem 0.625rem #333);
+  text-shadow: 0px 0.125rem 0.125rem dark-gray;
 }
 
 @media screen and (min-width: 30em) {
   .ts1-dark-gray-ns {
-    text-shadow: 0px 0.625rem 0.625rem #333;
-    filter: drop-shadow(0px 0.625rem 0.625rem #333);
+    text-shadow: 0px 0.125rem 0.125rem dark-gray;
   }
 }
 
 @media screen and (min-width: 30em) and (max-width: 60em) {
   .ts1-dark-gray-m {
-    text-shadow: 0px 0.625rem 0.625rem #333;
-    filter: drop-shadow(0px 0.625rem 0.625rem #333);
+    text-shadow: 0px 0.125rem 0.125rem dark-gray;
   }
 }
 
 @media screen and (min-width: 60em) {
   .ts1-dark-gray-l {
-    text-shadow: 0px 0.625rem 0.625rem #333;
-    filter: drop-shadow(0px 0.625rem 0.625rem #333);
+    text-shadow: 0px 0.125rem 0.125rem dark-gray;
   }
 }
 
-/* large gray text shadow */
-/* large gray SVG shadow */
+/* small dark-gray SVG shadow */
+.ds1-dark-gray {
+  filter: drop-shadow(0px 0.125rem 0.125rem dark-gray);
+}
+
+@media screen and (min-width: 30em) {
+  .ds1-dark-gray-ns {
+    filter: drop-shadow(0px 0.125rem 0.125rem dark-gray);
+  }
+}
+
+@media screen and (min-width: 30em) and (max-width: 60em) {
+  .ds1-dark-gray-m {
+    filter: drop-shadow(0px 0.125rem 0.125rem dark-gray);
+  }
+}
+
+@media screen and (min-width: 60em) {
+  .ds1-dark-gray-l {
+    filter: drop-shadow(0px 0.125rem 0.125rem dark-gray);
+  }
+}
+
+/* large dark-gray text shadow */
 .ts2-dark-gray {
-  text-shadow: 0px 0.125rem 0.125rem #333;
-  filter: drop-shadow(0px 0.125rem 0.125rem #333);
+  text-shadow: 0px 0.625rem 0.625rem dark-gray;
 }
 
 @media screen and (min-width: 30em) {
   .ts2-dark-gray-ns {
-    text-shadow: 0px 0.125rem 0.125rem #333;
-    filter: drop-shadow(0px 0.125rem 0.125rem #333);
+    text-shadow: 0px 0.625rem 0.625rem dark-gray;
   }
 }
 
 @media screen and (min-width: 30em) and (max-width: 60em) {
   .ts2-dark-gray-m {
-    text-shadow: 0px 0.125rem 0.125rem #333;
-    filter: drop-shadow(0px 0.125rem 0.125rem #333);
+    text-shadow: 0px 0.625rem 0.625rem dark-gray;
   }
 }
 
 @media screen and (min-width: 60em) {
   .ts2-dark-gray-l {
-    text-shadow: 0px 0.125rem 0.125rem #333;
-    filter: drop-shadow(0px 0.125rem 0.125rem #333);
+    text-shadow: 0px 0.625rem 0.625rem dark-gray;
+  }
+}
+
+/* large dark-gray SVG shadow */
+.ds2-dark-gray {
+  filter: drop-shadow(0px 0.625rem 0.625rem dark-gray);
+}
+
+@media screen and (min-width: 30em) {
+  .ds2-dark-gray-ns {
+    filter: drop-shadow(0px 0.625rem 0.625rem dark-gray);
+  }
+}
+
+@media screen and (min-width: 30em) and (max-width: 60em) {
+  .ds2-dark-gray-m {
+    filter: drop-shadow(0px 0.625rem 0.625rem dark-gray);
+  }
+}
+
+@media screen and (min-width: 60em) {
+  .ds2-dark-gray-l {
+    filter: drop-shadow(0px 0.625rem 0.625rem dark-gray);
   }
 }
 
