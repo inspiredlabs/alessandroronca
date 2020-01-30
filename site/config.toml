@@ -33,7 +33,7 @@ copyright = "https://inspiredlabs.co.uk" # © = http://www.theukwebdesigncompany
   #itemid = "#pablowoodward" #`seo.html` has: "$id": "{{ .Site.BaseURL }}"
   #keywords = ["Osm", "Bloke" ]
   email = "fairtech@pm.me"
-  image = "https://alessandroronca.netlify.com/images/profile.png" #favicon.png?
+  image = "https://alessandroronca.netlify.com/images/profile.jpg" #profile.png Open Graph Preview failed. #favicon.png?
   homepage = "https://alessandroronca.netlify.com/"
   facebook = "https://www.facebook.com/pablo.woodward/" #"inspiredlabs"
   #twitter = "pablowoodward" #https://twitter.com/PabloWoodward/, "inspiredlabs"
