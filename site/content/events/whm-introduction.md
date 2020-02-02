@@ -1,4 +1,6 @@
 ---
+
+weight: 2
 draft: false
 date: 2019-02-13T17:29:28.349Z
 title: An Introduction to The Wim Hof Method
@@ -89,6 +91,12 @@ Workshops take place from **PeR** (<span lang="it">Il Parco Dell'Energia Rinnova
 
 The crystal clear waters of [Il Solarium sul Fiume Nera](https://www.google.com/maps/place/The+Mole+Di+Narni/@42.4997431,12.4813737,282m
 ). The natural fresh water spring is emerald green due to the presence of copper salts. The site is an overflow owned by a [hydro-electric plant](https://duckduckgo.com/?q=Centrale+Idroelettrica+Stifone&t=ffab&ia=images), which has been known to increase the current.
+
+
+
+<!--Raffo said, this is the coldest place: https://www.google.com/maps/place/Antico+cantiere+navale+romano+di+Stifone/@42.4969676,12.4917752,349m/data=!3m1!1e3!4m8!1m2!3m1!2sThe+Mole+Di+Narni!3m4!1s0x132ee1d0f8e119d1:0xa64dc037b9731f14!8m2!3d42.4973408!4d12.4929846-->
+
+
 
 <!--[The Mole Di Narni](https://goo.gl/maps/ngBE5MW7wUSeE7hZ8) Via dello Stabilimento, 05035 Nera Montoro TR.-->
 
