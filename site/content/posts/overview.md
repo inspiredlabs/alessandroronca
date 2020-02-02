@@ -8,7 +8,7 @@ region: it
 date: 2018-12-07T10:14:48.939Z
 
 title: Overview
-subtitle: 
+subtitle:
 
 tags: ["italiano"]
 moods: ["italiano"]
@@ -17,9 +17,26 @@ categories: ["italiano"]
 
 description: ''
 
+keywords:
+- improve life circumstances
+- manage health
+- moderates immune response
+- connect with nature
+- bring symptoms into remission
+- scientific research
+- scientifically proven
+- natural healing
+- Umbria
+- Italy
+- Il Parco dell’ Energia Rinnovabile
+- Cerftified Wim Hof Method Instructor
+- Alessandro Ronca
+- The Wim Hof Method
+- Wim Hof
+
 ---
 
-##### Cerftified Wim Hof Method Instructor
+##### Alessandro Ronca, Cerftified Wim Hof Method Instructor
 
 I teach people to improve their life circumstances. Now a **Cerftified Wim Hof Method Instructor** based in Italy, I have been practicing <!--**The Wim Hof Method**--> for several years. Courses take place around [Il Parco dell’ Energia Rinnovabile](https://per.umbria.it/), which is in Umbria, Italy. <!--Here, I am Scientific Director.-->
 

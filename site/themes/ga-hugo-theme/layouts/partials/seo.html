@@ -14,7 +14,8 @@
     "image": {{ .Site.Author.image | jsonify | safeJS }}{{/* .Site.BaseURL | absURL | safeJS }}{{ .Site.Params.mask | safeJS */}},
     "thumbnailUrl": {{ .Site.Params.logo | jsonify | safeJS }},
     "license": {{ .Site.Copyright | jsonify | safeJS -}} {{/* "©{{ now.Format "2006" | safeJS}}, {{ .Site.Copyright | escapeHTML | safeJS }}" */}},
-    "name": "{{ if (isset .Site.Params "author" ) }}{{ .Site.Params.author | safeJS }} {{ else }}{{ .Params.title | safeJS }}{{ end }} | {{ if (isset .Site.Params "jobtitle" ) }}{{ .Site.Params.jobtitle | safeJS }}{{ else }}{{ .Params.subtitle | jsonify | safeJS }}{{ end }}"
+    "name": {{- if (isset .Site.Params "author" ) }}{{ .Site.Params.author | jsonify | safeJS }}{{ else }}{{ .Params.title | jsonify | safeJS }}{{ end -}}
+    {{/* if (isset .Site.Params "author" ) }}{{ .Site.Params.author | safeJS }} {{ else }}{{ .Params.title | safeJS }}{{ end }} | {{ if (isset .Site.Params "jobtitle" ) }}{{ .Site.Params.jobtitle | safeJS }}{{ else }}{{ .Params.subtitle | jsonify | safeJS }}{{ end */}}
   }
   </script>
 {{ else if .IsPage -}}
@@ -22,11 +23,10 @@
   {
   "@context": 'http://schema.org',
   "@type": 'Article',
-  "headline": '{{ .Title }}',
+  "headline": '{{ .Title }} {{ if (isset .Site.Params "author" ) }}{{ .Site.Params.author | safeJS }}{{ else }}{{ .Params.title | safeJS }}{{ end -}}',
   "mainEntityOfPage": {
     "@type": 'WebPage',
-    {{/*'$id": '{{ with .Site.Author.itemid }}{{ . }}{{ end }}'*/}}
-    "$id": '{{ .Permalink }}{{/*.Site.BaseURL */}}'
+    "$id": {{ .Permalink | jsonify | safeJS }}{{/* How best to link fragments together? .Site.BaseURL */}}{{/*'$id": '{{ with .Site.Author.itemid }}{{ . }}{{ end }}'*/}}
   },
   {{ if ge (.Param "lua.image.width") 696 }}
     "image": {
@@ -42,13 +42,14 @@
       "width": {{ .Site.Params.image.width }},
       "height": {{ .Site.Params.image.height }}
     },
-  {{ end }}
-  "genre": '{{ .Type }}',
-  {{ with .Params.tags }}
+  {{ end -}}
+  "genre": {{ .Type | jsonify | safeJS }},{{/* Validation path? */}}
+  "keywords": {{ if (isset .Params "keywords" ) }}{{- with .Params.keywords }}{{ delimit . ", " | jsonify | safeJS }}{{ end -}}{{else}} {{- with .Site.Author.keywords }}{{ delimit . ", " | jsonify | safeJS }}{{ end -}}{{ end -}}
+  {{/* with .Params.tags }}
   "keywords": '{{ delimit . ", " }}',
-  {{ end }}
+  {{ end */}}
   "wordcount": {{ .WordCount }},
-  "url": '{{ .Permalink }}',
+  "url": {{ .Permalink | jsonify | safeJS }},
   {{ if not .PublishDate.IsZero }}
   "datePublished": '{{ .PublishDate.Format "2006-01-02T15:04:05-07:00" | safeHTML }}',
 
@@ -61,7 +62,7 @@
   "dateModified": '{{ .Format "2006-01-02T15:04:05-07:00" | safeHTML }}',
   {{ end }}
   {{ with .Site.Copyright }}
-  "license": '{{ . }}',
+  "license": {{ . | jsonify | safeJS }},
   {{ end }}
   {{ with .Site.Params.publisher }}
     "publisher": {
@@ -78,7 +79,7 @@
   "author": {
     "@type": '{{ with .Site.Author.type }}{{ . }}{{ end }}',
     "name": '{{ with .Site.Author.name }}{{ . }}{{ end }}',
-    "$id": '{{ .Permalink }}{{/*.Site.BaseURL */}}'
+    "$id": {{ .Site.BaseURL | jsonify | safeJS }}{{/* How best to link these page fragments in LD? .Site.BaseURL */}}{{/*'$id": '{{ with .Site.Author.itemid }}{{ . }}{{ end }}'*/}}
   },
   "description": {{ .Description | jsonify | safeJS  }}
   }

@@ -8,7 +8,7 @@ class='w-100 h-100 {{ if .IsHome }}touch-manipulation fixed overflow-hidden{{ en
   <!-- https://gtmetrix.com (?% @28.01.2020) -->
   <!-- https://testmysite.io (?% @28.01.2020) -->
   <!-- https://cards-dev.twitter.com/validator What is the outcome? -->
-  <!-- https://freetools.seobility.net/en/seocheck (64% @29.01.2020) -->
+  <!-- https://freetools.seobility.net/en/seocheck (68% @30.01.2020) -->
   <!-- https://search.google.com/test/mobile-friendly (Lazyload iFrames) -->
   <!-- https://moz.com/domain-analysis?site=alessandroronca.netlify.com Domain Authority? -->
   <!-- https://search.google.com/structured-data/testing-tool (FIXME: ? ERRORS, ? WARNINGS) -->
@@ -179,6 +179,8 @@ class='w-100 h-100 {{ if .IsHome }}touch-manipulation fixed overflow-hidden{{ en
   <!-- Bud Par: https://discourse.gohugo.io/t/optimizing-css-remove-unused/18863/4 -->
   <!-- https://discourse.gohugo.io/t/hugo-inline-css-optimization-for-google-pagespeed/6032/13 -->
   <!-- regex CSS comments: http://blog.moagrius.com/javascript/javascript-regexp-to-remove-comments/ -->
+  <!-- TODO: Using {{/* $style | toCSS | minify */}}: https://youtu.be/NKLwuZIkReg?t=1144 -->
+  <!-- TODO: Define {{/* define "content" }}{{ thing:css; }}{{ end */}}?: https://youtu.be/-PBcvyytuMg?t=693 -->
   
   <!-- regex101.com PCRE & backticks not quotes: https://discourse.gohugo.io/t/replacere-gives-syntax-error/22624/2 -->
   {{ $style := resources.Get "css/uncssonline.css" | minify }}
@@ -194,4 +196,3 @@ class='w-100 h-100 {{ if .IsHome }}touch-manipulation fixed overflow-hidden{{ en
   <link rel="stylesheet" href="{{ .Site.BaseURL | absURL }}css/flickity.css"><!-- flickity.min.css -->
   {{ end }}
   {{ partial "add-to-tachyon-shower" . }}
- 

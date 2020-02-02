@@ -4,6 +4,28 @@ weight: 1
 title: Introduction
 subtitle: 
 
+keywords:
+- improve life circumstances
+- unlock potential
+- Change your life
+- Change your job
+- integrate energy technologies into your business
+- Sustainability Research Center
+- overcome burn out
+- improve focus
+- time management
+- executive coaching
+- life strategy
+- ambition
+- goals
+- Umbria
+- Italy
+- Il Parco dell’ Energia Rinnovabile
+- Cerftified Wim Hof Method Instructor
+- Alessandro Ronca
+- The Wim Hof Method
+- Wim Hof
+
 ---
 
 ##### Training Facilitator &amp; Life-coach

@@ -1,9 +1,9 @@
 {{ partial "head" . }}
 <body
-  class="w-100 h-100 ma0 pa0 overflow-hidden backface-hidden no-clutter bg-near-white charcoal avenir fixed disable-scrolling">
+  class="w-100 h-100 ma0 pa0 overflow-hidden backface-hidden bg-near-white charcoal avenir fixed disable-scrolling"><!-- no-clutter -->
   {{ partial "svg" . }}
   {{ partial "horizontalNav.html" . }}
-  
+
 <div class="carousel carousel-main vh-100 vw-100 relative z-1"><!-- https://discourse.gohugo.io/t/get-pages-from-multiple-sections-in-one-list/15271 -->
 
 {{/* range .Sections.ByWeight }}
@@ -17,7 +17,7 @@
   {{ range .Sections.ByWeight }}
   <section id="{{ .Title | lower | urlize }}" class="carousel-cell h-100 scrollable overflow-y-scroll touch-scrolling w-100 ">
     {{ partial "jumbotron" . }}
-    
+
     <!-- The `_index.md` is reserved for the synopsis, introduction or sign-up tiers (figure), breaking out from the main layout. -->
     <aside class="db dark-gray athelas f5 f4-ns f3-m f3-l lh-copy measure-narrow pa4 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l mr-auto ml-auto">
       <!--h2>{{ .Title }}&nbsp;<a href="{{ .Permalink }}" class="link emojisymbol o-30 glow no-underline"
@@ -25,10 +25,10 @@
       {{ .Content }}
 
     </aside>
-   
+
     {{ range .Pages }}
     <!-- Main layout, in a single column -->
-    <article class="db dark-gray athelas f5 f4-ns f3-m f3-l lh-copy measure pa2 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l mr-auto ml-auto">
+    <article class="highlight db dark-gray athelas f5 f4-ns f3-m f3-l lh-copy measure pa2 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l mr-auto ml-auto">
       <!-- <li style="border: 1px solid black;" class="list pa4"> -->
       <heading>
 
@@ -49,7 +49,7 @@
           <div style="color:grey; font-size:16px;">{{ if .Params.moods }}<strong>Moods:</strong> {{range .Params.moods}}<a
               href="{{ "/moods/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}</div>
           <p style="font-size:18px;">{{.Summary}}</p> -->
-      
+
           <!-- .Content -->
           {{ block "content" . }}
             {{ partial "content.html" . }}

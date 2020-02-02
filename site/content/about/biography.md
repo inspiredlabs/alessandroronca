@@ -4,6 +4,33 @@ weight: 3
 title: Biography
 subtitle:
 
+keywords:
+- engineering
+- Diving Instructor
+- relaxing oasis
+- independent sustainability research center
+- improve life circumstances
+- Conscious Resource Allocation
+- face the cold
+- harsh winters
+- develop focus
+- creativity
+- knowledge share
+- strength
+- happiness
+- health
+- Umbria
+- Italy
+- Il Parco dell’ Energia Rinnovabile
+- Cerftified Wim Hof Method Instructor
+- Alessandro Ronca
+- trainer
+- teacher
+- facilitator
+- The Wim Hof Method
+- Wim Hof
+
+
 ---
 
 <!--#### Alessandro Ronca's Biography -->
@@ -30,7 +57,9 @@ During the management of **PeR**, it became apparent to me: technology over-prom
 
 _Conscious Resource Allocation_ became critical to the success of the center. By being mindful of supply-needs, we developed systems without sacrificing comfort. As **PeR** evolved, so did society's environomental concerns. Today, it is accepted there is Climate Crisis.
 
-> The true value of technology to Humanity is when it provides more benefit than cost, this can only be achieved in equilibrium with our environment. <cite>– Alessandro Ronca on technology</cite>
+> The true value of technology to Humanity is when it provides more benefit than cost, this can only be achieved in equilibrium with our environment. - Alessandro Ronca on environmental impact
+
+<!-- [Alessandro Ronca](https://alessandroronca.netlify.com/about/biography/) -->
 
 ##### Man and planet in harmony
 
