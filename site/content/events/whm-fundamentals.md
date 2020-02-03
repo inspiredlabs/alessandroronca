@@ -17,6 +17,7 @@ subtitle:
 - **Directions:** [Frattuccia, Località Inano, Frattuccia, Terni, 05025, Umbria, Italy](https://www.google.com/maps/dir/current+location/Per+-+Il+Parco+Dell'Energia+Rinnovabile,+Localita'+Inano+-+Frattuccia,+05025+Collicello,+Italy)
 - **Natural fresh water spring:** [Il Solarium sul Fiume Nera](https://www.google.com/maps/place/The+Mole+Di+Narni/@42.4997431,12.4813737,282m)
 
+![Alessandro practices cold exposure swimming in the coldest water he can find](/images/IMG_2754-adaptation-1x.jpg)
 
 ### An introduction to: The Wim Hof Method, Fundamentals
 

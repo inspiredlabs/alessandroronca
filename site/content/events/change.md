@@ -15,6 +15,8 @@ subtitle:
 - **Time:** 09:00 am until 16:30 pm
 - **Directions:** [Frattuccia, Località Inano, Frattuccia, Terni, 05025, Umbria, Italy](https://www.google.com/maps/dir/current+location/Per+-+Il+Parco+Dell'Energia+Rinnovabile,+Localita'+Inano+-+Frattuccia,+05025+Collicello,+Italy)
 
+![Alessandro training people to tie rope in an emergancy](/images/activities-group-1x.jpg)
+
 ### Does your _comfort zone_ still bring peace of mind?
 #### Description
 

@@ -43,9 +43,13 @@ Using engineering to alleviate difficult environmental situations, I have worked
 
 Knowing there was important lessons to share in what I had learned so far, my next challenge was obvious. I sought advocates to help me test the idea… and eventually _we_ began to design and develop an independent sustainability research center based around energy technologies. This became known as <span lang="it">Il Parco Dell'Energia Rinnovabile</span>, or **PeR** for short. This has been an incredibly complicated process.
 
+![Alessandro has experience with life off-grid](/images/472803_10150792452772746_2030068506_o-2x.jpg)
+
 ##### Now
 
 Based deep in the heart of Italy our sustainability research center has become a relaxing oasis – but it wasn't always like this.
+
+![Alessandro has experience with life off-grid](/images/DSCN0436-2x.JPG)
 
 ##### Then
 
