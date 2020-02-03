@@ -9,7 +9,7 @@ icon: info
 
 image: images/tai-chi.jpg
 imageRetina: images/tai-chi.jpg
-backgroundPos: 0 20%
+backgroundPos: center 20%
 
 ---
 

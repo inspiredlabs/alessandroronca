@@ -3,17 +3,25 @@
 weight: 2
 draft: false
 date: 2019-02-13T17:29:28.349Z
-title: An Introduction to The Wim Hof Method
+title: The Wim Hof Method, Fundamentals
 subtitle:
 
 ---
 
-### The regenerative potential of The Wim Hof Method
-#### Capacity 10 people, only
+- **Program:** [The regenerative potential of The Wim Hof Method](https://www.per.umbria.it/esperienze/metodo-wim-hof-risvegliamo-lenergia-dentro-di-noi/)
+- **Price:** 95 €
+- **Capacity:** 10 people
+- **Date:** February 2020 and beyond
+- **Calendar:** [More information](https://www.per.umbria.it/i-nostri-corsi/)
+- **Time:** 09:45 am until 16:30 pm
+- **Directions:** [Frattuccia, Località Inano, Frattuccia, Terni, 05025, Umbria, Italy](https://www.google.com/maps/dir/current+location/Per+-+Il+Parco+Dell'Energia+Rinnovabile,+Localita'+Inano+-+Frattuccia,+05025+Collicello,+Italy)
+- **Natural fresh water spring:** [Il Solarium sul Fiume Nera](https://www.google.com/maps/place/The+Mole+Di+Narni/@42.4997431,12.4813737,282m)
 
-This introductory course is held on February 1st, 2020. The course will lead people to appreciate first-hand _the regenerative potential of The Wim Hof Method_.
 
-[More information](https://www.per.umbria.it/esperienze/metodo-wim-hof-risvegliamo-lenergia-dentro-di-noi/).
+### An introduction to: The Wim Hof Method, Fundamentals
+
+Introductory courses are held from February 2020. Courses lead people to appreciate, first-hand _the regenerative potential of The Wim Hof Method_.
+
 
 ### How I discovered The Wim Hof Method
 
@@ -90,9 +98,7 @@ Workshops take place from **PeR** (<span lang="it">Il Parco Dell'Energia Rinnova
 <!-- IMAGE: Mole di Narni e l’antico porto Romano di Stifone. -->
 
 The crystal clear waters of [Il Solarium sul Fiume Nera](https://www.google.com/maps/place/The+Mole+Di+Narni/@42.4997431,12.4813737,282m
-). The natural fresh water spring is emerald green due to the presence of copper salts. The site is an overflow owned by a [hydro-electric plant](https://duckduckgo.com/?q=Centrale+Idroelettrica+Stifone&t=ffab&ia=images), which has been known to increase the current.
-
-
+). The natural fresh water spring is emerald green due to the presence of copper salts and magnesium. This river section is safe, located away from the [hydro-electric plant](https://duckduckgo.com/?q=Centrale+Idroelettrica+Stifone&t=ffab&ia=images) overflow.
 
 <!--Raffo said, this is the coldest place: https://www.google.com/maps/place/Antico+cantiere+navale+romano+di+Stifone/@42.4969676,12.4917752,349m/data=!3m1!1e3!4m8!1m2!3m1!2sThe+Mole+Di+Narni!3m4!1s0x132ee1d0f8e119d1:0xa64dc037b9731f14!8m2!3d42.4973408!4d12.4929846-->
 
