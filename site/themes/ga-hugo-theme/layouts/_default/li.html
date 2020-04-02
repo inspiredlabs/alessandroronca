@@ -1,0 +1,35 @@
+{{ $currentSection := .CurrentSection }}
+
+{{ range where .Site.RegularPages "Section" .Section }}
+{{ if in (.Permalink | string) $currentSection.RelPermalink }}
+
+<!--code data-debug class="db" style="color:red">
+  {{ partial "debugprint" . }}
+  <ul>
+    <li>{{ .Params.region }}</li>
+    <li>{{ .Filename }}</li>
+    <li>{{ .Permalink }}</li>
+  </ul>
+</code-->
+
+<!-- Main layout, in a single column -->
+<article
+  class="highlight db dark-gray athelas f5 f4-ns f3-m f3-l lh-copy measure pa2 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l mr-auto ml-auto">
+  <!-- <li style="border: 1px solid black;" class="list pa4"> -->
+  <heading>
+
+    <!--svg viewBox="0 0 482 482" class="no-select pr2 h2 red" style="-webkit-transform: translate3d(0,0,0);"><use xlink:href="#url"></use></svg-->
+
+    <h3>{{ .Title }}&nbsp;<a href="{{ .RelPermalink }}" class="link emojisymbol o-30 glow no-underline"
+        title="{{ .Permalink | absURL | lower | urlize }}"></a></h3>
+    <!-- Alternative "already documented" SVG: https://discourse.gohugo.io/t/solved-inject-an-svg-file-into-my-html/7446/9 -->
+    <!--code>{{ .Page.CurrentSection.Title | lower | urlize }}</code-->
+    <!-- aside class="db dark-gray athelas f5 f4-ns f3-m f3-l lh-copy measure pa3 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l
+        mr-auto ml-auto" -->
+    {{ partial "share" . }}
+  </heading>
+
+  {{ partial "content.html" . }}
+</article>
+{{ end }}{{/* range where .Site.RegularPages "Section" .Section */}}
+{{ end }}{{/* $currentSection := .CurrentSection*/}}

@@ -1,0 +1,249 @@
+<!-- https://discourse.gohugo.io/t/live-reload-not-working-again-how-can-i-fix/18436/4 -->
+<form id="navigatorLang" action="" method="" ><!-- onsubmit="return preventSubmit(event);" -->
+  <label class="dn" for="inputLang">Language:</label>
+  <!-- https://stackoverflow.com/questions/7562095/redirect-on-select-option-in-select-box -->
+  <select
+  class="f3"
+  id="inputLang"
+  name="_lang"
+  onchange="replaceLang()">
+    <option data-italiano disabled selected>Opzioni&hellip;</option>
+    <!--option data-english disabled selected="selected">Preference&hellip;</option-->
+    <option data-italiano value="it">Italiano</option><!-- selected="selected" -->
+    <option data-english value="en">English</option>
+  </select>
+</form>
+
+<!--<script src="{{ .Site.BaseURL | absURL }}js/navigator-lang.js">// Server only </script> -->
+<script type="text/javascript">
+
+	// `stringify(value)` for numbers
+	//stackoverflow.com/questions/2010892/storing-objects-in-html5-localstorage
+	Storage.prototype.setObject = function(key, value) {
+	  this.setItem(key, JSON.stringify(value));
+	}
+
+	Storage.prototype.getObject = function(key) {
+	  return JSON.parse(this.getItem(key));
+	}
+
+  // '#navigatorLang' form group for localStorage
+  const navigatorLang = document.querySelector('#navigatorLang');
+
+	// Select option for '#navigatorLang' form group for localStorage
+	//stackoverflow.com/questions/23905358/how-to-use-localstorage-on-last-html-select-value
+  const inputLang = document.querySelector("#inputLang");
+  
+  
+
+	
+
+	// UI listener
+    navigatorLang.addEventListener('input', function () {
+      // if option selected add to localStorage
+      localStorage.setItem('inputLang', inputLang.options[inputLang.selectedIndex].value);
+    });//'navigatorLang' input EventListener
+
+
+
+  
+	// UI helper
+	function indexNavigatorLang() {
+    while (href == pref) {
+      // localStorage strings to restore
+      // Get [selectedIndex].value
+      inputLang.value = localStorage.getItem('inputLang');
+      alert('indexNavigatorLang = ' + inputLang.value);
+      let href = window.location.href;
+      alert(href);
+      /* let pref = window.location.assign('/' + inputLang.value);
+      alert(pref); */
+    }
+    /*
+    while(condition){
+      //statements
+    }
+    */
+
+    /*
+    do {
+      //statements
+    } while (condition)
+    */
+    
+
+
+    //replaceLang()
+	}//indexNavigatorLang(); restore data
+  
+  function prefixNavigatorLang() {
+    // Find browser language prefix:	
+    var navUserLanguage = navigator.language.toLowerCase().substr(0, 2) || navigator.userLanguage.toLowerCase().substr(0, 2);
+    let selectedIndex = inputLang.options[inputLang.selectedIndex].value;
+    // Apply prefix. alert(navUserLanguage)
+    if (navUserLanguage == 'it') {
+      //Italiano... alert('it')
+      localStorage.setItem('inputLang', navUserLanguage);
+      alert(navUserLanguage)
+      alert('selectedIndex = ' + selectedIndex)
+    } else {
+      //English... alert('Other');
+      localStorage.setItem('inputLang', navUserLanguage);
+      alert('prefixNavigatorLang = ' + navUserLanguage);
+      alert('selectedIndex = ' + selectedIndex)
+    };
+
+  }//prefixNavigatorLang(); default navUserLanguage
+
+  function replaceLang() {
+    let href = window.location.href;
+    //let input = 'hello' //inputLang.options[inputLang.selectedIndex].value;
+    let inputLang = localStorage.getItem('inputLang');
+    let pref = window.location.assign('/' + myPref);
+
+    alert('replaceLang, href = ' + href);
+    //alert('replaceLang, input = ' + input);
+    alert('replaceLang, input = ' + inputLang);
+    alert('replaceLang, pref = ' + window.location.assign('/' + inputLang));
+
+    if (inputLang !== pref) {
+      // if URL is not a match, then .assign pref
+      alert('THE SAME!');
+      return;
+    } else {
+      window.location.assign('/' + inputLang)
+    };
+  }//replaceLang(); Preference set, forward browser
+
+  // A Crockford iife: https://stackoverflow.com/a/23925102/3429622
+  (function () {
+    // Select option initial condition for 'inputLang':	
+    var value = localStorage.getItem('inputLang');
+    if (value >= 1) {
+      // make it correct [selectedIndex].value
+      localStorage.setItem('inputLang', inputLang.options[inputLang.selectedIndex].value);      
+    } else if (value == -1 || value === null || value === undefined) {
+      // DEFAULT: localStorage.setItem('inputLang', inputLang.value);
+      prefixNavigatorLang();
+    }
+    indexNavigatorLang();
+    //alert(localStorage.getItem('inputLang'));
+
+  }());
+  /* https://stackoverflow.com/questions/14071178/validate-first-2-characters-of-a-textfield */
+</script>
+
+<!--script>
+
+  function fwdNavigator() {
+    let href = window.location.href;
+    let pref = window.location.assign('/' + inputLang.value);
+    
+    if (href === pref ) {
+    // if URL is not a match, then .assign pref
+    alert('THE SAME!');
+    return
+    } else {
+    window.location.assign('/' + inputLang.value)
+    };
+  }//fwdNavigator(); Preference set, forward browser
+
+  function replaceLang() {
+    let href = window.location.href;
+    let pref = localStorage.getItem('inputLang');
+    let input = inputLang.options[inputLang.selectedIndex].value;
+    //var i = this.options[this.selectedIndex].value;
+    alert(href);
+    alert(input)
+    let assignment = window.location.assign('/' + pref);
+
+    if (href !== assignment) {
+      // if URL is not a match, then .assign pref
+      assignment;
+    } else {
+      return;
+    };
+}
+</script-->
+
+<!--script>
+/* var string = navUserLanguage, substring = "it";
+
+if (string.indexOf(substring) !== -1) {
+//Italiano... alert('it');
+window.location.assign('/' + string.substr(-3, 3));
+} else {
+//English... alert(href); let href = window.location.hostname;
+window.location.assign('/' + string.substr(-3, 3));
+}; */
+</script-->
+
+
+
+<!--script>
+  function navigatorLoc() {
+    let loc = window.location.href;
+    if (loc.indexOf('/it/')) {
+      //Italiano...
+      alert('it');
+      this.options[this.selectedIndex].value
+        && (loc = this.options[this.selectedIndex].value);
+    } else {
+      //English...
+      alert(En);
+      this.options[this.selectedIndex].value
+        && (loc = this.options[this.selectedIndex].value);
+    }
+  };
+  //manipulate the string //.substr(-3, 3)
+</script-->
+
+<!--script>
+  localStorage.setItem('inputLang', string.substr(-3, 3));
+  //string.substring("from", "to")
+  //string.substr("from", "length")
+  //string.substr(-3, 3)
+  // -from: https://www.youtube.com/watch?v=176JPkG227g
+
+  // indexOf and lastIndexOf String Methods
+  // -from: https://www.youtube.com/watch?v=eqPYvrxLm4c
+
+  let anything = '/**/'!italiano
+  let italiano = /it/
+  let href = window.location.href
+
+  challenge:
+  remove: '/**/'!italiano and replace with: window.location + '/en/'
+  remove: italiano replace with: window.location + '/it/'
+
+  onchange listener:
+  - if italiano then: forward to '/it/'
+    - if 'anything': forward to english
+
+
+  onload listen:
+  // IFFE
+  // is localStorage.getItem populated?
+  // if localStorage unset: forward to navUserLanguage
+  // and localStorage.getItem new default as navUserLanguage
+  // history.replaceState( 'new location' )
+  // -from: https://youtu.be/Mo9wn8jS1F8?list=PLyuRouwmQCjmQTKvgqIgah03HF1wrYkA9&t=877
+
+  // if 'it' then: forward to italiano
+  // if 'anything': forward to english
+
+  let log = console.log;
+  let href = window.location.href;
+  if (anything.indexOf('/' + href + '/') == '/it/') {
+    //Italiano... 
+    //remove: window.location.replace('/' + string.substr(-3, 3));
+    alert('it');
+  } else {
+    //English... alert(href); let href = window.location.hostname;
+    window.location.replace('/' + string.substr(-3, 3));
+  };
+
+  log()
+
+  log(italiano.indexOf('/' + href '+'))
+</script-->

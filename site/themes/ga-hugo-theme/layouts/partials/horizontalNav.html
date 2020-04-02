@@ -1,38 +1,73 @@
+<!--style>
+[data-sync] {
+  background: red
+}
+
+@media screen and (min-width: 30em) {
+  [data-sync] {
+    background: gold
+  }
+}
+
+@media screen and (min-width: 30em) and (max-width: 60em) {
+  [data-sync] {
+    background: orange
+  }
+}
+
+@media screen and (min-width: 60em) {
+  [data-sync] {
+    background: yellow
+  }
+}
+</style-->
+
+
+
 <header class="disable-scrolling">
   <div class="pa0 ma0 absolute z-999 w-100">
-    <div class="f5 f4-ns f3-m f3-l measure pa2 measure-ns measure-m ml-auto mr-auto">
+    <div class="f5 f4-ns f3-m f3-l measure pa2 measure-ns measure-m ml-auto mr-auto "><!-- debug -->
       <a onclick="mainFlkty.select( 0, false, true );//index, isWrapped, isInstant" href="#{{ range first 1 .Sections.ByWeight }}{{ .Params.name | lower }}{{ end }}" class="dib dib-ns dib-m dn-l
-                h3 pv2 
+                h3 pv2
                 tc tc-ns tc-m tl-l
                 pointer z-999" title="WHM Cerftified Instructor">
         <!--svg class="db ma-auto v-mid ts1-dark-gray" width="48" height="48" viewBox="0 0 128 128"
             alt="logo">
             <use xlink:href="#logo"></use>
           </svg-->
-        <img class="fl h2 mv2" src="images/whm_cerftified_instructor.png" alt="WHM Cerftified Instructor Badge" />
+        <img class="fl h2 mv2" src="{{ .Site.BaseURL | absURL }}images/whm_cerftified_instructor.png" alt="WHM Cerftified Instructor Badge" />
       </a>
+      <form data-sync id="preferenceLang" class="fr db db-ns db-m dn-l pv3 pr0 pl3 f6 pointer w-20 h-100"><!-- bg-debug -->
+        <!--label for="inputLang">Language:</label-->
+        <select id="inputLang" class="input-reset select-reset br0 bn pv2 pl3 pr0 bg-white-90 mr0 fr"><!-- inputLanguage -->
+          <option data-english value="en" selected>English</option>
+          <option data-italiano value="it">Italiano</option>
+        </select>
+      </form>
     </div>
   </div>
-  <nav class="pa0 ma0 fixed z-9999 w-100 
+  <nav class="pa0 ma0 fixed z-9999 w-100
     h3 h2-ns h3-m h2-l
     bottom-0 portrait-bottom-0-ns portrait-bottom-0-m
     portrait-bottom-0-l
     landscape-top-0-l">
     <!-- bottom-0 bottom-0-ns bottom-0-m top-0-l -->
     <div class="bg-black-80">
+      
       <!-- h3 h2-ns h3-m h3-l cf -->
       <div class="carousel carousel-nav
         f4 f3-ns measure-wide-l mr-auto ml-auto
-        fw6 ttu tracked cf">
+        fw6 ttu tracked cf
+        "><!-- debug -->
         <a href="#{{ range first 1 .Sections.ByWeight }}{{ .Params.name | lower }}{{ end }}" class="carousel-cell
-          pv4 pv0-m pv2-l 
-          ph0 
+          pv4 pv0-m pv2-l
+          ph0
           dn dn-ns dn-m dib-l
-          w-40-l
+          w-20-l
           tc tc-ns tc-m tl-l
           o-50 glow
           link pointer ml-auto mr-auto fl" title="WHM Cerftified Instructor">
-          <img class="h2 mv2" src="images/whm_cerftified_instructor.png" alt="WHM Cerftified Instructor Badge" /><!-- glow -->
+          <img class="h2 mv2" src="{{ .Site.BaseURL | absURL }}images/whm_cerftified_instructor.png" alt="WHM Cerftified Instructor Badge" /><!-- glow -->
           <!--svg
               class="db v-mid mr-auto ml-auto mh0-l w-60-m mv2 h3 h3-ns h3-m h2-l ts1-dark-gray" viewBox="0 0 128 128"
               alt="logo">
@@ -41,16 +76,22 @@
 
           {{/* range last 3 .Sections.ByWeight */}}
           <!-- https://discourse.gohugo.io/t/exclude-section-from-list/95 -->
-          {{ range .Sections.ByWeight }}
-            {{ if ne .Section "posts" }}
-              <a href="#{{ .Params.name | lower }}" class="carousel-cell lh-0 pv4 f6 dib
-                                white-50 ts1-dark-gray
-                                w-third w-third-ns w-third-m w-20-l
-                                tc tc-ns tc-m tr-l
-                                link pointer hover-white-80 ml-auto mr-auto fl" title="{{ .Params.name }}">{{ .Params.name | lower | urlize }}</a><!-- glow -->
-              {{ end }}
-            {{end}}
 
+          {{ range last 3 .Sections.ByWeight }}
+          {{/* range where (where .Pages "Section" "it" ) "Section" "!=" "posts" */}}
+              <a href="#{{ .Params.name | lower | urlize }}" class="carousel-cell lh-0 h-100 pv4 f6 dib
+                white-50 ts1-dark-gray
+                w-third w-third-ns w-third-m w-20-l
+                tc tc-ns tc-m tr-l
+                link pointer hover-white-80 ml-auto mr-auto pr3-l fl" title="{{ .Params.name }}">{{ .Params.name | lower }}</a><!-- bg-debug -->
+            {{ end }}
+          
+          <form data-sync id="preferenceLanguage" class="dn dn-ns dn-m db-l pv3 pr0 pl3 f6 pointer w-20 h-100 fr">
+              <select id="inputLanguage" class="input-reset select-reset br0 bn pv2 pl2 pr0 bg-white-90 mr0 ">
+              <option data-english value="en" selected>English</option>
+              <option data-italiano value="it">Italiano</option>
+            </select>
+          </form>            
       </div>
     </div>
   </nav>

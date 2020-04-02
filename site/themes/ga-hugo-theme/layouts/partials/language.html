@@ -1,0 +1,93 @@
+<!-- form -->
+<script type="text/javascript">
+
+    //const DEBUG_MODE = true; if (DEBUG_MODE) {debugger;}
+    const log = console.log
+    const userLang = navigator.language.toLowerCase().substr(0, 2) || navigator.userLanguage.toLowerCase().substr(0, 2);
+    //log(userLang)
+    //const inputLang = document.querySelector(".inputLanguage")
+    var inputLang = document.querySelector("#inputLang");
+    var inputLanguage = document.querySelector("#inputLanguage");
+
+    //log(inputLang.value)
+    var prefLang = localStorage.getItem('inputLang')
+    //log(prefLang)
+
+    if (prefLang) {
+      //log(prefLang)
+      //log(inputLang.value)
+      inputLang.value = prefLang
+      inputLanguage.value = prefLang
+    }
+
+    inputLang.onchange = function () {      
+      //log(prefLang)
+      prefLang = inputLang.options[inputLang.selectedIndex].value
+      //log(inputLang.options[inputLang.selectedIndex].value)
+      localStorage.setItem('inputLang', prefLang)
+      forwardTo(prefLang);
+      inputLanguage.value = this.value;
+    }
+    inputLanguage.onchange = function () {
+      //log(prefLang)
+      prefLang = inputLanguage.options[inputLanguage.selectedIndex].value
+      localStorage.setItem('inputLang', prefLang)
+      forwardTo(prefLang);
+      inputLang.value = this.value;
+    }
+    
+
+
+  function forwardTo(prefLang) {
+    //log(prefLang)
+    if ( prefLang != '' ) {//|| prefLang != null 
+      var href = window.location.href;
+      //log(window.location.href)
+      //log(window.location + '/' + prefLang)
+      window.location.assign('/' + prefLang)
+    }
+  };
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+    function indexPrefLang() {
+      var href = window.location.href.substr(-3, 2)
+      //log(href)
+      if (href != prefLang) {
+        //log(window.location + prefLang)
+        window.location.assign('/' + prefLang)
+      } else {
+        //log('return false;')
+        return false;
+      }
+    }
+
+    // A Crockford iife: https://stackoverflow.com/a/23925102/3429622
+    (function () {
+      
+      localStorage.setItem('inputLang', inputLanguage.options[inputLanguage.selectedIndex].value)
+      localStorage.setItem('inputLang', inputLang.options[inputLang.selectedIndex].value)
+      // Select initial condition for 'inputLang':	
+      // Duplicate scope, how to ref `const`?
+      var prefLang = localStorage.getItem('inputLang')
+      //log(prefLang)
+      if (prefLang == -1 || prefLang === null || prefLang === undefined) {
+        // Store default userLang
+        //log('inputLang = ' + inputLang)
+        //log('userLang = ' + userLang)
+        localStorage.setItem('inputLang', userLang)
+        localStorage.getItem('inputLang')
+      } else if (prefLang >= 1) {
+        //log('inputLang = ' + inputLang)
+        //log(inputLang.options[inputLang.selectedIndex].value)
+        // make it correct [selectedIndex].value
+        localStorage.setItem('inputLang', inputLang.options[inputLang.selectedIndex].value)
+        localStorage.setItem('inputLang', inputLanguage.options[inputLanguage.selectedIndex].value)
+        //log('localStorage.getItem = ' + localStorage.getItem('inputLang', inputLang.options[inputLang.selectedIndex].value))
+      }
+      indexPrefLang()
+    }());// stackoverflow.com/questions/27664654/html-how-to-fill-input-text-on-load
+
+
+  /* sync: https://stackoverflow.com/questions/8547328/how-to-synchronize-two-select-elements */
+
+</script>

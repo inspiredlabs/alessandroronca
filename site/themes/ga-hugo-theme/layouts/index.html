@@ -1,0 +1,64 @@
+{{ partial "head" . }}
+<body
+  class="w-100 h-100 ma0 pa0 overflow-hidden backface-hidden bg-near-white charcoal avenir fixed disable-scrolling"><!-- no-clutter -->
+  {{ partial "svg" . }}
+  {{ partial "horizontalNav.html" . }}
+
+<div class="carousel carousel-main vh-100 vw-100 relative z-1"><!-- https://discourse.gohugo.io/t/get-pages-from-multiple-sections-in-one-list/15271 -->
+
+
+{{ range $i, $e := .Data.Pages }}
+{{ if eq .Params.region "it" }}
+{{ range .Sections.ByWeight }}
+  <section id="{{ .Title | lower | urlize }}" class="carousel-cell h-100 scrollable overflow-y-scroll touch-scrolling w-100 ">
+    {{ partial "jumbotron" . }}
+    <code data-debug class="db" style="color:green">
+      {{ partial "debugprint" . }}
+      <ul>
+        <li>{{ .Params.region }}</li>
+        <li>{{ .Filename }}</li>
+        <li>{{ .Permalink }}</li>
+      </ul>
+    </code>
+
+    <!-- The `_index.md` is reserved for the synopsis, introduction or sign-up tiers (figure), breaking out from the main layout. -->
+    <aside class="db dark-gray athelas f5 f4-ns f3-m f3-l lh-copy measure-narrow pa4 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l mr-auto ml-auto">
+      <!--h2>{{ .Title }}&nbsp;<a href="{{ .Permalink }}" class="link emojisymbol o-30 glow no-underline"
+        title="{{ .Permalink | absURL | lower | urlize }}"></a></h2-->
+      {{ .Content }}
+
+    </aside>
+    {{ range .Pages }}
+    <!-- Main layout, in a single column -->
+    <article class="highlight db dark-gray athelas f5 f4-ns f3-m f3-l lh-copy measure pa2 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l mr-auto ml-auto">
+      <!-- <li style="border: 1px solid black;" class="list pa4"> -->
+      <heading>
+
+        <!--svg viewBox="0 0 482 482" class="no-select pr2 h2 red" style="-webkit-transform: translate3d(0,0,0);"><use xlink:href="#url"></use></svg-->
+
+        <h3>{{ .Title }}&nbsp;<a href="{{ .RelPermalink }}" class="link emojisymbol o-30 glow no-underline" title="{{ .Permalink | absURL | lower | urlize }}"></a></h3><!-- Alternative "already documented" SVG: https://discourse.gohugo.io/t/solved-inject-an-svg-file-into-my-html/7446/9 -->
+        <!--code>{{ .Page.CurrentSection.Title | lower | urlize }}</code-->
+      <!-- aside class="db dark-gray athelas f5 f4-ns f3-m f3-l lh-copy measure pa3 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l
+        mr-auto ml-auto" -->
+        {{ partial "share" . }}
+      </heading>
+      <code data-debug class="db" style="color:green">
+        {{ partial "debugprint" . }}
+        <ul>
+          <li>{{ .Params.region }}</li>
+          <li>{{ .Filename }}</li>
+          <li>{{ .Permalink }}</li>
+        </ul>
+      </code>
+      {{ partial "content.html" . }}
+    </article>
+    {{ end }}<!-- {{/* range .Pages */}} -->
+    {{ partial "footer" . }}
+  </section>
+  {{ end }}<!-- {{/* range .Sections.ByWeight */}} -->
+  {{ end }}
+  {{ end }}
+</div>
+{{ partial "script" . }}
+</body>
+</html>

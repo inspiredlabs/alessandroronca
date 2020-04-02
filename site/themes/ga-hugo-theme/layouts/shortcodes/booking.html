@@ -25,6 +25,27 @@ data-netlify="true"
       <label for=email class="f6 f5-ns ttu gray tracked b system pl3">Address</label>
       <input type=email name=email id=email class="input-reset br0 bn pa3 w-100 bg-white-90" placeholder="your@email.com" pattern="[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" required>
     </div>
+    <div class="mb4">
+      <label for="business" class="f6 f5-ns ttu tracked-mega pl3">Tell me about yourself</label>
+      <select class="input-reset select-reset br0 bn pa3 w-100 f5 f5-ns mr0 bg-white-90" id="business" name="business"
+        onmouseover="onSite();" required="">
+        <option value="startup" selected="" class="system">Startup entrepreneur</option>
+        <option value="established" class="system">Established business</option>
+        <option value="recruiter" class="system">Recruiter</option>
+      </select>
+    </div>
+
+    <div class="mb4 dn db" id="opportunity">
+      <label for="reason" class="f6 f5-ns ttu tracked-mega pl3">Opportunity</label>
+      <select class="input-reset select-reset br0 bn pa3 w-100 f5 f5-ns mr0 bg-white-90" id="reason" name="reason"
+        onmouseover="onSite();" required="">
+        <option selected="" class="system">Consultancy</option>
+        <option class="system">Remote contractor</option>
+        <option class="system">In-house relocation package</option>
+      </select>
+    </div>
+
+
     <div class=mb4>
       <label for=message class="f6 f5-ns ttu gray tracked b system pl3 ">Message</label>
       <textarea class="input-reset br0 bn pa3 mw-100 bg-white-90" id=message name=message rows=4 placeholder="I'd like to take a course with Alessandro, " style="min-width:100%;" required></textarea>
@@ -34,3 +55,78 @@ data-netlify="true"
     </div>
   </form>
 </section>
+
+<script>
+  //stackoverflow.com/questions/49146131/how-do-i-correctly-use-the-mouseleave-function-in-my-code#49146328
+  var eventExists = false;
+
+  function offSite() {
+    return exitSurvey();
+  }
+
+  function attachEvent() {
+    if (!eventExists) {
+      this.addEventListener("mouseleave", offSite);
+    } else {
+      this.removeEventListener("mouseleave", offSite);
+    }
+    eventExists = !eventExists;
+  }
+
+  function onSite() {
+    document.body.removeEventListener('mouseleave', offSite);
+  };
+
+
+  //www.youtube.com/watch?v=yEMQWyiEPFk
+  //stackoverflow.com/questions/23942893/javascript-obtain-value-of-select-option-without-submitting-form
+  //stackoverflow.com/questions/23942893/javascript-obtain-value-of-select-option-without-submitting-form
+
+  //document.querySelectorAll('.my-class')[0].classList.toggle('selected')
+
+  // Business Type IIFE
+  (function () {
+    if (document.querySelector('#business').value == 'recruiter') {
+      document.querySelector('#opportunity').classList.toggle('db', 'dn');
+    } else {
+      document.querySelector('#opportunity').classList.add('dn');
+      document.querySelector('#opportunity').classList.remove('db');
+    };
+
+    // UI listener IIFE
+    (function () {
+      var value;
+      document.querySelector('#business').addEventListener('change', function () {
+        value = this.value;
+
+        if (this.value == 'recruiter') {
+          document.querySelector('#opportunity').classList.toggle('db', 'dn');
+        } else {
+          document.querySelector('#opportunity').classList.add('dn');
+          document.querySelector('#opportunity').classList.remove('db');
+        }
+
+      }, false);
+
+    })();	// UI listener IIFE
+
+  })();// Business Type IIFE
+
+  function once(fn, context) {
+    var result; return function () {
+      if (fn) { result = fn.apply(context || this, arguments); fn = null; }
+      return result;
+    };
+  }
+</script>
+<!-- <script>
+  // No drag
+  (function () {
+    var href = document.getElementsByTagName('a');
+    for (var i = 0; i < href.length; i++) {
+      href[i].ondragstart = function () {
+        return false;
+      }
+    }
+  })();//benalman.com/news/2010/11/immediately-invoked-function-expression/
+</script> -->
