@@ -24,27 +24,27 @@
     </aside>
 
     {{ if eq .Params.region "it" }}
-    <code data-debug style="color:green!important">
-      {{ partial "debugprint" . }}
+    <!--code data-debug style="color:green!important">
+      {{/* partial "debugprint" . */}}
       <ul>
         <li>{{ .Params.region }}</li>
         <li>{{ .Filename }}</li>
         <li>{{ .Permalink }}</li>
       </ul>
-    </code>
+    </code-->
     {{ .Render "li" }}
     {{ end }}
 
 
     {{ if eq .Params.region "en" }}
-    <code data-debug style="color:blue!important">
-      {{ partial "debugprint" . }}
+    <!--code data-debug style="color:blue!important">
+      {{/* partial "debugprint" . */}}
       <ul>
         <li>{{ .Params.region }}</li>
         <li>{{ .Filename }}</li>
         <li>{{ .Permalink }}</li>
       </ul>
-    </code>
+    </code-->
     {{ .Render "li" }}
     {{ end }}
 

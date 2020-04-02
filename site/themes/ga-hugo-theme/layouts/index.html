@@ -12,14 +12,14 @@
 {{ range .Sections.ByWeight }}
   <section id="{{ .Title | lower | urlize }}" class="carousel-cell h-100 scrollable overflow-y-scroll touch-scrolling w-100 ">
     {{ partial "jumbotron" . }}
-    <code data-debug class="db" style="color:green">
-      {{ partial "debugprint" . }}
+    <!--code data-debug class="db" style="color:green">
+      {{/* partial "debugprint" . */}}
       <ul>
         <li>{{ .Params.region }}</li>
         <li>{{ .Filename }}</li>
         <li>{{ .Permalink }}</li>
       </ul>
-    </code>
+    </code-->
 
     <!-- The `_index.md` is reserved for the synopsis, introduction or sign-up tiers (figure), breaking out from the main layout. -->
     <aside class="db dark-gray athelas f5 f4-ns f3-m f3-l lh-copy measure-narrow pa4 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l mr-auto ml-auto">
@@ -42,14 +42,14 @@
         mr-auto ml-auto" -->
         {{ partial "share" . }}
       </heading>
-      <code data-debug class="db" style="color:green">
+      <!--code data-debug class="db" style="color:green">
         {{ partial "debugprint" . }}
         <ul>
           <li>{{ .Params.region }}</li>
           <li>{{ .Filename }}</li>
           <li>{{ .Permalink }}</li>
         </ul>
-      </code>
+      </code-->
       {{ partial "content.html" . }}
     </article>
     {{ end }}<!-- {{/* range .Pages */}} -->
