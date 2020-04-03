@@ -5,26 +5,29 @@
     const log = console.log;
     
     // Interrogate browser:
-    const navUserLang = navigator.language.toLowerCase().substr(0, 2) || navigator.userLanguage.toLowerCase().substr(0, 2);
-    //log(navUserLang)
+    const nativeNavLang = navigator.language.toLowerCase().substr(0, 2) || navigator.userLanguage.toLowerCase().substr(0, 2);
+    // View: localStorage.setItem('nativeNavLang', nativeNavLang);
+    if (nativeNavLang == 'it') {
+      var navUserLang = 'it'
+    } else {
+      var navUserLang = 'en'
+    };
+    
+    
     
     // Name `select`:
     const inputLang = document.querySelector("#inputLang");
     const inputLanguage = document.querySelector("#inputLanguage");
-    //log(inputLang.value)
     var prefLang = localStorage.getItem('inputLang');
     
     // Store default:
     localStorage.setItem('defaultLang', navUserLang);
-    //log(localStorage.getItem('defaultLang'))
 
     if (!prefLang) {
       var prefLang = navUserLang;
       localStorage.setItem('inputLang', navUserLang);
       forwardTo(prefLang);
     };
-    //log(prefLang);
-    //log(inputLang.value);
 
     if (prefLang) {
       //sync across `option` inputs
@@ -50,43 +53,22 @@
 
     function forwardTo(prefLang) {
       var href = window.location.href;
-      window.location.assign('/' + prefLang)
+      //log(href)
+      log(prefLang)
+      window.location.assign('/' + prefLang);
+      /* if (prefLang == 'it') {
+        window.location.assign('/' + prefLang);
+      } else {
+        window.location.assign('/' + 'en');
+      } */
     };
 
   // A Crockford iife: https://stackoverflow.com/a/23925102/3429622
   (function () {
     if (window.location.href.substr(-3, 2) != prefLang) {
-      //log('not the same = ' + window.location.href.substr(-3, 2));
       window.location.assign('/' + prefLang);
-    }
+    };
+    
   }()); //onload
 
 </script>
-<!--script type = "text/javascript">
-  //for ( init; condition; iterate; )
-    for ( let i = 0; i < inputLang.length; i++;) {
-      // `break;` for loop early: https://youtu.be/iw8J8W9wXZA?list=PLkwxH9e_vrALlH7D0XLDn2td-uoHqHFxq&t=111
-      let defaultLang = localStorage.getItem('defaultLang');
-      if (prefLang != inputLang.value) {
-        // set `prefLang` to `inputLang.value`
-        localStorage.setItem('inputLang', inputLang.value)
-
-      } else if (prefLang == -1 || prefLang === null || prefLang === undefined) {        
-        // set `prefLang` to `defaultLang`
-        prefLang = x
-
-        // then set `inputLang.value` to `defaultLang`
-      } return;
-    }
-
-    if (prefLang == -1 || prefLang === null || prefLang === undefined) {
-      // Eq userLang?
-      //localStorage.setItem('inputLang', userLang)
-      //localStorage.getItem('inputLang')
-      //log('ciao')
-    }
-
-    //var prefLang = localStorage.getItem('inputLang')
-    //log(prefLang)
-  
-</script-->
