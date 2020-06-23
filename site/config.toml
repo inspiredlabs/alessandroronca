@@ -1,5 +1,5 @@
 enableRobotsTXT = true
-baseurl = "https://alessandroronca.netlify.com/" #baseurl = "./" "https://alessandroronca.netlify.com/" #{{ .Site.BaseURL }}
+baseurl = "https://alessandroronca.netlify.app/" #baseurl = "./" "https://alessandroronca.netlify.com/" #{{ .Site.BaseURL }}
 #"/" netlify #"./" local only #"https://hungry-wozniak-e915f8.netlify.com"
 # same issue: https://discourse.gohugo.io/t/how-to-get-the-current-absolute-url/17328/13
 # relativeURLs = "true" #https://github.com/gohugoio/hugo/issues/985
@@ -14,7 +14,7 @@ copyright = "https://inspiredlabs.co.uk" # © = http://www.theukwebdesigncompany
 ## As of v0.20, all content files include a default "categories" value that's the same as the section. This was a cheap future-proofing method and should/could be changed accordingly.
 
 [params] #Public `[params]` in `config.toml` stored as: {{ .Site.Params.Foo }} or {{ .Site.Params.foo }}: https://discourse.gohugo.io/t/variables-not-pulled-from-config-file/1455/10
-  canonical = "https://alessandroronca.it/"
+  canonical = "http://alessandroronca.it/"
   foo = "foo"
   bar = "bar" #{{ (.Site.Param "bar") }}
   logo = "favicon.png" #{{ with .Site.Params "logo" }}{{ . }}{{ end }}
@@ -33,9 +33,9 @@ copyright = "https://inspiredlabs.co.uk" # © = http://www.theukwebdesigncompany
   #itemid = "#pablowoodward" #`seo.html` has: "$id": "{{ .Site.BaseURL }}"
   #keywords = ["Osm", "Bloke" ]
   email = "fairtech@pm.me"
-  image = "https://alessandroronca.netlify.com/images/profile.jpg" #profile.png Open Graph Preview failed. #favicon.png?
-  homepage = "https://alessandroronca.netlify.com/"
-  facebook = "https://www.facebook.com/pablo.woodward/" #"inspiredlabs"
+  image = "https://alessandroronca.netlify.app/images/profile.jpg" #profile.png Open Graph Preview failed. #favicon.png?
+  homepage = "https://alessandroronca.netlify.app/"
+  facebook = "https://it-it.facebook.com/ferdinando.macchie.9" #"inspiredlabs"
   #twitter = "pablowoodward" #https://twitter.com/PabloWoodward/, "inspiredlabs"
 	#bio = """Actor, Presenter, Comedian & ethnically ambiguous probable Latino with an insatiable energy to explore, adventure & learn: Bold Linguistic Artist Extraordinaire.""" #"""multi-line""" #https://discourse.gohugo.io/t/how-to-access-site-params-map-with-a-params-variable/348/2
 
